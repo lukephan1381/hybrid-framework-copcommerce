@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite parallel="false" name="Suite">
+  <test name="NopCommerce Demo">
+  
+<!--   	<groups> -->
+<!--   		<run> -->
+<!--   			<include name="cart"></include> -->
+<!--   		</run> -->
+<!--   	</groups> -->
+  	
+  	<packages>
+  		<package name="testcases"></package>
+  	</packages>
+  	
+    <classes>
+<!--       <class name="fossil.admin.Shopper_01_Manage_Product"/> -->
+<!--       <class name="fossil.admin.Shopper_02_Manage_Cart"/> -->
+<!--       <class name="fossil.user.User_01_Checkout"/> -->
+<!--       <class name="fossil.user.User_02_Order"/>  -->
+			<class name = "com.nopcommerce.users.User_01_RepeatYourSelf"></class>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

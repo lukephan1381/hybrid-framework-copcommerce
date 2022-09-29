@@ -4,8 +4,10 @@ import java.util.List;
 import java.util.Set;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.Color;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
@@ -126,6 +128,10 @@ public class BasePage {
 		return new Select(getElement(driver, locator)).getFirstSelectedOption().getText();
 	}
 	
+	public Boolean isDropdownMultiple(WebDriver driver, String locator) {
+		return new Select(getElement(driver, locator)).isMultiple();
+	}
+	
 	public void selectItemInCustomDropdown(WebDriver driver, String parentLocator, String childLocator, String expectedTextItem) {
 		getElement(driver, parentLocator).click();
 		sleepInSecond(3);
@@ -161,16 +167,58 @@ public class BasePage {
 	}
 	
 	public void checkOnCheckboxOrRadio(WebDriver driver, String locator) {
-		if (!getElement(driver, locator).isSelected()) {
-			getElement(driver, locator).click();
+		if (!isElementSelected(driver, locator)) {
+			clickToElement(driver, locator);
 		}
 	}
 	
 	public void uncheckTheCheckbox(WebDriver driver, String locator) {
-		if (getElement(driver, locator).isSelected()){
-			getElement(driver, locator).click();
+		if (isElementSelected(driver, locator)){
+			clickToElement(driver, locator);
 		}
 	}
+	
+	public boolean isElementDisplayed(WebDriver driver, String locator) {
+		return getElement(driver, locator).isDisplayed();
+	}
+	
+	public boolean isElementSelected(WebDriver driver, String locator) {
+		return getElement(driver, locator).isSelected();
+	}
+	
+	public boolean isElementEnabled(WebDriver driver, String locator) {
+		return getElement(driver, locator).isEnabled();
+	}
+	
+	public void switchToFrame(WebDriver driver, String locator) {
+		driver.switchTo().frame(getElement(driver, locator));
+	}
+	
+	public void switchToDefaultContent(WebDriver driver) {
+		driver.switchTo().defaultContent();
+	}
+	
+	public void moveToElement(WebDriver driver, String locator) {
+		new Actions(driver).moveToElement(getElement(driver, locator)).perform();
+	}
+	
+	public void doubleClickToElement(WebDriver driver, String locator) {
+		new Actions(driver).doubleClick(getElement(driver, locator)).perform();
+	}
+	
+	public void rightClickElement(WebDriver driver, String locator) {
+		new Actions(driver).contextClick(getElement(driver, locator)).perform();
+	}
+	
+	public void dragAndDrop(WebDriver driver, String sourceLocator, String targetLocator) {
+		new Actions(driver).dragAndDrop(getElement(driver, sourceLocator), getElement(driver, targetLocator)).perform();;
+	}
+	
+	public void sendKeyboardToElement(WebDriver driver, String locator, Keys key) {
+		new Actions(driver).sendKeys(getElement(driver, locator), key).perform();
+	}
+	
+	
 	
 	public void sleepInSecond(long timeInSecond) {
 		try {
@@ -181,10 +229,6 @@ public class BasePage {
 		}
 	}
 	
-	public Boolean isDropdownMultiple(WebDriver driver, String locator) {
-		return new Select(getElement(driver, locator)).isMultiple();
-	}
-	
-	
+
 	
 }

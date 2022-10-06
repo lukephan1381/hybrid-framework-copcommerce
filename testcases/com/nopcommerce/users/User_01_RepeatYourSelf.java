@@ -19,7 +19,7 @@ public class User_01_RepeatYourSelf {
 	String projectPath = System.getProperty("user.dir");
 	String osName = System.getProperty("os.name");
 	Select select;
-	String emailAddress = "lukephanauto" + generateRandomNumber() + "@test.vn";
+	String emailAddress = "lukephan" + generateRandomNumber() + "@auto.vn";
 	
 	@BeforeClass
 	public void beforeClass() {
@@ -40,6 +40,7 @@ public class User_01_RepeatYourSelf {
 	
 	@Test
 	public void User_01_Register() {
+
 		//Click on Register button
 		driver.findElement(By.xpath("//a[@class='ico-register']")).click();
 		
@@ -72,10 +73,24 @@ public class User_01_RepeatYourSelf {
 		
 		//Verify success message
 		Assert.assertEquals(driver.findElement(By.xpath("//div[@class='result']")).getText(), "Your registration completed");
+		
+		//logout of current account
+		driver.findElement(By.xpath("//a[@class='ico-logout']")).click();
 	}
 	
-	//@Test
+	@Test
 	public void User_02_Login() {
+
+		//click on login button
+		driver.findElement(By.xpath("//a[@class='ico-login']")).click();
+		
+		//input Email address & password
+		driver.findElement(By.xpath("//input[@id='Email']")).sendKeys(emailAddress);
+		driver.findElement(By.xpath("//input[@id='Password']")).sendKeys("qqqq1111");
+		
+		//submit login
+		driver.findElement(By.xpath("//button[text()='Log in']")).click();
+		Assert.assertEquals(driver.findElement(By.xpath("//a[@class='ico-logout']")).getText(), "Log out");
 		
 	}
 	

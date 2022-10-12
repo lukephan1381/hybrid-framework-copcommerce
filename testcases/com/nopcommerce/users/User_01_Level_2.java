@@ -14,12 +14,20 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 
 import commons.BasePage;
+import pageObjects.CustomerInfoPageObject;
+import pageObjects.HomePageObject;
+import pageObjects.LoginPageObject;
+import pageObjects.RegisterPageObject;
 
 public class User_01_Level_2 {
 	
 	String githubToken = "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";
 	WebDriver driver;
 	BasePage basepage = new BasePage();
+	HomePageObject homePage;
+	RegisterPageObject registerPage;
+	LoginPageObject loginPage;
+	CustomerInfoPageObject customerInfoPage;
 	String projectPath = System.getProperty("user.dir");
 	String osName = System.getProperty("os.name");
 	Select select;
@@ -46,71 +54,90 @@ public class User_01_Level_2 {
 	@Test
 	public void User_01_Register() {
 		//Click on Register button
-		//driver.findElement(By.xpath("//a[@class='ico-register']")).click();
+		homePage = new HomePageObject();
+		homePage.clickToRegisterButton();
 		basepage.clickToElement(driver,"//a[@class='ico-register']");
 		
+		
+		registerPage = new RegisterPageObject();
 		//Select gender
+		registerPage.clickToGenderMaleRadio();
 		basepage.clickToElement(driver, "//span[@class='male']");
 		
 		//Input first name & last name
-		//driver.findElement(By.xpath("//input[@id='FirstName']")).sendKeys("Luke");
+		registerPage.inputToFirstNameTextbox();
+		registerPage.inputToLastNameTextbox();
 		basepage.sendKeyToElement(driver, "//input[@id='FirstName']", "Luke");
-		//driver.findElement(By.xpath("//input[@id='LastName']")).sendKeys("Phan");
 		basepage.sendKeyToElement(driver, "//input[@id='LastName']", "Phan");
 		
 		//Select birthday
-		//select = new Select(driver.findElement(By.xpath("//select[@name='DateOfBirthDay']")));
-		//select.selectByVisibleText("28");
+		registerPage.selectDayDropdown("28");
+		registerPage.selectMonthDropdown("January");
+		registerPage.selectYearDropdown("1991");
 		basepage.selectItemInDropdown(driver, "//select[@name='DateOfBirthDay']", "28");
-		
-		//select = new Select(driver.findElement(By.xpath("//select[@name='DateOfBirthMonth']")));
-		//select.selectByVisibleText("January");
 		basepage.selectItemInDropdown(driver, "//select[@name='DateOfBirthMonth']", "January");
-		
-		//select = new Select(driver.findElement(By.xpath("//select[@name='DateOfBirthYear']")));
-		//select.selectByVisibleText("1991");
 		basepage.selectItemInDropdown(driver, "//select[@name='DateOfBirthYear']", "1991");
 		
 		//Input email address
-		//driver.findElement(By.xpath("//input[@id='Email']")).sendKeys(emailAddress);
+		registerPage.inputToEmailTextbox(emailAddress);
 		basepage.sendKeyToElement(driver, "//input[@id='Email']", emailAddress);
 		
 		//Input & confirm password
-		//driver.findElement(By.xpath("//input[@id='Password']")).sendKeys("qqqq1111");
-		//driver.findElement(By.xpath("//input[@id='ConfirmPassword']")).sendKeys("qqqq1111");
+		registerPage.inputToCompanyTextbox("Marvel");
+		registerPage.inputToPasswordTextbox("qqqq1111");
+		registerPage.inputToConfirmPasswordTextbox("qqqq1111");
 		basepage.sendKeyToElement(driver, "//input[@id='Password']", "qqqq1111");
 		basepage.sendKeyToElement(driver, "//input[@id='ConfirmPassword']", "qqqq1111");
 		
 		//Click REGISTER button
-		//driver.findElement(By.xpath("//button[@id='register-button']")).click();
+		registerPage.clickToRegisterButton();
 		basepage.clickToElement(driver, "//button[@id='register-button']");
 		
 		//Verify success message
-		//Assert.assertEquals(driver.findElement(By.xpath("//div[@class='result']")).getText(), "Your registration completed");
+		registerPage.getRegisterResultMessage();
 		Assert.assertEquals(basepage.getElement(driver, "//div[@class='result']").getText(), "Your registration completed");
 		
 		//logout of current account
-		//driver.findElement(By.xpath("//a[@class='ico-logout']")).click();
+		registerPage.clickToLogoutLink();
 		basepage.clickToElement(driver, "//a[@class='ico-logout']");
+		
+		homePage = new HomePageObject();
+		Assert.assertEquals(homePage.getHomePageURL(), "https://demo.nopcommerce.com/");
 	}
 	
 	@Test
 	public void User_02_Login() {
 		//click on login button
-		//driver.findElement(By.xpath("//a[@class='ico-login']")).click();
+		homePage.clickToLoginLink();
 		basepage.clickToElement(driver, "//a[@class='ico-login']");
 		
 		//input Email address & password
-		//driver.findElement(By.xpath("//input[@id='Email']")).sendKeys(emailAddress);
-		//driver.findElement(By.xpath("//input[@id='Password']")).sendKeys("qqqq1111");
+		loginPage = new LoginPageObject();
+		loginPage.inputToEmailTextbox(emailAddress);
+		loginPage.inputtoPasswordTextbox("qqqq1111");
 		basepage.sendKeyToElement(driver, "//input[@id='Email']", emailAddress);
 		basepage.sendKeyToElement(driver, "//input[@id='Password']", "qqqq1111");
 		
 		//submit login
-		//driver.findElement(By.xpath("//button[text()='Log in']")).click();
-		//Assert.assertEquals(driver.findElement(By.xpath("//a[@class='ico-logout']")).getText(), "Log out");
+		loginPage.clickToLoginButton();
 		basepage.clickToElement(driver, "//button[text()='Log in']");
+		
+		homePage = new HomePageObject();
+		Assert.assertTrue(homePage.isMyAccountLinkDisplayed());
 		Assert.assertEquals(basepage.getElement(driver, "//a[@class='ico-logout']").getText(), "Log out");
+		
+		homePage.clickToMyAccountLink();
+		customerInfoPage = new CustomerInfoPageObject();
+		
+		Assert.assertTrue(customerInfoPage.isGenderMaleRadioSelected());
+		Assert.assertEquals(customerInfoPage.getFirstNameTextboxAttribute(), "Luke");
+		Assert.assertEquals(customerInfoPage.getLastNameTextboxAttribute(), "Phan");
+		Assert.assertEquals(customerInfoPage.getDayDropdownSelectedItem(), "28");
+		Assert.assertEquals(customerInfoPage.getMonthDropdownSelectedItem(), "January");
+		Assert.assertEquals(customerInfoPage.getYearDropdownSelectedItem(), "1991");
+		Assert.assertEquals(customerInfoPage.getEmailTextboxAttribute(), emailAddress);
+		Assert.assertEquals(customerInfoPage.getCompanyTextboxAttribute(), "Marvel");
+		
 	}
 	
 	@AfterClass

@@ -65,8 +65,8 @@ public class User_01_Level_2 {
 		basepage.clickToElement(driver, "//span[@class='male']");
 		
 		//Input first name & last name
-		registerPage.inputToFirstNameTextbox();
-		registerPage.inputToLastNameTextbox();
+		registerPage.inputToFirstNameTextbox("");
+		registerPage.inputToLastNameTextbox("");
 		basepage.sendKeyToElement(driver, "//input[@id='FirstName']", "Luke");
 		basepage.sendKeyToElement(driver, "//input[@id='LastName']", "Phan");
 		
@@ -115,7 +115,7 @@ public class User_01_Level_2 {
 		//input Email address & password
 		loginPage = new LoginPageObject();
 		loginPage.inputToEmailTextbox(emailAddress);
-		loginPage.inputtoPasswordTextbox("qqqq1111");
+		loginPage.inputToPasswordTextbox("qqqq1111");
 		basepage.sendKeyToElement(driver, "//input[@id='Email']", emailAddress);
 		basepage.sendKeyToElement(driver, "//input[@id='Password']", "qqqq1111");
 		

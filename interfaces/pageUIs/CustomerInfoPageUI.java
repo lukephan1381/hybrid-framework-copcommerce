@@ -1,6 +1,6 @@
 package pageUIs;
 
-public class RegisterPageUI {
+public class CustomerInfoPageUI {
 	public static final String GENDER_MALE_RADIO = "//span[@class='male']";
 	public static final String GENDER_FEMALE_RADIO = "//span[@class='female']";
 	public static final String FIRSTNAME_TEXTBOX = "//input[@id='FirstName']";
@@ -11,9 +11,5 @@ public class RegisterPageUI {
 	public static final String EMAIL_TEXTBOX = "//input[@id='Email']";
 	public static final String COMPANY_TEXTBOX = "//input[@id='Company']";
 	public static final String NEWSLETTER_CHECKBOX = "//input[@id='Newsletter']";
-	public static final String PASSWORD_TEXTBOX = "//input[@id='Password']";
-	public static final String PASSWORD_CONFIRM_TEXTBOX = "//input[@id='Password']";
-	public static final String REGISTER_BUTTON = "//button[@id='register-button']";
-	public static final String REGISTER_SUCCESS_MESSAGE = "//div[@class='result']";
 	public static final String LOGOUT_LINK = "//a[@class='ico-logout']";
 }

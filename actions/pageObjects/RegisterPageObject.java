@@ -1,70 +1,81 @@
 package pageObjects;
 
-public class RegisterPageObject {
+import org.openqa.selenium.WebDriver;
+import commons.BasePage;
+import pageUIs.RegisterPageUI;
+
+public class RegisterPageObject extends BasePage {
+	
+	WebDriver driver;
 
 	public void clickToGenderMaleRadio() {
-		// TODO Auto-generated method stub
-		
+		waitElementToBeClickable(driver, RegisterPageUI.GENDER_MALE_RADIO);
+		checkOnCheckboxOrRadio(driver, RegisterPageUI.GENDER_MALE_RADIO);
+	}
+	
+	public void clickToGenderFemaleRadio() {
+		waitElementToBeClickable(driver, RegisterPageUI.GENDER_FEMALE_RADIO);
+		checkOnCheckboxOrRadio(driver, RegisterPageUI.GENDER_FEMALE_RADIO);
 	}
 
-	public void inputToFirstNameTextbox() {
-		// TODO Auto-generated method stub
-		
+	public void inputToFirstNameTextbox(String firstName) {
+		waitElementToBeVisible(driver, RegisterPageUI.FIRSTNAME_TEXTBOX);
+		sendKeyToElement(driver, RegisterPageUI.FIRSTNAME_TEXTBOX, firstName);
 	}
 
-	public void inputToLastNameTextbox() {
-		// TODO Auto-generated method stub
-		
+	public void inputToLastNameTextbox(String lastName) {
+		waitElementToBeVisible(driver, RegisterPageUI.FIRSTNAME_TEXTBOX);
+		sendKeyToElement(driver, RegisterPageUI.FIRSTNAME_TEXTBOX, lastName);
 	}
 
-	public void selectDayDropdown(String string) {
-		// TODO Auto-generated method stub
-		
+	public void selectDayDropdown(String textValue) {
+		waitElementToBeVisible(driver, RegisterPageUI.DAY_DROPDOWN);
+		selectItemInDropdown(driver, RegisterPageUI.DAY_DROPDOWN, textValue);
 	}
 
-	public void selectMonthDropdown(String string) {
-		// TODO Auto-generated method stub
-		
+	public void selectMonthDropdown(String textValue) {
+		waitElementToBeVisible(driver, RegisterPageUI.MONTH_DROPDOWN);
+		selectItemInDropdown(driver, RegisterPageUI.MONTH_DROPDOWN, textValue);
 	}
 
-	public void selectYearDropdown(String string) {
-		// TODO Auto-generated method stub
-		
+	public void selectYearDropdown(String textValue) {
+		waitElementToBeVisible(driver, RegisterPageUI.YEAR_DROPDOWN);
+		selectItemInDropdown(driver, RegisterPageUI.YEAR_DROPDOWN, textValue);
 	}
 
 	public void inputToEmailTextbox(String emailAddress) {
-		// TODO Auto-generated method stub
-		
+		waitElementToBeVisible(driver, RegisterPageUI.EMAIL_TEXTBOX);
+		sendKeyToElement(driver, RegisterPageUI.EMAIL_TEXTBOX, emailAddress);
 	}
 
-	public void inputToCompanyTextbox(String string) {
-		// TODO Auto-generated method stub
-		
+	public void inputToCompanyTextbox(String companyName) {
+		waitElementToBeVisible(driver, RegisterPageUI.COMPANY_TEXTBOX);
+		sendKeyToElement(driver, RegisterPageUI.COMPANY_TEXTBOX, companyName);
 	}
 
-	public void inputToPasswordTextbox(String string) {
-		// TODO Auto-generated method stub
-		
+	public void inputToPasswordTextbox(String password) {
+		waitElementToBeVisible(driver, RegisterPageUI.PASSWORD_TEXTBOX);
+		sendKeyToElement(driver, RegisterPageUI.PASSWORD_TEXTBOX, password);
 	}
 
-	public void inputToConfirmPasswordTextbox(String string) {
-		// TODO Auto-generated method stub
-		
+	public void inputToConfirmPasswordTextbox(String passwordConfirm) {
+		waitElementToBeVisible(driver, RegisterPageUI.PASSWORD_CONFIRM_TEXTBOX);
+		sendKeyToElement(driver, RegisterPageUI.PASSWORD_CONFIRM_TEXTBOX, passwordConfirm);
 	}
 
 	public void clickToRegisterButton() {
-		// TODO Auto-generated method stub
-		
+		waitElementToBeClickable(driver, RegisterPageUI.REGISTER_BUTTON);
+		clickToElement(driver, RegisterPageUI.REGISTER_BUTTON);
 	}
 
-	public void getRegisterResultMessage() {
-		// TODO Auto-generated method stub
-		
+	public String getRegisterResultMessage() {
+		waitElementToBeVisible(driver, RegisterPageUI.REGISTER_SUCCESS_MESSAGE);
+		return getElement(driver, RegisterPageUI.REGISTER_SUCCESS_MESSAGE).getText();
 	}
 
 	public void clickToLogoutLink() {
-		// TODO Auto-generated method stub
-		
+		waitElementToBeVisible(driver, RegisterPageUI.LOGOUT_LINK);
+		clickToElement(driver, RegisterPageUI.LOGOUT_LINK);
 	}
 
 }

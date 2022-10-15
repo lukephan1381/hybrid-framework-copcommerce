@@ -1,31 +1,30 @@
 package pageObjects;
 
 import org.openqa.selenium.WebDriver;
-
 import commons.BasePage;
+import pageUIs.HomePageUI;
 
-public class HomePageObject {
+public class HomePageObject extends BasePage{
 	
-	BasePage basepage = new BasePage();
 	WebDriver driver;
+	
 	public void clickToRegisterButton() {
-		basepage.clickToElement(driver,"//a[@class='ico-register']");
+		waitElementToBeClickable(driver, HomePageUI.REGISTER_LINK);
+		clickToElement(driver, HomePageUI.REGISTER_LINK);
 	}
 	public String getHomePageURL() {
-		// TODO Auto-generated method stub
-		return null;
+		return getPageUrl(driver);
 	}
 	public void clickToLoginLink() {
-		// TODO Auto-generated method stub
-		
+		waitElementToBeClickable(driver, HomePageUI.LOGIN_LINK);
+		clickToElement(driver, HomePageUI.LOGIN_LINK);
 	}
 	public boolean isMyAccountLinkDisplayed() {
-		// TODO Auto-generated method stub
-		return false;
+		return isElementDisplayed(driver, HomePageUI.MY_ACCOUNT_LINK);
 	}
 	public void clickToMyAccountLink() {
-		// TODO Auto-generated method stub
-		
+		waitElementToBeClickable(driver, HomePageUI.MY_ACCOUNT_LINK);
+		clickToElement(driver, HomePageUI.MY_ACCOUNT_LINK);
 	}
 
 }

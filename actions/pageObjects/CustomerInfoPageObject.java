@@ -1,47 +1,52 @@
 package pageObjects;
 
 import org.openqa.selenium.WebDriver;
-
+import pageUIs.CustomerInfoPageUI;
 import commons.BasePage;
 
-public class CustomerInfoPageObject {
-	
-	BasePage basepage = new BasePage();
+public class CustomerInfoPageObject extends BasePage{
+
 	WebDriver driver;
-	public void clickToRegisterButton() {
-		basepage.clickToElement(driver,"//a[@class='ico-register']");
+	
+	public void clickToSaveButton() {
+		waitElementToBeClickable(driver, CustomerInfoPageUI.SAVE_BUTTON);
+		clickToElement(driver,CustomerInfoPageUI.SAVE_BUTTON);
 	}
+	
 	public boolean isGenderMaleRadioSelected() {
-		// TODO Auto-generated method stub
-		return false;
+		return isElementSelected(driver, CustomerInfoPageUI.GENDER_MALE_RADIO);
 	}
-	public String getFirstNameTextboxAttribute() {
-		// TODO Auto-generated method stub
-		return null;
+	
+	public boolean isGenderFemaleRadioSelected() {
+		return isElementSelected(driver, CustomerInfoPageUI.GENDER_FEMALE_RADIO);
 	}
-	public String getLastNameTextboxAttribute() {
-		// TODO Auto-generated method stub
-		return null;
+	
+	public String getFirstNameTextboxAttribute(String attributeName) {
+		return getElementAttribute(driver, CustomerInfoPageUI.FIRSTNAME_TEXTBOX, attributeName);
 	}
+	
+	public String getLastNameTextboxAttribute(String attributeName) {
+		return getElementAttribute(driver, CustomerInfoPageUI.LASTNAME_TEXTBOX, attributeName);
+	}
+	
 	public String getDayDropdownSelectedItem() {
-		// TODO Auto-generated method stub
-		return null;
+		return getSelectedItemInDropdown(driver, CustomerInfoPageUI.DAY_DROPDOWN);
 	}
+	
 	public String getMonthDropdownSelectedItem() {
-		// TODO Auto-generated method stub
-		return null;
+		return getSelectedItemInDropdown(driver, CustomerInfoPageUI.MONTH_DROPDOWN);
 	}
+	
 	public String getYearDropdownSelectedItem() {
-		// TODO Auto-generated method stub
-		return null;
+		return getSelectedItemInDropdown(driver, CustomerInfoPageUI.YEAR_DROPDOWN);
 	}
-	public String getEmailTextboxAttribute() {
-		// TODO Auto-generated method stub
-		return null;
+	
+	public String getEmailTextboxAttribute(String attributeName) {
+		return getElementAttribute(driver, CustomerInfoPageUI.EMAIL_TEXTBOX, attributeName);
 	}
-	public String getCompanyTextboxAttribute() {
-		// TODO Auto-generated method stub
-		return null;
+	
+	public String getCompanyTextboxAttribute(String attributeName) {
+		return getElementAttribute(driver, CustomerInfoPageUI.COMPANY_TEXTBOX, attributeName);
 	}
 
 }

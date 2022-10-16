@@ -108,13 +108,13 @@ public class User_01_Level_3 {
 		customerInfoPage = new CustomerInfoPageObject();
 		
 		Assert.assertTrue(customerInfoPage.isGenderMaleRadioSelected());
-		Assert.assertEquals(customerInfoPage.getFirstNameTextboxAttribute(), "Luke");
-		Assert.assertEquals(customerInfoPage.getLastNameTextboxAttribute(), "Phan");
+		Assert.assertEquals(customerInfoPage.getFirstNameTextboxAttribute("value"), "Luke");
+		Assert.assertEquals(customerInfoPage.getLastNameTextboxAttribute("value"), "Phan");
 		Assert.assertEquals(customerInfoPage.getDayDropdownSelectedItem(), "28");
 		Assert.assertEquals(customerInfoPage.getMonthDropdownSelectedItem(), "January");
 		Assert.assertEquals(customerInfoPage.getYearDropdownSelectedItem(), "1991");
-		Assert.assertEquals(customerInfoPage.getEmailTextboxAttribute(), emailAddress);
-		Assert.assertEquals(customerInfoPage.getCompanyTextboxAttribute(), "Marvel");
+		Assert.assertEquals(customerInfoPage.getEmailTextboxAttribute("value"), emailAddress);
+		Assert.assertEquals(customerInfoPage.getCompanyTextboxAttribute("value"), "Marvel");
 		
 	}
 	

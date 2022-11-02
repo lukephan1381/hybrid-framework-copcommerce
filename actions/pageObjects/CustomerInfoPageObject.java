@@ -8,6 +8,10 @@ public class CustomerInfoPageObject extends BasePage{
 
 	WebDriver driver;
 	
+	public CustomerInfoPageObject(WebDriver driver) {
+		this.driver = driver;
+	}
+	
 	public void clickToSaveButton() {
 		waitElementToBeClickable(driver, CustomerInfoPageUI.SAVE_BUTTON);
 		clickToElement(driver,CustomerInfoPageUI.SAVE_BUTTON);

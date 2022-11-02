@@ -8,6 +8,10 @@ public class HomePageObject extends BasePage{
 	
 	WebDriver driver;
 	
+	public HomePageObject(WebDriver driver) {
+		this.driver = driver;
+	}
+	
 	public void clickToRegisterButton() {
 		waitElementToBeClickable(driver, HomePageUI.REGISTER_LINK);
 		clickToElement(driver, HomePageUI.REGISTER_LINK);

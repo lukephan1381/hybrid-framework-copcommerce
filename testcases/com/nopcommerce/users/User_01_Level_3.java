@@ -50,11 +50,11 @@ public class User_01_Level_3 {
 	@Test
 	public void User_01_Register() {
 		//Click on Register button
-		homePage = new HomePageObject();
+		homePage = new HomePageObject(driver);
 		homePage.clickToRegisterButton();
 		
 		
-		registerPage = new RegisterPageObject();
+		registerPage = new RegisterPageObject(driver);
 		//Select gender
 		registerPage.clickToGenderMaleRadio();
 		
@@ -84,7 +84,7 @@ public class User_01_Level_3 {
 		//logout of current account
 		registerPage.clickToLogoutLink();
 		
-		homePage = new HomePageObject();
+		homePage = new HomePageObject(driver);
 		Assert.assertEquals(homePage.getHomePageURL(), "https://demo.nopcommerce.com/");
 	}
 	
@@ -94,18 +94,18 @@ public class User_01_Level_3 {
 		homePage.clickToLoginLink();
 		
 		//input Email address & password
-		loginPage = new LoginPageObject();
+		loginPage = new LoginPageObject(driver);
 		loginPage.inputToEmailTextbox(emailAddress);
 		loginPage.inputToPasswordTextbox("qqqq1111");
 		
 		//submit login
 		loginPage.clickToLoginButton();
 		
-		homePage = new HomePageObject();
+		homePage = new HomePageObject(driver);
 		Assert.assertTrue(homePage.isMyAccountLinkDisplayed());
 		
 		homePage.clickToMyAccountLink();
-		customerInfoPage = new CustomerInfoPageObject();
+		customerInfoPage = new CustomerInfoPageObject(driver);
 		
 		Assert.assertTrue(customerInfoPage.isGenderMaleRadioSelected());
 		Assert.assertEquals(customerInfoPage.getFirstNameTextboxAttribute("value"), "Luke");

@@ -8,6 +8,10 @@ public class LoginPageObject extends BasePage {
 	
 	WebDriver driver;
 	
+	public LoginPageObject(WebDriver driver) {
+		this.driver = driver;
+	}
+	
 	public void inputToEmailTextbox(String emailAddress) {
 		waitElementToBeVisible(driver, LoginPageUI.EMAIL_TEXTBOX);
 		sendKeyToElement(driver, LoginPageUI.EMAIL_TEXTBOX, emailAddress);

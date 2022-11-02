@@ -54,12 +54,12 @@ public class User_01_Level_2 {
 	@Test
 	public void User_01_Register() {
 		//Click on Register button
-		homePage = new HomePageObject();
+		homePage = new HomePageObject(driver);
 		homePage.clickToRegisterButton();
 		basepage.clickToElement(driver,"//a[@class='ico-register']");
 		
 		
-		registerPage = new RegisterPageObject();
+		registerPage = new RegisterPageObject(driver);
 		//Select gender
 		registerPage.clickToGenderMaleRadio();
 		basepage.clickToElement(driver, "//span[@class='male']");
@@ -102,7 +102,7 @@ public class User_01_Level_2 {
 		registerPage.clickToLogoutLink();
 		basepage.clickToElement(driver, "//a[@class='ico-logout']");
 		
-		homePage = new HomePageObject();
+		homePage = new HomePageObject(driver);
 		Assert.assertEquals(homePage.getHomePageURL(), "https://demo.nopcommerce.com/");
 	}
 	
@@ -113,7 +113,7 @@ public class User_01_Level_2 {
 		basepage.clickToElement(driver, "//a[@class='ico-login']");
 		
 		//input Email address & password
-		loginPage = new LoginPageObject();
+		loginPage = new LoginPageObject(driver);
 		loginPage.inputToEmailTextbox(emailAddress);
 		loginPage.inputToPasswordTextbox("qqqq1111");
 		basepage.sendKeyToElement(driver, "//input[@id='Email']", emailAddress);
@@ -123,13 +123,13 @@ public class User_01_Level_2 {
 		loginPage.clickToLoginButton();
 		basepage.clickToElement(driver, "//button[text()='Log in']");
 		
-		homePage = new HomePageObject();
+		homePage = new HomePageObject(driver);
 		Assert.assertTrue(homePage.isMyAccountLinkDisplayed());
 		Assert.assertEquals(basepage.getElement(driver, "//a[@class='ico-logout']").getText(), "Log out");
 		
 		homePage.clickToMyAccountLink();
 		basepage.clickToElement(driver, "//a[@class='ico-account']");
-		customerInfoPage = new CustomerInfoPageObject();
+		customerInfoPage = new CustomerInfoPageObject(driver);
 		
 		Assert.assertTrue(customerInfoPage.isGenderMaleRadioSelected());
 		Assert.assertEquals(customerInfoPage.getFirstNameTextboxAttribute(""), "Luke");

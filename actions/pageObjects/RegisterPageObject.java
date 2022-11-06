@@ -28,8 +28,8 @@ public class RegisterPageObject extends BasePage {
 	}
 
 	public void inputToLastNameTextbox(String lastName) {
-		waitElementToBeVisible(driver, RegisterPageUI.FIRSTNAME_TEXTBOX);
-		sendKeyToElement(driver, RegisterPageUI.FIRSTNAME_TEXTBOX, lastName);
+		waitElementToBeVisible(driver, RegisterPageUI.LASTNAME_TEXTBOX);
+		sendKeyToElement(driver, RegisterPageUI.LASTNAME_TEXTBOX, lastName);
 	}
 
 	public void selectDayDropdown(String textValue) {

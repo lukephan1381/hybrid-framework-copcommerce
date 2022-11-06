@@ -59,8 +59,8 @@ public class User_01_Level_3 {
 		registerPage.clickToGenderMaleRadio();
 		
 		//Input first name & last name
-		registerPage.inputToFirstNameTextbox("luke");
-		registerPage.inputToLastNameTextbox("phan");
+		registerPage.inputToFirstNameTextbox("Luke");
+		registerPage.inputToLastNameTextbox("Phan");
 		
 		//Select birthday
 		registerPage.selectDayDropdown("28");

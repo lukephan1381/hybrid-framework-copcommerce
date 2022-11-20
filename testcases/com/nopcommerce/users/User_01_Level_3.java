@@ -1,22 +1,19 @@
 package com.nopcommerce.users;
 
-import java.util.Random;
-import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 
+import commons.BaseTest;
 import pageObjects.CustomerInfoPageObject;
 import pageObjects.HomePageObject;
 import pageObjects.LoginPageObject;
 import pageObjects.RegisterPageObject;
 
-public class User_01_Level_3 {
+public class User_01_Level_3 extends BaseTest{
 	
 	String githubToken = "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";
 	WebDriver driver;
@@ -24,27 +21,16 @@ public class User_01_Level_3 {
 	RegisterPageObject registerPage;
 	LoginPageObject loginPage;
 	CustomerInfoPageObject customerInfoPage;
-	String projectPath = System.getProperty("user.dir");
 	String osName = System.getProperty("os.name");
-	Select select;
-	String emailAddress = "lukephan" + generateRandomNumber() + "@auto.vn";
+	String emailAddress;
 	
+	@Parameters("browser")
 	@BeforeClass
-	public void beforeClass() {
+	public void beforeClass(String browserName) {
 
-		
-		if (osName.startsWith("Windows")) {
-			System.setProperty("webdriver.chrome.driver", projectPath + "/browserDrivers/chromedriver.exe");
-		}
-		else {
-			System.setProperty("webdriver.chrome.driver", projectPath + "/browserDrivers/chromedriver");
-		}
-		
-		
-		driver = new ChromeDriver();
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		driver.manage().window().maximize();
-		driver.get("https://demo.nopcommerce.com/");
+		driver = getBrowserDriver(browserName);
+		emailAddress = "lukephan" + generateRandomNumber() + "@auto.vn";
+
 	}
 	
 	@Test
@@ -123,9 +109,6 @@ public class User_01_Level_3 {
 		driver.quit();
 	}
 	
-	public int generateRandomNumber() {
-		Random email = new Random();
-		return email.nextInt(9999);
-	}
+
 	
 }

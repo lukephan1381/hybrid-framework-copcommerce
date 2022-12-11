@@ -62,37 +62,37 @@ public class User_01_Level_2 {
 		registerPage = new RegisterPageObject(driver);
 		//Select gender
 		registerPage.clickToGenderMaleRadio();
-		basepage.clickToElement(driver, "//span[@class='male']");
+		//basepage.clickToElement(driver, "//span[@class='male']");
 		
 		//Input first name & last name
 		registerPage.inputToFirstNameTextbox("");
 		registerPage.inputToLastNameTextbox("");
-		basepage.sendKeyToElement(driver, "//input[@id='FirstName']", "Luke");
-		basepage.sendKeyToElement(driver, "//input[@id='LastName']", "Phan");
+		//basepage.sendKeyToElement(driver, "//input[@id='FirstName']", "Luke");
+		//basepage.sendKeyToElement(driver, "//input[@id='LastName']", "Phan");
 		
 		//Select birthday
 		registerPage.selectDayDropdown("28");
 		registerPage.selectMonthDropdown("January");
 		registerPage.selectYearDropdown("1991");
-		basepage.selectItemInDropdown(driver, "//select[@name='DateOfBirthDay']", "28");
-		basepage.selectItemInDropdown(driver, "//select[@name='DateOfBirthMonth']", "January");
-		basepage.selectItemInDropdown(driver, "//select[@name='DateOfBirthYear']", "1991");
+		//basepage.selectItemInDropdown(driver, "//select[@name='DateOfBirthDay']", "28");
+		//basepage.selectItemInDropdown(driver, "//select[@name='DateOfBirthMonth']", "January");
+		//basepage.selectItemInDropdown(driver, "//select[@name='DateOfBirthYear']", "1991");
 		
 		//Input email address
 		registerPage.inputToEmailTextbox(emailAddress);
-		basepage.sendKeyToElement(driver, "//input[@id='Email']", emailAddress);
+		//basepage.sendKeyToElement(driver, "//input[@id='Email']", emailAddress);
 		
 		//Input & confirm password
 		registerPage.inputToCompanyTextbox("Marvel");
 		registerPage.inputToPasswordTextbox("qqqq1111");
 		registerPage.inputToConfirmPasswordTextbox("qqqq1111");
-		basepage.sendKeyToElement(driver, "//input[@id='Company']", "Marvel");
-		basepage.sendKeyToElement(driver, "//input[@id='Password']", "qqqq1111");
+		//basepage.sendKeyToElement(driver, "//input[@id='Company']", "Marvel");
+		//basepage.sendKeyToElement(driver, "//input[@id='Password']", "qqqq1111");
 		basepage.sendKeyToElement(driver, "//input[@id='ConfirmPassword']", "qqqq1111");
-		
+		//
 		//Click REGISTER button
 		registerPage.clickToRegisterButton();
-		basepage.clickToElement(driver, "//button[@id='register-button']");
+		//basepage.clickToElement(driver, "//button[@id='register-button']");
 		
 		//Verify success message
 		registerPage.getRegisterResultMessage();
@@ -100,7 +100,7 @@ public class User_01_Level_2 {
 		
 		//logout of current account
 		registerPage.clickToLogoutLink();
-		basepage.clickToElement(driver, "//a[@class='ico-logout']");
+		//basepage.clickToElement(driver, "//a[@class='ico-logout']");
 		
 		homePage = new HomePageObject(driver);
 		Assert.assertEquals(homePage.getHomePageURL(), "https://demo.nopcommerce.com/");
@@ -110,25 +110,25 @@ public class User_01_Level_2 {
 	public void User_02_Login() {
 		//click on login button
 		homePage.clickToLoginLink();
-		basepage.clickToElement(driver, "//a[@class='ico-login']");
+		//basepage.clickToElement(driver, "//a[@class='ico-login']");
 		
 		//input Email address & password
 		loginPage = new LoginPageObject(driver);
 		loginPage.inputToEmailTextbox(emailAddress);
 		loginPage.inputToPasswordTextbox("qqqq1111");
-		basepage.sendKeyToElement(driver, "//input[@id='Email']", emailAddress);
-		basepage.sendKeyToElement(driver, "//input[@id='Password']", "qqqq1111");
+		//basepage.sendKeyToElement(driver, "//input[@id='Email']", emailAddress);
+		//basepage.sendKeyToElement(driver, "//input[@id='Password']", "qqqq1111");
 		
 		//submit login
 		loginPage.clickToLoginButton();
-		basepage.clickToElement(driver, "//button[text()='Log in']");
+		//basepage.clickToElement(driver, "//button[text()='Log in']");
 		
 		homePage = new HomePageObject(driver);
 		Assert.assertTrue(homePage.isMyAccountLinkDisplayed());
 		Assert.assertEquals(basepage.getElement(driver, "//a[@class='ico-logout']").getText(), "Log out");
 		
 		homePage.clickToMyAccountLink();
-		basepage.clickToElement(driver, "//a[@class='ico-account']");
+		//basepage.clickToElement(driver, "//a[@class='ico-account']");
 		customerInfoPage = new CustomerInfoPageObject(driver);
 		
 		Assert.assertTrue(customerInfoPage.isGenderMaleRadioSelected());

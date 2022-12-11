@@ -27,7 +27,6 @@ public class User_01_Level_4_MultipleBrowsers extends BaseTest{
 	@Parameters("browser")
 	@BeforeClass
 	public void beforeClass(String browserName) {
-
 		driver = getBrowserDriver(browserName);
 		emailAddress = "lukephan" + generateRandomNumber() + "@auto.vn";
 

@@ -5,14 +5,14 @@
     <test name="Run on FIREFOX">
   	<parameter name="browser" value="firefox"/>
     <classes>
-			<class name = "com.nopcommerce.users.User_01_Level_4_MultipleBrowsers"/>
+			<class name = "com.nopcommerce.users.User_01_Level_6_Page_Generator_II"/>
     </classes>
   </test> 
 
     <test name="Run on CHROME">
   	<parameter name="browser" value="chrome"/>
     <classes>
-			<class name = "com.nopcommerce.users.User_01_Level_4_MultipleBrowsers"/>
+			<class name = "com.nopcommerce.users.User_01_Level_6_Page_Generator_II"/>
     </classes>
   </test> <!-- Test -->
   

@@ -22,9 +22,10 @@ public class LoginPageObject extends BasePage {
 		sendKeyToElement(driver, LoginPageUI.PASSWORD_TEXTBOX, password);
 	}
 
-	public void clickToLoginButton() {
+	public LoginPageObject clickToLoginButton() {
 		waitElementToBeClickable(driver, LoginPageUI.LOGIN_BUTTON);
 		clickToElement(driver, LoginPageUI.LOGIN_BUTTON);
+		return PageGeneratorManager.getLoginPage(driver);
 	}
 
 }

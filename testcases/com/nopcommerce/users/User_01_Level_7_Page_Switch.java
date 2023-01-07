@@ -11,10 +11,13 @@ import commons.BaseTest;
 import pageObjects.CustomerInfoPageObject;
 import pageObjects.HomePageObject;
 import pageObjects.LoginPageObject;
+import pageObjects.OrdersPageObject;
 import pageObjects.PageGeneratorManager;
+import pageObjects.ProductReviewPageObject;
 import pageObjects.RegisterPageObject;
+import pageObjects.RewardPageObject;
 
-public class User_01_Level_6_Page_Generator_II extends BaseTest{
+public class User_01_Level_7_Page_Switch extends BaseTest{
 	
 	String githubToken = "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";
 	WebDriver driver;
@@ -22,7 +25,10 @@ public class User_01_Level_6_Page_Generator_II extends BaseTest{
 	RegisterPageObject registerPage;
 	LoginPageObject loginPage;
 	CustomerInfoPageObject customerInfoPage;
-	String osName = System.getProperty("os.name");
+	OrdersPageObject orderPage;
+	RewardPageObject rewardPage;
+	ProductReviewPageObject productReviewPage;
+	//String osName = System.getProperty("os.name");
 	String emailAddress;
 	
 	@Parameters("browser")
@@ -67,10 +73,10 @@ public class User_01_Level_6_Page_Generator_II extends BaseTest{
 		Assert.assertEquals(registerPage.getRegisterResultMessage(), "Your registration completed");
 		
 		//logout of current account
-		registerPage.clickToLogoutLink();
-		Assert.assertEquals(homePage.getHomePageURL(), "https://demo.nopcommerce.com/");
+		registerPage.clickToContinueButton();
 		
 		homePage = PageGeneratorManager.getHomePage(driver);
+		Assert.assertEquals(homePage.getHomePageURL(), "https://demo.nopcommerce.com/");
 	}
 	
 	@Test
@@ -101,7 +107,19 @@ public class User_01_Level_6_Page_Generator_II extends BaseTest{
 		Assert.assertEquals(customerInfoPage.getYearDropdownSelectedItem(), "1991");
 		Assert.assertEquals(customerInfoPage.getEmailTextboxAttribute("value"), emailAddress);
 		Assert.assertEquals(customerInfoPage.getCompanyTextboxAttribute("value"), "Marvel");
+	}
+	
+	@Test
+	public void User_03_Navigate() {
+		orderPage = customerInfoPage.openOrderPage(); 
 		
+		productReviewPage = orderPage.openProductReviewPage();
+		
+		rewardPage = productReviewPage.openRewardPage();
+		
+		orderPage = rewardPage.openOrderPage();
+		
+		rewardPage = orderPage.openRewardPage();
 	}
 	
 	@AfterClass

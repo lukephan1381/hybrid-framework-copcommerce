@@ -62,4 +62,10 @@ public class CustomerInfoPageObject extends BasePage{
 		return getElementAttribute(driver, CustomerInfoPageUI.COMPANY_TEXTBOX, attributeName);
 	}
 
+	public OrdersPageObject openOrderPage() {
+		waitElementToBeClickable(driver, CustomerInfoPageUI.ORDER_LINK_SIDEBAR);
+		clickToElement(driver, CustomerInfoPageUI.ORDER_LINK_SIDEBAR);
+		return PageGeneratorManager.getOrdersPage(driver);
+	}
+
 }

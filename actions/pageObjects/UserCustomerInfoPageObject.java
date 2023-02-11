@@ -4,11 +4,11 @@ import org.openqa.selenium.WebDriver;
 import pageUIs.CustomerInfoPageUI;
 import commons.BasePage;
 
-public class CustomerInfoPageObject extends BasePage{
+public class UserCustomerInfoPageObject extends BasePage{
 
 	WebDriver driver;
 	
-	public CustomerInfoPageObject(WebDriver driver) {
+	public UserCustomerInfoPageObject(WebDriver driver) {
 		this.driver = driver;
 	}
 	
@@ -62,7 +62,7 @@ public class CustomerInfoPageObject extends BasePage{
 		return getElementAttribute(driver, CustomerInfoPageUI.COMPANY_TEXTBOX, attributeName);
 	}
 
-	public OrdersPageObject openOrderPage() {
+	public UserOrdersPageObject openOrderPage() {
 		waitElementToBeClickable(driver, CustomerInfoPageUI.ORDER_LINK_SIDEBAR);
 		clickToElement(driver, CustomerInfoPageUI.ORDER_LINK_SIDEBAR);
 		return PageGeneratorManager.getOrdersPage(driver);

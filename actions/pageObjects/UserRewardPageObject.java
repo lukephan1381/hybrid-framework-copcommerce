@@ -5,14 +5,14 @@ import org.openqa.selenium.WebDriver;
 import commons.BasePage;
 import pageUIs.OrdersPageUI;
 
-public class RewardPageObject extends BasePage{
+public class UserRewardPageObject extends BasePage{
 	WebDriver driver;
 
-	public RewardPageObject(WebDriver driver)	{
+	public UserRewardPageObject(WebDriver driver)	{
 		this.driver = driver;
 	}
 
-	public OrdersPageObject openOrderPage() {
+	public UserOrdersPageObject openOrderPage() {
 		waitElementToBeClickable(driver, OrdersPageUI.ORDER_LINK_SIDEBAR);
 		clickToElement(driver,OrdersPageUI.ORDER_LINK_SIDEBAR);
 		return PageGeneratorManager.getOrdersPage(driver);

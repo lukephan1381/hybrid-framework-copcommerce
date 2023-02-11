@@ -12,20 +12,20 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 
 import commons.BasePage;
-import pageObjects.CustomerInfoPageObject;
-import pageObjects.HomePageObject;
-import pageObjects.LoginPageObject;
-import pageObjects.RegisterPageObject;
+import pageObjects.UserCustomerInfoPageObject;
+import pageObjects.UserHomePageObject;
+import pageObjects.UserLoginPageObject;
+import pageObjects.UserRegisterPageObject;
 
 public class User_01_Level_2 {
 	
 	String githubToken = "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";
 	WebDriver driver;
 	BasePage basepage = new BasePage();
-	HomePageObject homePage;
-	RegisterPageObject registerPage;
-	LoginPageObject loginPage;
-	CustomerInfoPageObject customerInfoPage;
+	UserHomePageObject homePage;
+	UserRegisterPageObject registerPage;
+	UserLoginPageObject loginPage;
+	UserCustomerInfoPageObject customerInfoPage;
 	String projectPath = System.getProperty("user.dir");
 	String osName = System.getProperty("os.name");
 	Select select;
@@ -52,12 +52,12 @@ public class User_01_Level_2 {
 	@Test
 	public void User_01_Register() {
 		//Click on Register button
-		homePage = new HomePageObject(driver);
+		homePage = new UserHomePageObject(driver);
 		homePage.clickToRegisterButton();
 		basepage.clickToElement(driver,"//a[@class='ico-register']");
 		
 		
-		registerPage = new RegisterPageObject(driver);
+		registerPage = new UserRegisterPageObject(driver);
 		//Select gender
 		registerPage.clickToGenderMaleRadio();
 		//basepage.clickToElement(driver, "//span[@class='male']");
@@ -100,7 +100,7 @@ public class User_01_Level_2 {
 		registerPage.clickToLogoutLink();
 		//basepage.clickToElement(driver, "//a[@class='ico-logout']");
 		
-		homePage = new HomePageObject(driver);
+		homePage = new UserHomePageObject(driver);
 		Assert.assertEquals(homePage.getHomePageURL(), "https://demo.nopcommerce.com/");
 	}
 	
@@ -111,7 +111,7 @@ public class User_01_Level_2 {
 		//basepage.clickToElement(driver, "//a[@class='ico-login']");
 		
 		//input Email address & password
-		loginPage = new LoginPageObject(driver);
+		loginPage = new UserLoginPageObject(driver);
 		loginPage.inputToEmailTextbox(emailAddress);
 		loginPage.inputToPasswordTextbox("qqqq1111");
 		//basepage.sendKeyToElement(driver, "//input[@id='Email']", emailAddress);
@@ -121,13 +121,13 @@ public class User_01_Level_2 {
 		loginPage.clickToLoginButton();
 		//basepage.clickToElement(driver, "//button[text()='Log in']");
 		
-		homePage = new HomePageObject(driver);
+		homePage = new UserHomePageObject(driver);
 		Assert.assertTrue(homePage.isMyAccountLinkDisplayed());
 		Assert.assertEquals(basepage.getElement(driver, "//a[@class='ico-logout']").getText(), "Log out");
 		
 		homePage.clickToMyAccountLink();
 		//basepage.clickToElement(driver, "//a[@class='ico-account']");
-		customerInfoPage = new CustomerInfoPageObject(driver);
+		customerInfoPage = new UserCustomerInfoPageObject(driver);
 		
 		Assert.assertTrue(customerInfoPage.isGenderMaleRadioSelected());
 		Assert.assertEquals(customerInfoPage.getFirstNameTextboxAttribute(""), "Luke");

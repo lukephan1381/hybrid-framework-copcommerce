@@ -8,20 +8,20 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 
 import commons.BaseTest;
-import pageObjects.CustomerInfoPageObject;
-import pageObjects.HomePageObject;
-import pageObjects.LoginPageObject;
+import pageObjects.UserCustomerInfoPageObject;
+import pageObjects.UserHomePageObject;
+import pageObjects.UserLoginPageObject;
 import pageObjects.PageGeneratorManager;
-import pageObjects.RegisterPageObject;
+import pageObjects.UserRegisterPageObject;
 
 public class User_01_Level_6_Page_Generator_II extends BaseTest{
 	
 	String githubToken = "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";
 	WebDriver driver;
-	HomePageObject homePage;
-	RegisterPageObject registerPage;
-	LoginPageObject loginPage;
-	CustomerInfoPageObject customerInfoPage;
+	UserHomePageObject homePage;
+	UserRegisterPageObject registerPage;
+	UserLoginPageObject loginPage;
+	UserCustomerInfoPageObject customerInfoPage;
 	String osName = System.getProperty("os.name");
 	String emailAddress;
 	

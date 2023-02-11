@@ -8,19 +8,19 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 
 import commons.BaseTest;
-import pageObjects.CustomerInfoPageObject;
-import pageObjects.HomePageObject;
-import pageObjects.LoginPageObject;
-import pageObjects.RegisterPageObject;
+import pageObjects.UserCustomerInfoPageObject;
+import pageObjects.UserHomePageObject;
+import pageObjects.UserLoginPageObject;
+import pageObjects.UserRegisterPageObject;
 
 public class User_01_Level_3 extends BaseTest{
 	
 	String githubToken = "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";
 	WebDriver driver;
-	HomePageObject homePage;
-	RegisterPageObject registerPage;
-	LoginPageObject loginPage;
-	CustomerInfoPageObject customerInfoPage;
+	UserHomePageObject homePage;
+	UserRegisterPageObject registerPage;
+	UserLoginPageObject loginPage;
+	UserCustomerInfoPageObject customerInfoPage;
 	String osName = System.getProperty("os.name");
 	String emailAddress;
 	
@@ -36,11 +36,11 @@ public class User_01_Level_3 extends BaseTest{
 	@Test
 	public void User_01_Register() {
 		//Click on Register button
-		homePage = new HomePageObject(driver);
+		homePage = new UserHomePageObject(driver);
 		homePage.clickToRegisterButton();
 		
 		
-		registerPage = new RegisterPageObject(driver);
+		registerPage = new UserRegisterPageObject(driver);
 		//Select gender
 		registerPage.clickToGenderMaleRadio();
 		
@@ -70,7 +70,7 @@ public class User_01_Level_3 extends BaseTest{
 		//logout of current account
 		registerPage.clickToLogoutLink();
 		
-		homePage = new HomePageObject(driver);
+		homePage = new UserHomePageObject(driver);
 		Assert.assertEquals(homePage.getHomePageURL(), "https://demo.nopcommerce.com/");
 	}
 	
@@ -80,18 +80,18 @@ public class User_01_Level_3 extends BaseTest{
 		homePage.clickToLoginLink();
 		
 		//input Email address & password
-		loginPage = new LoginPageObject(driver);
+		loginPage = new UserLoginPageObject(driver);
 		loginPage.inputToEmailTextbox(emailAddress);
 		loginPage.inputToPasswordTextbox("qqqq1111");
 		
 		//submit login
 		loginPage.clickToLoginButton();
 		
-		homePage = new HomePageObject(driver);
+		homePage = new UserHomePageObject(driver);
 		Assert.assertTrue(homePage.isMyAccountLinkDisplayed());
 		
 		homePage.clickToMyAccountLink();
-		customerInfoPage = new CustomerInfoPageObject(driver);
+		customerInfoPage = new UserCustomerInfoPageObject(driver);
 		
 		Assert.assertTrue(customerInfoPage.isGenderMaleRadioSelected());
 		Assert.assertEquals(customerInfoPage.getFirstNameTextboxAttribute("value"), "Luke");

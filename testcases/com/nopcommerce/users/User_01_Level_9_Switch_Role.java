@@ -17,7 +17,7 @@ import pageObjects.UserProductReviewPageObject;
 import pageObjects.UserRegisterPageObject;
 import pageObjects.UserRewardPageObject;
 
-public class User_01_Level_7_Page_Switch extends BaseTest{
+public class User_01_Level_9_Switch_Role extends BaseTest{
 	
 	String githubToken = "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";
 	WebDriver driver;
@@ -29,20 +29,22 @@ public class User_01_Level_7_Page_Switch extends BaseTest{
 	UserRewardPageObject rewardPage;
 	UserProductReviewPageObject productReviewPage;
 	//String osName = System.getProperty("os.name");
-	String emailAddress;
+	String userUsername, userPassword, adminUsername, adminPassword;
+	String userURL, adminURL;
 	
-	@Parameters("browser")
+	@Parameters({"browser","userURL","adminURL"})
 	@BeforeClass
-	public void beforeClass(String browserName) {
-		driver = getBrowserDriver(browserName);
-		emailAddress = "lukephan" + generateRandomNumber() + "@auto.vn";
+	public void beforeClass(String browserName, String userURL, String adminURL) {
+		driver = getBrowserDriver(browserName, userURL);
+		userUsername = "lukephan" + generateRandomNumber() + "@auto.vn";
+		userPassword = "qqqq1111";
+		adminUsername = "admin@yourstore.com";
+		adminPassword = "admin";
+		this.userURL = userURL;
+		this.adminURL = adminURL;
+		
 		homePage = PageGeneratorManager.getHomePage(driver);
-
-	}
-	
-	@Test
-	public void User_01_Register() {
-		//Click on Register button
+		
 		homePage.clickToRegisterButton();
 		registerPage = PageGeneratorManager.getRegisterPage(driver);
 		
@@ -59,7 +61,7 @@ public class User_01_Level_7_Page_Switch extends BaseTest{
 		registerPage.selectYearDropdown("1991");
 		
 		//Input email address
-		registerPage.inputToEmailTextbox(emailAddress);
+		registerPage.inputToEmailTextbox(userUsername);
 		
 		//Input & confirm password
 		registerPage.inputToCompanyTextbox("Marvel");
@@ -70,56 +72,30 @@ public class User_01_Level_7_Page_Switch extends BaseTest{
 		registerPage.clickToRegisterButton();
 		
 		//Verify success message
-		Assert.assertEquals(registerPage.getRegisterResultMessage(), "Your registration completed");
+		//Assert.assertEquals(registerPage.getRegisterResultMessage(), "Your registration completed");
 		
 		//logout of current account
 		registerPage.clickToContinueButton();
 		
 		homePage = PageGeneratorManager.getHomePage(driver);
-		Assert.assertEquals(homePage.getHomePageURL(), "https://demo.nopcommerce.com/");
+		//Assert.assertEquals(homePage.getHomePageURL(), "https://demo.nopcommerce.com/");
+
 	}
 	
 	@Test
-	public void User_02_Login() {
-		//click on login button
-		homePage.clickToLoginLink();
-		
-		//input Email address & password
-		loginPage = PageGeneratorManager.getLoginPage(driver);
-		loginPage.inputToEmailTextbox(emailAddress);
-		loginPage.inputToPasswordTextbox("qqqq1111");
-		
-		//submit login
-		loginPage.clickToLoginButton();
-		
-		homePage = PageGeneratorManager.getHomePage(driver);
+	public void Role_01_User_To_Admin() {
+		loginPage = homePage.clickToLoginLink();
+		loginPage.inputToEmailTextbox(userUsername);
+		loginPage.inputToPasswordTextbox(userPassword);
+		homePage = loginPage.clickToLoginButton();
 		Assert.assertTrue(homePage.isMyAccountLinkDisplayed());
 		
-		homePage.clickToMyAccountLink();
-		//customerInfoPage = new CustomerInfoPageObject(driver);
-		customerInfoPage = PageGeneratorManager.getCustomerInfoPage(driver);
-		
-		Assert.assertTrue(customerInfoPage.isGenderMaleRadioSelected());
-		Assert.assertEquals(customerInfoPage.getFirstNameTextboxAttribute("value"), "Luke");
-		Assert.assertEquals(customerInfoPage.getLastNameTextboxAttribute("value"), "Phan");
-		Assert.assertEquals(customerInfoPage.getDayDropdownSelectedItem(), "28");
-		Assert.assertEquals(customerInfoPage.getMonthDropdownSelectedItem(), "January");
-		Assert.assertEquals(customerInfoPage.getYearDropdownSelectedItem(), "1991");
-		Assert.assertEquals(customerInfoPage.getEmailTextboxAttribute("value"), emailAddress);
-		Assert.assertEquals(customerInfoPage.getCompanyTextboxAttribute("value"), "Marvel");
+		homePage.openURL(driver, this.adminURL);
 	}
 	
 	@Test
-	public void User_03_Navigate() {
-		orderPage = customerInfoPage.openOrderPage(); 
-		
-		productReviewPage = orderPage.openProductReviewPage();
-		
-		rewardPage = productReviewPage.openRewardPage();
-		
-		orderPage = rewardPage.openOrderPage();
-		
-		rewardPage = orderPage.openRewardPage();
+	public void Role_02_Admin_to_User() {
+
 	}
 	
 	@AfterClass

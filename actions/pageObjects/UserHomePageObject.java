@@ -4,15 +4,15 @@ import org.openqa.selenium.WebDriver;
 import commons.BasePage;
 import pageUIs.HomePageUI;
 
-public class HomePageObject extends BasePage{
+public class UserHomePageObject extends BasePage{
 	
 	WebDriver driver;
 	
-	public HomePageObject(WebDriver driver) {
+	public UserHomePageObject(WebDriver driver) {
 		this.driver = driver;
 	}
 	
-	public RegisterPageObject clickToRegisterButton() {
+	public UserRegisterPageObject clickToRegisterButton() {
 		waitElementToBeClickable(driver, HomePageUI.REGISTER_LINK);
 		clickToElement(driver, HomePageUI.REGISTER_LINK);
 		//return new RegisterPageObject(driver);
@@ -21,7 +21,7 @@ public class HomePageObject extends BasePage{
 	public String getHomePageURL() {
 		return getPageUrl(driver);
 	}
-	public LoginPageObject clickToLoginLink() {
+	public UserLoginPageObject clickToLoginLink() {
 		waitElementToBeClickable(driver, HomePageUI.LOGIN_LINK);
 		clickToElement(driver, HomePageUI.LOGIN_LINK);
 		return PageGeneratorManager.getLoginPage(driver);

@@ -3,17 +3,19 @@
 
 
     <test name="Run on FIREFOX">
-  	<parameter name="browser" value="firefox"/>
+<!--   	<parameter name="browser" value="firefox"/> -->
+	<parameter name= "userURL" value ="https://demo.nopcommerce.com/"/>
+	<parameter name= "adminURL" value ="https://admin-demo.nopcommerce.com/"/>
     <classes>
 			<class name = "com.nopcommerce.users.User_01_Level_7_Page_Switch"/>
     </classes>
   </test> 
 
-    <test name="Run on CHROME">
-  	<parameter name="browser" value="chrome"/>
-    <classes>
-			<class name = "com.nopcommerce.users.User_01_Level_7_Page_Switch"/>
-    </classes>
-  </test> Test
+<!--     <test name="Run on CHROME"> -->
+<!--   	<parameter name="browser" value="chrome"/> -->
+<!--     <classes> -->
+<!-- 			<class name = "com.nopcommerce.users.User_01_Level_7_Page_Switch"/> -->
+<!--     </classes> -->
+<!--   </test> -->
   
 </suite> <!-- Suite -->

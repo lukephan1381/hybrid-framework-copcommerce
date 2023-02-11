@@ -4,11 +4,11 @@ import org.openqa.selenium.WebDriver;
 import commons.BasePage;
 import pageUIs.LoginPageUI;
 
-public class LoginPageObject extends BasePage {
+public class UserLoginPageObject extends BasePage {
 	
 	WebDriver driver;
 	
-	public LoginPageObject(WebDriver driver) {
+	public UserLoginPageObject(WebDriver driver) {
 		this.driver = driver;
 	}
 	
@@ -22,10 +22,10 @@ public class LoginPageObject extends BasePage {
 		sendKeyToElement(driver, LoginPageUI.PASSWORD_TEXTBOX, password);
 	}
 
-	public LoginPageObject clickToLoginButton() {
+	public UserHomePageObject clickToLoginButton() {
 		waitElementToBeClickable(driver, LoginPageUI.LOGIN_BUTTON);
 		clickToElement(driver, LoginPageUI.LOGIN_BUTTON);
-		return PageGeneratorManager.getLoginPage(driver);
+		return PageGeneratorManager.getHomePage(driver);
 	}
 
 }

@@ -8,26 +8,22 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 
 import commons.BaseTest;
-import pageObjects.UserCustomerInfoPageObject;
 import pageObjects.UserHomePageObject;
 import pageObjects.UserLoginPageObject;
-import pageObjects.UserOrdersPageObject;
+import pageObjects.AdminDashboardPageObject;
+import pageObjects.AdminLoginPageObject;
 import pageObjects.PageGeneratorManager;
-import pageObjects.UserProductReviewPageObject;
 import pageObjects.UserRegisterPageObject;
-import pageObjects.UserRewardPageObject;
 
 public class User_01_Level_9_Switch_Role extends BaseTest{
 	
 	String githubToken = "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";
 	WebDriver driver;
-	UserHomePageObject homePage;
-	UserRegisterPageObject registerPage;
-	UserLoginPageObject loginPage;
-	UserCustomerInfoPageObject customerInfoPage;
-	UserOrdersPageObject orderPage;
-	UserRewardPageObject rewardPage;
-	UserProductReviewPageObject productReviewPage;
+	UserHomePageObject userHomePage;
+	UserRegisterPageObject userRegisterPage;
+	UserLoginPageObject userLoginPage;
+	AdminLoginPageObject adminLoginPage;
+	AdminDashboardPageObject adminDashboardPage;
 	//String osName = System.getProperty("os.name");
 	String userUsername, userPassword, adminUsername, adminPassword;
 	String userURL, adminURL;
@@ -43,54 +39,58 @@ public class User_01_Level_9_Switch_Role extends BaseTest{
 		this.userURL = userURL;
 		this.adminURL = adminURL;
 		
-		homePage = PageGeneratorManager.getHomePage(driver);
+		userHomePage = PageGeneratorManager.getUserHomePage(driver);
 		
-		homePage.clickToRegisterButton();
-		registerPage = PageGeneratorManager.getRegisterPage(driver);
+		userHomePage.clickToRegisterButton();
+		userRegisterPage = PageGeneratorManager.getUserRegisterPage(driver);
 		
 		//Select gender
-		registerPage.clickToGenderMaleRadio();
+		userRegisterPage.clickToGenderMaleRadio();
 		
 		//Input first name & last name
-		registerPage.inputToFirstNameTextbox("Luke");
-		registerPage.inputToLastNameTextbox("Phan");
+		userRegisterPage.inputToFirstNameTextbox("Luke");
+		userRegisterPage.inputToLastNameTextbox("Phan");
 		
 		//Select birthday
-		registerPage.selectDayDropdown("28");
-		registerPage.selectMonthDropdown("January");
-		registerPage.selectYearDropdown("1991");
+		userRegisterPage.selectDayDropdown("28");
+		userRegisterPage.selectMonthDropdown("January");
+		userRegisterPage.selectYearDropdown("1991");
 		
 		//Input email address
-		registerPage.inputToEmailTextbox(userUsername);
+		userRegisterPage.inputToEmailTextbox(userUsername);
 		
 		//Input & confirm password
-		registerPage.inputToCompanyTextbox("Marvel");
-		registerPage.inputToPasswordTextbox("qqqq1111");
-		registerPage.inputToConfirmPasswordTextbox("qqqq1111");
+		userRegisterPage.inputToCompanyTextbox("Marvel");
+		userRegisterPage.inputToPasswordTextbox("qqqq1111");
+		userRegisterPage.inputToConfirmPasswordTextbox("qqqq1111");
 		
 		//Click REGISTER button
-		registerPage.clickToRegisterButton();
+		userRegisterPage.clickToRegisterButton();
 		
 		//Verify success message
 		//Assert.assertEquals(registerPage.getRegisterResultMessage(), "Your registration completed");
 		
 		//logout of current account
-		registerPage.clickToContinueButton();
+		userRegisterPage.clickToContinueButton();
 		
-		homePage = PageGeneratorManager.getHomePage(driver);
+		userHomePage = PageGeneratorManager.getUserHomePage(driver);
 		//Assert.assertEquals(homePage.getHomePageURL(), "https://demo.nopcommerce.com/");
 
 	}
 	
 	@Test
 	public void Role_01_User_To_Admin() {
-		loginPage = homePage.clickToLoginLink();
-		loginPage.inputToEmailTextbox(userUsername);
-		loginPage.inputToPasswordTextbox(userPassword);
-		homePage = loginPage.clickToLoginButton();
-		Assert.assertTrue(homePage.isMyAccountLinkDisplayed());
+		userLoginPage = userHomePage.clickToLoginLink();
+		userLoginPage.inputToEmailTextbox(userUsername);
+		userLoginPage.inputToPasswordTextbox(userPassword);
+		userHomePage = userLoginPage.clickToLoginButton();
+		Assert.assertTrue(userHomePage.isMyAccountLinkDisplayed());
 		
-		homePage.openURL(driver, this.adminURL);
+		userHomePage.openURL(driver, this.adminURL);
+		adminLoginPage = PageGeneratorManager.getAdminLoginPage(driver);
+		adminLoginPage.inputToEmailTextbox(adminUsername);
+		adminLoginPage.inputToPasswordTextbox(adminPassword);
+		adminDashboardPage = adminLoginPage.clickToLoginButton();
 	}
 	
 	@Test

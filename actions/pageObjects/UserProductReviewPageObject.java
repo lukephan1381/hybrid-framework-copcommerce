@@ -4,7 +4,7 @@ import org.openqa.selenium.WebDriver;
 
 import commons.BasePage;
 
-import pageUIs.ProductReviewPageUI;
+import pageUIs.UserProductReviewPageUI;
 
 public class UserProductReviewPageObject extends BasePage{
 	WebDriver driver;
@@ -14,8 +14,8 @@ public class UserProductReviewPageObject extends BasePage{
 	}
 
 	public UserRewardPageObject openRewardPage() {
-		waitElementToBeClickable(driver, ProductReviewPageUI.REWARD_POINTS_LINK_SIDEBAR);
-		clickToElement(driver,ProductReviewPageUI.REWARD_POINTS_LINK_SIDEBAR);
-		return PageGeneratorManager.getRewardPage(driver);
+		waitElementToBeClickable(driver, UserProductReviewPageUI.REWARD_POINTS_LINK_SIDEBAR);
+		clickToElement(driver,UserProductReviewPageUI.REWARD_POINTS_LINK_SIDEBAR);
+		return PageGeneratorManager.getUserRewardPage(driver);
 }
 }

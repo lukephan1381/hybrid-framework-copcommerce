@@ -3,7 +3,7 @@ package pageObjects;
 import org.openqa.selenium.WebDriver;
 
 import commons.BasePage;
-import pageUIs.OrdersPageUI;
+import pageUIs.UserOrdersPageUI;
 
 public class UserRewardPageObject extends BasePage{
 	WebDriver driver;
@@ -13,8 +13,8 @@ public class UserRewardPageObject extends BasePage{
 	}
 
 	public UserOrdersPageObject openOrderPage() {
-		waitElementToBeClickable(driver, OrdersPageUI.ORDER_LINK_SIDEBAR);
-		clickToElement(driver,OrdersPageUI.ORDER_LINK_SIDEBAR);
-		return PageGeneratorManager.getOrdersPage(driver);
+		waitElementToBeClickable(driver, UserOrdersPageUI.ORDER_LINK_SIDEBAR);
+		clickToElement(driver,UserOrdersPageUI.ORDER_LINK_SIDEBAR);
+		return PageGeneratorManager.getUserOrdersPage(driver);
 	}
 }

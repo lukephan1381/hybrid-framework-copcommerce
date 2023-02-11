@@ -2,7 +2,7 @@ package pageObjects;
 
 import org.openqa.selenium.WebDriver;
 import commons.BasePage;
-import pageUIs.HomePageUI;
+import pageUIs.UserHomePageUI;
 
 public class UserHomePageObject extends BasePage{
 	
@@ -13,25 +13,25 @@ public class UserHomePageObject extends BasePage{
 	}
 	
 	public UserRegisterPageObject clickToRegisterButton() {
-		waitElementToBeClickable(driver, HomePageUI.REGISTER_LINK);
-		clickToElement(driver, HomePageUI.REGISTER_LINK);
+		waitElementToBeClickable(driver, UserHomePageUI.REGISTER_LINK);
+		clickToElement(driver, UserHomePageUI.REGISTER_LINK);
 		//return new RegisterPageObject(driver);
-		return PageGeneratorManager.getRegisterPage(driver);
+		return PageGeneratorManager.getUserRegisterPage(driver);
 	}
 	public String getHomePageURL() {
 		return getPageUrl(driver);
 	}
 	public UserLoginPageObject clickToLoginLink() {
-		waitElementToBeClickable(driver, HomePageUI.LOGIN_LINK);
-		clickToElement(driver, HomePageUI.LOGIN_LINK);
-		return PageGeneratorManager.getLoginPage(driver);
+		waitElementToBeClickable(driver, UserHomePageUI.LOGIN_LINK);
+		clickToElement(driver, UserHomePageUI.LOGIN_LINK);
+		return PageGeneratorManager.getUserLoginPage(driver);
 	}
 	public boolean isMyAccountLinkDisplayed() {
-		return isElementDisplayed(driver, HomePageUI.MY_ACCOUNT_LINK);
+		return isElementDisplayed(driver, UserHomePageUI.MY_ACCOUNT_LINK);
 	}
 	public void clickToMyAccountLink() {
-		waitElementToBeClickable(driver, HomePageUI.MY_ACCOUNT_LINK);
-		clickToElement(driver, HomePageUI.MY_ACCOUNT_LINK);
+		waitElementToBeClickable(driver, UserHomePageUI.MY_ACCOUNT_LINK);
+		clickToElement(driver, UserHomePageUI.MY_ACCOUNT_LINK);
 	}
 
 }

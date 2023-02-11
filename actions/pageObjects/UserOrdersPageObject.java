@@ -3,7 +3,7 @@ package pageObjects;
 import org.openqa.selenium.WebDriver;
 
 import commons.BasePage;
-import pageUIs.OrdersPageUI;
+import pageUIs.UserOrdersPageUI;
 
 public class UserOrdersPageObject extends BasePage {
 	WebDriver driver;
@@ -13,14 +13,14 @@ public class UserOrdersPageObject extends BasePage {
 	}
 
 	public UserProductReviewPageObject openProductReviewPage() {
-		waitElementToBeClickable(driver, OrdersPageUI.PRODUCT_REVIEW_LINK_SIDEBAR);
-		clickToElement(driver, OrdersPageUI.PRODUCT_REVIEW_LINK_SIDEBAR);
-		return PageGeneratorManager.getProductReviewPage(driver);
+		waitElementToBeClickable(driver, UserOrdersPageUI.PRODUCT_REVIEW_LINK_SIDEBAR);
+		clickToElement(driver, UserOrdersPageUI.PRODUCT_REVIEW_LINK_SIDEBAR);
+		return PageGeneratorManager.getUserProductReviewPage(driver);
 	}
 
 	public UserRewardPageObject openRewardPage() {
-		waitElementToBeClickable(driver, OrdersPageUI.REWARD_POINTS_LINK_SIDEBAR);
-		clickToElement(driver, OrdersPageUI.REWARD_POINTS_LINK_SIDEBAR);
-		return PageGeneratorManager.getRewardPage(driver);
+		waitElementToBeClickable(driver, UserOrdersPageUI.REWARD_POINTS_LINK_SIDEBAR);
+		clickToElement(driver, UserOrdersPageUI.REWARD_POINTS_LINK_SIDEBAR);
+		return PageGeneratorManager.getUserRewardPage(driver);
 	}
 }

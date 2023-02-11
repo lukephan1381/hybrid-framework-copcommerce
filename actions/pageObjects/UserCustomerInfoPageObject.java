@@ -1,7 +1,7 @@
 package pageObjects;
 
 import org.openqa.selenium.WebDriver;
-import pageUIs.CustomerInfoPageUI;
+import pageUIs.UserCustomerInfoPageUI;
 import commons.BasePage;
 
 public class UserCustomerInfoPageObject extends BasePage{
@@ -13,59 +13,59 @@ public class UserCustomerInfoPageObject extends BasePage{
 	}
 	
 	public void clickToSaveButton() {
-		waitElementToBeClickable(driver, CustomerInfoPageUI.SAVE_BUTTON);
-		clickToElement(driver,CustomerInfoPageUI.SAVE_BUTTON);
+		waitElementToBeClickable(driver, UserCustomerInfoPageUI.SAVE_BUTTON);
+		clickToElement(driver,UserCustomerInfoPageUI.SAVE_BUTTON);
 	}
 	
 	public boolean isGenderMaleRadioSelected() {
-		waitElementToBeVisible(driver, CustomerInfoPageUI.GENDER_MALE_RADIO);
-		return isElementSelected(driver, CustomerInfoPageUI.GENDER_MALE_RADIO);
+		waitElementToBeVisible(driver, UserCustomerInfoPageUI.GENDER_MALE_RADIO);
+		return isElementSelected(driver, UserCustomerInfoPageUI.GENDER_MALE_RADIO);
 	}
 	
 	public boolean isGenderFemaleRadioSelected() {
-		waitElementToBeVisible(driver, CustomerInfoPageUI.GENDER_FEMALE_RADIO);
-		return isElementSelected(driver, CustomerInfoPageUI.GENDER_FEMALE_RADIO);
+		waitElementToBeVisible(driver, UserCustomerInfoPageUI.GENDER_FEMALE_RADIO);
+		return isElementSelected(driver, UserCustomerInfoPageUI.GENDER_FEMALE_RADIO);
 	}
 	
 	public String getFirstNameTextboxAttribute(String attributeName) {
-		waitElementToBeVisible(driver, CustomerInfoPageUI.FIRSTNAME_TEXTBOX);
-		return getElementAttribute(driver, CustomerInfoPageUI.FIRSTNAME_TEXTBOX, attributeName);
+		waitElementToBeVisible(driver, UserCustomerInfoPageUI.FIRSTNAME_TEXTBOX);
+		return getElementAttribute(driver, UserCustomerInfoPageUI.FIRSTNAME_TEXTBOX, attributeName);
 	}
 	
 	public String getLastNameTextboxAttribute(String attributeName) {
-		waitElementToBeVisible(driver, CustomerInfoPageUI.LASTNAME_TEXTBOX);
-		return getElementAttribute(driver, CustomerInfoPageUI.LASTNAME_TEXTBOX, attributeName);
+		waitElementToBeVisible(driver, UserCustomerInfoPageUI.LASTNAME_TEXTBOX);
+		return getElementAttribute(driver, UserCustomerInfoPageUI.LASTNAME_TEXTBOX, attributeName);
 	}
 	
 	public String getDayDropdownSelectedItem() {
-		waitElementToBeVisible(driver, CustomerInfoPageUI.DAY_DROPDOWN);
-		return getSelectedItemInDropdown(driver, CustomerInfoPageUI.DAY_DROPDOWN);
+		waitElementToBeVisible(driver, UserCustomerInfoPageUI.DAY_DROPDOWN);
+		return getSelectedItemInDropdown(driver, UserCustomerInfoPageUI.DAY_DROPDOWN);
 	}
 	
 	public String getMonthDropdownSelectedItem() {
-		waitElementToBeVisible(driver, CustomerInfoPageUI.MONTH_DROPDOWN);
-		return getSelectedItemInDropdown(driver, CustomerInfoPageUI.MONTH_DROPDOWN);
+		waitElementToBeVisible(driver, UserCustomerInfoPageUI.MONTH_DROPDOWN);
+		return getSelectedItemInDropdown(driver, UserCustomerInfoPageUI.MONTH_DROPDOWN);
 	}
 	
 	public String getYearDropdownSelectedItem() {
-		waitElementToBeVisible(driver, CustomerInfoPageUI.YEAR_DROPDOWN);
-		return getSelectedItemInDropdown(driver, CustomerInfoPageUI.YEAR_DROPDOWN);
+		waitElementToBeVisible(driver, UserCustomerInfoPageUI.YEAR_DROPDOWN);
+		return getSelectedItemInDropdown(driver, UserCustomerInfoPageUI.YEAR_DROPDOWN);
 	}
 	
 	public String getEmailTextboxAttribute(String attributeName) {
-		waitElementToBeVisible(driver, CustomerInfoPageUI.EMAIL_TEXTBOX);
-		return getElementAttribute(driver, CustomerInfoPageUI.EMAIL_TEXTBOX, attributeName);
+		waitElementToBeVisible(driver, UserCustomerInfoPageUI.EMAIL_TEXTBOX);
+		return getElementAttribute(driver, UserCustomerInfoPageUI.EMAIL_TEXTBOX, attributeName);
 	}
 	
 	public String getCompanyTextboxAttribute(String attributeName) {
-		waitElementToBeVisible(driver, CustomerInfoPageUI.COMPANY_TEXTBOX);
-		return getElementAttribute(driver, CustomerInfoPageUI.COMPANY_TEXTBOX, attributeName);
+		waitElementToBeVisible(driver, UserCustomerInfoPageUI.COMPANY_TEXTBOX);
+		return getElementAttribute(driver, UserCustomerInfoPageUI.COMPANY_TEXTBOX, attributeName);
 	}
 
 	public UserOrdersPageObject openOrderPage() {
-		waitElementToBeClickable(driver, CustomerInfoPageUI.ORDER_LINK_SIDEBAR);
-		clickToElement(driver, CustomerInfoPageUI.ORDER_LINK_SIDEBAR);
-		return PageGeneratorManager.getOrdersPage(driver);
+		waitElementToBeClickable(driver, UserCustomerInfoPageUI.ORDER_LINK_SIDEBAR);
+		clickToElement(driver, UserCustomerInfoPageUI.ORDER_LINK_SIDEBAR);
+		return PageGeneratorManager.getUserOrdersPage(driver);
 	}
 
 }

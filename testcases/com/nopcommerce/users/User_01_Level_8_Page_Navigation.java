@@ -31,12 +31,12 @@ public class User_01_Level_8_Page_Navigation extends BaseTest{
 	//String osName = System.getProperty("os.name");
 	String emailAddress;
 	
-	@Parameters("browser")
+	@Parameters({"browser","userURL"})
 	@BeforeClass
-	public void beforeClass(String browserName) {
-		driver = getBrowserDriver(browserName);
+	public void beforeClass(String browserName, String userURL) {
+		driver = getBrowserDriver(browserName,userURL);
 		emailAddress = "lukephan" + generateRandomNumber() + "@auto.vn";
-		homePage = PageGeneratorManager.getHomePage(driver);
+		homePage = PageGeneratorManager.getUserHomePage(driver);
 
 	}
 	
@@ -44,7 +44,7 @@ public class User_01_Level_8_Page_Navigation extends BaseTest{
 	public void User_01_Register() {
 		//Click on Register button
 		homePage.clickToRegisterButton();
-		registerPage = PageGeneratorManager.getRegisterPage(driver);
+		registerPage = PageGeneratorManager.getUserRegisterPage(driver);
 		
 		//Select gender
 		registerPage.clickToGenderMaleRadio();
@@ -75,7 +75,7 @@ public class User_01_Level_8_Page_Navigation extends BaseTest{
 		//logout of current account
 		registerPage.clickToContinueButton();
 		
-		homePage = PageGeneratorManager.getHomePage(driver);
+		homePage = PageGeneratorManager.getUserHomePage(driver);
 		Assert.assertEquals(homePage.getHomePageURL(), "https://demo.nopcommerce.com/");
 	}
 	
@@ -85,19 +85,19 @@ public class User_01_Level_8_Page_Navigation extends BaseTest{
 		homePage.clickToLoginLink();
 		
 		//input Email address & password
-		loginPage = PageGeneratorManager.getLoginPage(driver);
+		loginPage = PageGeneratorManager.getUserLoginPage(driver);
 		loginPage.inputToEmailTextbox(emailAddress);
 		loginPage.inputToPasswordTextbox("qqqq1111");
 		
 		//submit login
 		loginPage.clickToLoginButton();
 		
-		homePage = PageGeneratorManager.getHomePage(driver);
+		homePage = PageGeneratorManager.getUserHomePage(driver);
 		Assert.assertTrue(homePage.isMyAccountLinkDisplayed());
 		
 		homePage.clickToMyAccountLink();
 		//customerInfoPage = new CustomerInfoPageObject(driver);
-		customerInfoPage = PageGeneratorManager.getCustomerInfoPage(driver);
+		customerInfoPage = PageGeneratorManager.getUserCustomerInfoPage(driver);
 		
 		Assert.assertTrue(customerInfoPage.isGenderMaleRadioSelected());
 		Assert.assertEquals(customerInfoPage.getFirstNameTextboxAttribute("value"), "Luke");

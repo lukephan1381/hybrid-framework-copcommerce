@@ -13,6 +13,7 @@ import pageObjects.UserLoginPageObject;
 import pageObjects.AdminDashboardPageObject;
 import pageObjects.AdminLoginPageObject;
 import pageObjects.PageGeneratorManager;
+import pageObjects.UserCustomerInfoPageObject;
 import pageObjects.UserRegisterPageObject;
 
 public class User_01_Level_9_Switch_Role extends BaseTest{
@@ -22,6 +23,7 @@ public class User_01_Level_9_Switch_Role extends BaseTest{
 	UserHomePageObject userHomePage;
 	UserRegisterPageObject userRegisterPage;
 	UserLoginPageObject userLoginPage;
+	UserCustomerInfoPageObject userCustomerInfoPage;
 	AdminLoginPageObject adminLoginPage;
 	AdminDashboardPageObject adminDashboardPage;
 	//String osName = System.getProperty("os.name");
@@ -95,7 +97,29 @@ public class User_01_Level_9_Switch_Role extends BaseTest{
 	
 	@Test
 	public void Role_02_Admin_to_User() {
-
+		//From Admin navigate to User page by URL
+		adminDashboardPage.openURL(driver, this.userURL);
+		userHomePage = PageGeneratorManager.getUserHomePage(driver);
+		adminDashboardPage.sleepInSecond(3);
+		
+		//User actions
+		userHomePage.clickToMyAccountLink();
+		userCustomerInfoPage = PageGeneratorManager.getUserCustomerInfoPage(driver);
+		
+		Assert.assertTrue(userCustomerInfoPage.isGenderMaleRadioSelected());
+		Assert.assertEquals(userCustomerInfoPage.getFirstNameTextboxAttribute("value"), "Luke");
+		Assert.assertEquals(userCustomerInfoPage.getLastNameTextboxAttribute("value"), "Phan");
+		Assert.assertEquals(userCustomerInfoPage.getDayDropdownSelectedItem(), "28");
+		Assert.assertEquals(userCustomerInfoPage.getMonthDropdownSelectedItem(), "January");
+		Assert.assertEquals(userCustomerInfoPage.getYearDropdownSelectedItem(), "1991");
+		Assert.assertEquals(userCustomerInfoPage.getEmailTextboxAttribute("value"), userUsername);
+		Assert.assertEquals(userCustomerInfoPage.getCompanyTextboxAttribute("value"), "Marvel");
+		
+		//User Customer Info -> Admin
+		userCustomerInfoPage.openURL(driver, this.adminURL);
+		adminDashboardPage = PageGeneratorManager.getAdminDashboardPage(driver);
+		adminDashboardPage.sleepInSecond(3);
+		
 	}
 	
 	@AfterClass

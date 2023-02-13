@@ -3,11 +3,11 @@
 
 
     <test name="Run on FIREFOX">
-<!--   	<parameter name="browser" value="firefox"/> -->
+	<parameter name="browser" value="firefox"/>
 	<parameter name= "userURL" value ="https://demo.nopcommerce.com/"/>
 	<parameter name= "adminURL" value ="https://admin-demo.nopcommerce.com/"/>
     <classes>
-			<class name = "com.nopcommerce.users.User_01_Level_7_Page_Switch"/>
+			<class name = "com.nopcommerce.users.User_01_Level_9_Switch_Role"/>
     </classes>
   </test> 
 

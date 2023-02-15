@@ -3,7 +3,7 @@
 
 
     <test name="Run on FIREFOX">
-	<parameter name="browser" value="firefox"/>
+	<parameter name="browser" value="chrome"/>
 	<parameter name= "userURL" value ="https://demo.nopcommerce.com/"/>
 	<parameter name= "adminURL" value ="https://admin-demo.nopcommerce.com/"/>
     <classes>

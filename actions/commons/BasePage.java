@@ -107,11 +107,44 @@ public class BasePage {
 	}
 	
 	public WebElement getElement(WebDriver driver, String locator) {
-		return driver.findElement(getByXpath(locator));
+		return driver.findElement(getByLocator(locator));
 	}
 	
 	public List<WebElement> getElements(WebDriver driver, String locator) {
-		return driver.findElements(getByXpath(locator));
+		return driver.findElements(getByLocator(locator));
+	}
+	
+	public By getByLocator(String locator) {
+		By by = null;
+		
+		if (locator.startsWith(("id=")) || locator.startsWith(("Id=")) || locator.startsWith(("ID="))) {
+			locator = locator.substring(3);
+			by = By.id(locator);
+		}
+		else if (locator.startsWith("class=") || locator.startsWith("Class=") || locator.startsWith("CLASS=")) {
+			locator = locator.substring(6);
+			by = By.className(locator);
+		}
+		else if (locator.startsWith("name=") || locator.startsWith("Name=") || locator.startsWith("NAME=")) {
+			locator = locator.substring(5);
+			by = By.name(locator);
+		}
+		else if (locator.startsWith("css=") || locator.startsWith("Css=") || locator.startsWith("CSS=")) {
+			locator = locator.substring(4);
+			by = By.cssSelector(locator);
+		}
+		else if (locator.startsWith("xpath=") || locator.startsWith("Xpath=") || locator.startsWith("XPath=") || locator.startsWith("XPATH=")) {
+			locator = locator.substring(6);
+			by = By.xpath(locator);
+		}
+		else if (locator.startsWith("tagname=") || locator.startsWith("Tagname=") || locator.startsWith("XPath=") || locator.startsWith("TAGNAME=")) {
+			locator = locator.substring(6);
+			by = By.tagName(locator);
+		}
+		else {
+			throw new RuntimeException("<---Your locator is invalid.--->");
+		}
+		return by;
 	}
 	
 	public void clickToElement(WebDriver driver, String locator) {
@@ -315,19 +348,19 @@ public class BasePage {
 	/* Waits */
 	
 	public void waitElementToBeVisible(WebDriver driver, String locator) {
-		new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOfElementLocated(getByXpath(locator)));
+		new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOfElementLocated(getByLocator(locator)));
 	}
 	
 	public void waitElementToBeClickable(WebDriver driver, String locator) {
-		new WebDriverWait(driver, 15).until(ExpectedConditions.elementToBeClickable(getByXpath(locator)));
+		new WebDriverWait(driver, 15).until(ExpectedConditions.elementToBeClickable(getByLocator(locator)));
 	}
 	
 	public void waitElementToBeInvisible(WebDriver driver, String locator) {
-		new WebDriverWait(driver, 15).until(ExpectedConditions.invisibilityOfElementLocated(getByXpath(locator)));
+		new WebDriverWait(driver, 15).until(ExpectedConditions.invisibilityOfElementLocated(getByLocator(locator)));
 	}
 	
 	public void waitListElementsToBeVisible(WebDriver driver, String locator) {
-		new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOfAllElementsLocatedBy(getByXpath(locator)));
+		new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOfAllElementsLocatedBy(getByLocator(locator)));
 	}
 	
 	public void waitListElementsToBeInvisibile(WebDriver driver, String locator) {
@@ -335,11 +368,11 @@ public class BasePage {
 	}
 	
 	public void waitElementPresence(WebDriver driver, String locator) {
-		new WebDriverWait(driver, 15).until(ExpectedConditions.presenceOfElementLocated(getByXpath(locator)));
+		new WebDriverWait(driver, 15).until(ExpectedConditions.presenceOfElementLocated(getByLocator(locator)));
 	}
 	
 	public void waitListElementsPresence(WebDriver driver, String locator) {
-		new WebDriverWait(driver, 15).until(ExpectedConditions.presenceOfAllElementsLocatedBy(getByXpath(locator)));
+		new WebDriverWait(driver, 15).until(ExpectedConditions.presenceOfAllElementsLocatedBy(getByLocator(locator)));
 	}
 
 }

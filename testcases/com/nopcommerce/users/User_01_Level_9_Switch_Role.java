@@ -90,8 +90,8 @@ public class User_01_Level_9_Switch_Role extends BaseTest{
 		
 		userHomePage.openURL(driver, this.adminURL);
 		adminLoginPage = PageGeneratorManager.getAdminLoginPage(driver);
-		adminLoginPage.inputToEmailTextbox(adminUsername);
-		adminLoginPage.inputToPasswordTextbox(adminPassword);
+		//adminLoginPage.inputToEmailTextbox(adminUsername);
+		//adminLoginPage.inputToPasswordTextbox(adminPassword);
 		adminDashboardPage = adminLoginPage.clickToLoginButton();
 	}
 	

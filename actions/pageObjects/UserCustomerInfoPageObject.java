@@ -2,13 +2,13 @@ package pageObjects;
 
 import org.openqa.selenium.WebDriver;
 import pageUIs.UserCustomerInfoPageUI;
-import commons.BasePage;
 
-public class UserCustomerInfoPageObject extends BasePage{
+public class UserCustomerInfoPageObject extends UserSideBarPageObject{
 
 	WebDriver driver;
 	
 	public UserCustomerInfoPageObject(WebDriver driver) {
+		super(driver);
 		this.driver = driver;
 	}
 	
@@ -62,10 +62,10 @@ public class UserCustomerInfoPageObject extends BasePage{
 		return getElementAttribute(driver, UserCustomerInfoPageUI.COMPANY_TEXTBOX, attributeName);
 	}
 
-	public UserOrdersPageObject openOrderPage() {
-		waitElementToBeClickable(driver, UserCustomerInfoPageUI.ORDER_LINK_SIDEBAR);
-		clickToElement(driver, UserCustomerInfoPageUI.ORDER_LINK_SIDEBAR);
-		return PageGeneratorManager.getUserOrdersPage(driver);
-	}
+//	public UserOrdersPageObject openOrderPage() {
+//		waitElementToBeClickable(driver, UserCustomerInfoPageUI.ORDER_LINK_SIDEBAR);
+//		clickToElement(driver, UserCustomerInfoPageUI.ORDER_LINK_SIDEBAR);
+//		return PageGeneratorManager.getUserOrdersPage(driver);
+//	}
 
 }

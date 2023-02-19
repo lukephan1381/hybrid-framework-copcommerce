@@ -7,7 +7,7 @@
 	<parameter name= "userURL" value ="https://demo.nopcommerce.com/"/>
 	<parameter name= "adminURL" value ="https://admin-demo.nopcommerce.com/"/>
     <classes>
-			<class name = "com.nopcommerce.users.User_01_Level_9_Switch_Role"/>
+			<class name = "com.nopcommerce.users.User_01_Level_10_Dynamic_Locator"/>
     </classes>
   </test> 
 

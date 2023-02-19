@@ -16,8 +16,9 @@ import pageObjects.PageGeneratorManager;
 import pageObjects.UserProductReviewPageObject;
 import pageObjects.UserRegisterPageObject;
 import pageObjects.UserRewardPageObject;
+import pageObjects.UserSideBarPageObject;
 
-public class User_01_Level_8_Page_Navigation extends BaseTest{
+public class User_01_Level_10_Dynamic_Locator extends BaseTest{
 	
 	String githubToken = "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";
 	WebDriver driver;
@@ -28,6 +29,7 @@ public class User_01_Level_8_Page_Navigation extends BaseTest{
 	UserOrdersPageObject orderPage;
 	UserRewardPageObject rewardPage;
 	UserProductReviewPageObject productReviewPage;
+	UserSideBarPageObject userSideBar;
 	//String osName = System.getProperty("os.name");
 	String emailAddress;
 	
@@ -111,15 +113,16 @@ public class User_01_Level_8_Page_Navigation extends BaseTest{
 	
 	@Test
 	public void User_03_Navigate() {
-		orderPage = customerInfoPage.openOrderPage(driver); 
-		
-		productReviewPage = orderPage.openProductReviewPage(driver);
-		
-		rewardPage = productReviewPage.openRewardPage(driver);
-		
+		orderPage = customerInfoPage.openOrderPage(driver); 	
+		productReviewPage = orderPage.openProductReviewPage(driver);	
+		rewardPage = productReviewPage.openRewardPage(driver);	
 		orderPage = rewardPage.openOrderPage(driver);
-		
 		rewardPage = orderPage.openRewardPage(driver);
+		
+//		orderPage = userSideBar.openOrderPage(driver);
+//		productReviewPage = userSideBar.openProductReviewPage(driver);
+//		rewardPage = userSideBar.openRewardPage(driver);
+//		customerInfoPage = userSideBar.openCustomerInfoPage(driver);
 	}
 	
 	@AfterClass

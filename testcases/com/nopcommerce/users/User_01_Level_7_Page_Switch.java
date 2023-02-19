@@ -111,15 +111,15 @@ public class User_01_Level_7_Page_Switch extends BaseTest{
 	
 	@Test
 	public void User_03_Navigate() {
-		orderPage = customerInfoPage.openOrderPage(); 
+		orderPage = customerInfoPage.openOrderPage(driver); 
 		
-		productReviewPage = orderPage.openProductReviewPage();
+		productReviewPage = orderPage.openProductReviewPage(driver);
 		
-		rewardPage = productReviewPage.openRewardPage();
+		rewardPage = productReviewPage.openRewardPage(driver);
 		
-		orderPage = rewardPage.openOrderPage();
+		orderPage = rewardPage.openOrderPage(driver);
 		
-		rewardPage = orderPage.openRewardPage();
+		rewardPage = orderPage.openRewardPage(driver);
 	}
 	
 	@AfterClass

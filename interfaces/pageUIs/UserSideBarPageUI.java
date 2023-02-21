@@ -1,8 +1,8 @@
 package pageUIs;
 
 public class UserSideBarPageUI {
-	public static final String ORDER_LINK_SIDEBAR = "xpath=//div[contains(@class,'block-account-navigation')]//a[text()='Orders']";
-	public static final String REWARD_POINTS_LINK_SIDEBAR = "xpath=//div[contains(@class,'block-account-navigation')]//a[text()='Reward points']";
-	public static final String PRODUCT_REVIEW_LINK_SIDEBAR = "xpath=//div[contains(@class,'block-account-navigation')]//a[text()='My product reviews']";
-	public static final String CUSTOMER_INFO_LINK_SIDEBAR = "xpath=//div[contains(@class,'block-account-navigation')]//a[text()='Customer info']";
+	public static final String DYNAMIC_ORDER_LINK_SIDEBAR = "xpath=//div[contains(@class,'block-account-navigation')]//a[text()='%s']";
+	public static final String DYNAMIC_REWARD_POINTS_LINK_SIDEBAR = "xpath=//div[contains(@class,'block-account-navigations')]//a[text()='%s']";
+	public static final String DYNAMIC_PRODUCT_REVIEW_LINK_SIDEBAR = "xpath=//div[contains(@class,'block-account-navigations')]//a[text()='%s']";
+	public static final String DYNAMIC_CUSTOMER_INFO_LINK_SIDEBAR = "xpath=//div[contains(@class,'block-account-navigation')]//a[text()='%s']";
 }

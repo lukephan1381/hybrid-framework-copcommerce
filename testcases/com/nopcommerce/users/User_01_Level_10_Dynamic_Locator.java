@@ -113,16 +113,29 @@ public class User_01_Level_10_Dynamic_Locator extends BaseTest{
 	
 	@Test
 	public void User_03_Navigate() {
-		orderPage = customerInfoPage.openOrderPage(driver); 	
-		productReviewPage = orderPage.openProductReviewPage(driver);	
-		rewardPage = productReviewPage.openRewardPage(driver);	
-		orderPage = rewardPage.openOrderPage(driver);
-		rewardPage = orderPage.openRewardPage(driver);
+
+		orderPage = (UserOrdersPageObject) customerInfoPage.openSideBarPageByName("Orders");
+
+		productReviewPage = (UserProductReviewPageObject) orderPage.openSideBarPageByName("My product reviews");
+
+		rewardPage = (UserRewardPageObject) productReviewPage.openSideBarPageByName("Reward points");
 		
-//		orderPage = userSideBar.openOrderPage(driver);
-//		productReviewPage = userSideBar.openProductReviewPage(driver);
-//		rewardPage = userSideBar.openRewardPage(driver);
-//		customerInfoPage = userSideBar.openCustomerInfoPage(driver);
+		orderPage = (UserOrdersPageObject) rewardPage.openSideBarPageByName("Orders");
+
+		rewardPage = (UserRewardPageObject) orderPage.openSideBarPageByName("Reward points");
+
+	}
+	
+	@Test
+	public void User_04_Navigate() {
+		rewardPage.openSideBarPageByPageName("Orders");
+		orderPage = PageGeneratorManager.getUserOrdersPage(driver);
+		
+		orderPage.openSideBarPageByPageName("Customer info");
+		customerInfoPage = PageGeneratorManager.getUserCustomerInfoPage(driver);
+		
+		customerInfoPage.openSideBarPageByPageName("My product reviews");
+		productReviewPage = PageGeneratorManager.getUserProductReviewPage(driver);
 	}
 	
 	@AfterClass

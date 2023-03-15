@@ -3,7 +3,7 @@
 
 
     <test name="Run on FIREFOX">
-	<parameter name="browser" value="chrome"/>
+	<parameter name="browser" value="firefox"/>
 	<parameter name= "userURL" value ="https://www.jqueryscript.net/demo/CRUD-Data-Grid-Plugin-jQuery-Quickgrid/"/>
 	<parameter name= "adminURL" value ="https://admin-demo.nopcommerce.com/"/>
     <classes>

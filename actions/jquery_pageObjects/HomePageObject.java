@@ -2,7 +2,10 @@ package jquery_pageObjects;
 
 import org.openqa.selenium.WebDriver;
 
-public class HomePageObject {
+import commons.BasePage;
+import jquery_pageUIs.HomePageUI;
+
+public class HomePageObject extends BasePage{
 	WebDriver driver;
 	
 	public HomePageObject(WebDriver driver) {
@@ -10,7 +13,7 @@ public class HomePageObject {
 	}
 
 	public void openPageByPageNumber(String pageNumber) {
-		// TODO Auto-generated method stub
-		
+		waitElementToBeClickable(driver, HomePageUI.DYNAMIC_PAGE_BY_NUMBER, pageNumber);
+		clickToElement(driver, HomePageUI.DYNAMIC_PAGE_BY_NUMBER, pageNumber);
 	}
 }

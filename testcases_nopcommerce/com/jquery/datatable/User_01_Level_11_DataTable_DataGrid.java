@@ -28,19 +28,25 @@ public class User_01_Level_11_DataTable_DataGrid extends BaseTest{
 	
 	@Test
 	public void Table_01_Paging() {
-		homePage.openPageByPageNumber("");
-		homePage.openPageByPageNumber("");
-		homePage.openPageByPageNumber("");
-		homePage.openPageByPageNumber("");
+		homePage.openPageByPageNumber("2");
+		homePage.sleepInSecond(3);
 		
+		homePage.openPageByPageNumber("3");
+		homePage.sleepInSecond(3);
+		
+		homePage.openPageByPageNumber("4");
+		homePage.sleepInSecond(3);
+		
+		homePage.openPageByPageNumber("5");
+		homePage.sleepInSecond(3);
 	}
 	
-	@Test
+	//@Test
 	public void User_02_Login() {
 
 	}
 	
-	@Test
+	//@Test
 	public void User_03_Navigate() {
 
 

@@ -232,6 +232,10 @@ public class BasePage {
 		return getElement(driver, locator).isDisplayed();
 	}
 	
+	public boolean isElementDisplayed(WebDriver driver, String locator, String...params) {
+		return getElement(driver,getRestParameter(locator, params)).isDisplayed();
+	}
+	
 	public boolean isElementSelected(WebDriver driver, String locator) {
 		return getElement(driver, locator).isSelected();
 	}
@@ -266,6 +270,10 @@ public class BasePage {
 	
 	public void sendKeyboardToElement(WebDriver driver, String locator, Keys key) {
 		new Actions(driver).sendKeys(getElement(driver, locator), key).perform();
+	}
+	
+	public void sendKeyboardToElement(WebDriver driver, String locator, Keys key, String... params) {
+		new Actions(driver).sendKeys(getElement(driver, getRestParameter(locator, params)), key).perform();
 	}
 	
 	public void sleepInSecond(long timeInSecond) {

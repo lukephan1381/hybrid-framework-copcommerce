@@ -8,5 +8,12 @@ public class HomePageUI {
 	public static final String DYNAMIC_PAGE_BY_INDEX = "xpath=//li[@class='qgrd-pagination-page'][%s]/a";
 	public static final String ALL_ROW_EACH_PAGE = "xpath=//tbody/tr";
 	public static final String ALL_ROW_COUNTRY_EACH_PAGE = "xpath=//tbody/tr/td[@data-key='country']";
-
+	
+	public static final String COLUMN_INDEX_BY_NAME = "xpath=//tr/th[text()='%s']/preceding-sibling::th";
+	public static final String TEXTBOX_BY_ROW_AND_COLUMN_INDEX = "xpath=//tbody/tr[%s]/td[%s]/input[@type='text']";
+	public static final String DROPDOWN_BY_ROW_AND_COLUMN_INDEX = "xpath=//tbody/tr[%s]/td[%s]//select";
+	public static final String CHECKBOX_BY_ROW_AND_COLUMN_INDEX = "xpath=//tbody/tr[%s]/td[%s]//input[@type='checkbox']";
+	public static final String ICON_BY_ROW_NUMBER = "xpath=//tbody/tr[%s]//button[@title='%s']";
+	
+	public static final String LOAD_BUTTON = "css=button#load";
 }

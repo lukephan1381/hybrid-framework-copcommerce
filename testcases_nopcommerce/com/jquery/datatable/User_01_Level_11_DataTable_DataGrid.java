@@ -66,9 +66,41 @@ public class User_01_Level_11_DataTable_DataGrid extends BaseTest{
 		homePage.sleepInSecond(3);
 	}
 	
-	@Test
-	public void User_03_Navigate() {
+	//@Test
+	public void User_03_Input_To_Header() {
+		homePage.pageRefresh(driver);
 		homePage.getRowValuesAtAllPage();
+	}
+	
+	@Test
+	public void Table_04_Ation_At_Any_Row() {
+		homePage.clickToLoadButton();
+		
+//		homePage.enterToTextboxByColumnNameAtRowNumber("Company","1","Fossil");
+//		homePage.sleepInSecond(1);
+//		
+//		homePage.enterToTextboxByColumnNameAtRowNumber("Contact Person","1","Michel 97");
+//		homePage.sleepInSecond(1);
+//		
+//		homePage.selectDropdownByColumnNameAtRowNumber("Country", "1", "Hong Kong");
+//		homePage.sleepInSecond(1);
+//		
+//		homePage.checkToCheckboxByColumnNameAtRowNumber("NPO?","2");
+//		homePage.checkToCheckboxByColumnNameAtRowNumber("NPO?","3");
+//		
+//		homePage.uncheckToCheckboxByColumnNameAtRowNumber("NPO?","1");
+//		homePage.uncheckToCheckboxByColumnNameAtRowNumber("NPO?","4");
+//		homePage.uncheckToCheckboxByColumnNameAtRowNumber("NPO?","5");
+		
+		homePage.clickToIconByRowNumber("1","Remove Current Row");
+		homePage.clickToIconByRowNumber("1","Insert Row Above");
+		homePage.clickToIconByRowNumber("3","Move Up");
+		
+		homePage.clickToIconByRowNumber("5","Remove Current Row");
+		homePage.clickToIconByRowNumber("4","Remove Current Row");
+		homePage.clickToIconByRowNumber("3","Remove Current Row");
+		homePage.clickToIconByRowNumber("2","Remove Current Row");
+		homePage.clickToIconByRowNumber("1","Remove Current Row");
 	}
 	
 

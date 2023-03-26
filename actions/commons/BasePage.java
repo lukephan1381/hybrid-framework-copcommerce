@@ -174,6 +174,10 @@ public class BasePage {
 		new Select(getElement(driver, locator)).selectByVisibleText(textValue);;
 	}
 	
+	public void selectItemInDropdown(WebDriver driver, String locator, String textValue, String...params) {
+		new Select(getElement(driver, getRestParameter(locator, params))).selectByVisibleText(textValue);;
+	}
+	
 	public String getSelectedItemInDropdown(WebDriver driver, String locator) {
 		return new Select(getElement(driver, locator)).getFirstSelectedOption().getText();
 	}
@@ -216,15 +220,31 @@ public class BasePage {
 		return getElements(driver, locator).size();
 	}
 	
+	public int getElementsSize(WebDriver driver, String locator, String... params) {
+		return getElements(driver,getRestParameter(locator, params)).size();
+	}
+	
 	public void checkOnCheckboxOrRadio(WebDriver driver, String locator) {
 		if (!isElementSelected(driver, locator)) {
 			clickToElement(driver, locator);
 		}
 	}
 	
-	public void uncheckTheCheckbox(WebDriver driver, String locator) {
+	public void checkOnCheckboxOrRadio(WebDriver driver, String locator, String...params) {
+		if (!isElementSelected(driver, getRestParameter(locator, params))) {
+			clickToElement(driver, getRestParameter(locator, params));
+		}
+	}
+	
+	public void uncheckTOCheckbox(WebDriver driver, String locator) {
 		if (isElementSelected(driver, locator)){
 			clickToElement(driver, locator);
+		}
+	}
+	
+	public void uncheckToCheckbox(WebDriver driver, String locator, String...params) {
+		if (isElementSelected(driver, getRestParameter(locator, params))){
+			clickToElement(driver, getRestParameter(locator, params));
 		}
 	}
 	

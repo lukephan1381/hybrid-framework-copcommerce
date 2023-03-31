@@ -16,6 +16,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import jquery_uploadfile_PageUIs.HomePageUI;
+
 public class BasePage {
 	
 	/* Web Browser */
@@ -101,6 +103,17 @@ public class BasePage {
 	}
 	
 	/* Web Element*/
+	
+	public void uploadMultipleFiles(WebDriver driver, String...fileNames) {
+		String filePath = System.getProperty("user.dir") + "\\uploadFiles\\";
+		String fullFileName = "";
+		
+		for (String file:fileNames) {
+			fullFileName = fullFileName + filePath + file + "\n";
+		}
+		fullFileName = fullFileName.trim();
+		getElement(driver,HomePageUI.UPLOAD_FILE).sendKeys(fullFileName);
+	}
 	
 	public By getByXpath(String locator) {
 		return By.xpath(locator);

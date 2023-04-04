@@ -105,7 +105,8 @@ public class BasePage {
 	/* Web Element*/
 	
 	public void uploadMultipleFiles(WebDriver driver, String...fileNames) {
-		String filePath = System.getProperty("user.dir") + "\\uploadFiles\\";
+		//String filePath = System.getProperty("user.dir") + "\\uploadFiles\\";
+		String filePath = GlobalConstant.UPLOAD_FILE;
 		String fullFileName = "";
 		
 		for (String file:fileNames) {
@@ -394,11 +395,12 @@ public class BasePage {
 
 	public boolean isImageLoaded(WebDriver driver, String locator) {
 		boolean status = (boolean) ((JavascriptExecutor) driver).executeScript("return arguments[0].complete && typeof arguments[0].naturalWidth != \"undefined\" && arguments[0].naturalWidth > 0", getElement(driver, locator));
-		if (status) {
-			return true;
-		} else {
-			return false;
-		}
+		return status;
+	}
+	
+	public boolean isImageLoaded(WebDriver driver, String locator, String...params) {
+		boolean status = (boolean) ((JavascriptExecutor) driver).executeScript("return arguments[0].complete && typeof arguments[0].naturalWidth != \"undefined\" && arguments[0].naturalWidth > 0", getElement(driver, getRestParameter(locator, params)));
+		return status;
 	}
 	
 	/* Waits */

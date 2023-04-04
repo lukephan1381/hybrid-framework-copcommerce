@@ -96,7 +96,6 @@ public class HomePageObject extends BasePage{
 	public void clickToIconByRowNumber(String rowNumber, String iconTitle) {
 		waitElementToBeClickable(driver, HomePageUI.ICON_BY_ROW_NUMBER,rowNumber, iconTitle);
 		clickToElement(driver, HomePageUI.ICON_BY_ROW_NUMBER,rowNumber, iconTitle);
-	}
-	
+	}	
 	
 }

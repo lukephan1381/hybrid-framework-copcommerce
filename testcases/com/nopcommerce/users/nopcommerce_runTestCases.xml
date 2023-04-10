@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite parallel="false" name="Suite">
 
-
+	<listeners>
+	<listener class-name="commons.MethodListener"></listener>
+	</listeners>
     <test name="Run on FIREFOX">
 	<parameter name="browser" value="chrome"/>
 	<parameter name= "userURL" value ="https://demo.nopcommerce.com/"/>
 	<parameter name= "adminURL" value ="https://admin-demo.nopcommerce.com/"/>
     <classes>
-			<class name = "com.nopcommerce.users.User_01_Level_10_Dynamic_Locator"/>
+			<class name = "com.nopcommerce.users.User_01_Level_12_Assert_Verify"/>
     </classes>
   </test> 
 

@@ -8,13 +8,13 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 
 import commons.BaseTest;
-import nopcommerce_pageObjects.AdminDashboardPageObject;
-import nopcommerce_pageObjects.AdminLoginPageObject;
-import nopcommerce_pageObjects.PageGeneratorManager;
-import nopcommerce_pageObjects.UserCustomerInfoPageObject;
-import nopcommerce_pageObjects.UserHomePageObject;
-import nopcommerce_pageObjects.UserLoginPageObject;
-import nopcommerce_pageObjects.UserRegisterPageObject;
+import pageObjects.nopcommerce.AdminDashboardPageObject;
+import pageObjects.nopcommerce.AdminLoginPageObject;
+import pageObjects.nopcommerce.PageGeneratorManager;
+import pageObjects.nopcommerce.UserCustomerInfoPageObject;
+import pageObjects.nopcommerce.UserHomePageObject;
+import pageObjects.nopcommerce.UserLoginPageObject;
+import pageObjects.nopcommerce.UserRegisterPageObject;
 
 public class User_01_Level_9_Switch_Role extends BaseTest{
 	

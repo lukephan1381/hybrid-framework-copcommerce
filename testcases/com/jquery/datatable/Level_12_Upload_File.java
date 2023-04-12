@@ -8,8 +8,8 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 
 import commons.BaseTest;
-import jquery_uploadfile_pageObjects.HomePageObject;
-import jquery_uploadfile_pageObjects.PageGeneratorManager;
+import pageObjects.jquery.uploadfile.HomePageObject;
+import pageObjects.jquery.uploadfile.PageGeneratorManager;
 
 
 public class Level_12_Upload_File extends BaseTest{

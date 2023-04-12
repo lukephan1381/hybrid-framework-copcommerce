@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite parallel="false" name="Suite">
+
+
+<!--     <test name="Run on FIREFOX">
+	<parameter name="browser" value="firefox"/>
+	<parameter name= "userURL" value ="https://www.jqueryscript.net/demo/CRUD-Data-Grid-Plugin-jQuery-Quickgrid/"/>
+	<parameter name= "adminURL" value ="https://admin-demo.nopcommerce.com/"/>
+    <classes>
+			<class name = "com.jquery.datatable.User_01_Level_11_DataTable_DataGrid"/>
+    </classes>
+  </test>  -->
+
+    <test name="Run on CHROME">
+  	<parameter name="browser" value="chrome"/>
+  	<parameter name= "userURL" value ="https://www.facebook.com"/>	
+<!-- <parameter name= "userURL" value ="https://www.jqueryscript.net/demo/CRUD-Data-Grid-Plugin-jQuery-Quickgrid/"/> -->
+<!-- <parameter name= "userURL" value ="https://www.jqueryscript.net/demo/jQuery-Dynamic-Data-Grid-Plugin-appendGrid/"/> -->
+    <classes>
+			<class name = "com.facebook.register.Level_13_Element_Undisplayed"/>
+    </classes>
+  </test>
+  
+</suite> <!-- Suite -->

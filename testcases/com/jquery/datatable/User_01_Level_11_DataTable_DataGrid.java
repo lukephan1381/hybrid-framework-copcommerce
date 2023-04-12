@@ -10,8 +10,8 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 
 import commons.BaseTest;
-import jquery_pageObjects.HomePageObject;
-import jquery_pageObjects.PageGeneratorManager;
+import pageObjects.jquery.HomePageObject;
+import pageObjects.jquery.PageGeneratorManager;
 
 
 public class User_01_Level_11_DataTable_DataGrid extends BaseTest{

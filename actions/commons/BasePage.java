@@ -16,7 +16,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import jquery_uploadfile_PageUIs.HomePageUI;
+import pageUIs.jquery.uploadfile.HomePageUI;
 
 public class BasePage {
 	

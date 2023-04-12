@@ -8,10 +8,10 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 
 import commons.BaseTest;
-import nopcommerce_pageObjects.UserCustomerInfoPageObject;
-import nopcommerce_pageObjects.UserHomePageObject;
-import nopcommerce_pageObjects.UserLoginPageObject;
-import nopcommerce_pageObjects.UserRegisterPageObject;
+import pageObjects.nopcommerce.UserCustomerInfoPageObject;
+import pageObjects.nopcommerce.UserHomePageObject;
+import pageObjects.nopcommerce.UserLoginPageObject;
+import pageObjects.nopcommerce.UserRegisterPageObject;
 
 public class User_01_Level_3 extends BaseTest{
 	

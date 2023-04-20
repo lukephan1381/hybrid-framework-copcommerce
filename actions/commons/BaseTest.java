@@ -41,7 +41,7 @@ public class BaseTest {
 			throw new RuntimeException("Cannot find browser name.");
 		}
 		
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(GlobalConstant.LONG_TIMEOUT, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
 		driver.get(userURL);
 		return driver;

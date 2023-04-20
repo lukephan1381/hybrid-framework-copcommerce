@@ -1,7 +1,9 @@
 package commons;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Set;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
@@ -250,7 +252,7 @@ public class BasePage {
 		}
 	}
 	
-	public void uncheckTOCheckbox(WebDriver driver, String locator) {
+	public void uncheckToCheckbox(WebDriver driver, String locator) {
 		if (isElementSelected(driver, locator)){
 			clickToElement(driver, locator);
 		}
@@ -268,6 +270,33 @@ public class BasePage {
 	
 	public boolean isElementDisplayed(WebDriver driver, String locator, String...params) {
 		return getElement(driver,getRestParameter(locator, params)).isDisplayed();
+	}
+	
+	public boolean isElementUndisplayed(WebDriver driver, String locator) {
+		System.out.println("Start time: " + new Date().toString());
+		overrideImplicitTimeout(driver,5);
+		List<WebElement> elements = getElements(driver, locator);
+		overrideImplicitTimeout(driver,30);
+		
+		if (elements.size()==0) {
+			System.out.println("Element NOT in DOM");
+			System.out.println("End time: " + new Date().toString());
+			return true;
+		}
+		else if (elements.size()>0 && !elements.get(0).isDisplayed()) {
+			System.out.println("Element in DOM but NOT displayed ");
+			System.out.println("End time: " + new Date().toString());
+			return true;
+		}
+		else {
+			System.out.println("Element in DOM and displayed");
+			System.out.println("End time: " + new Date().toString());
+			return false;
+		}
+	}
+	
+	public void overrideImplicitTimeout(WebDriver driver, int timeOut) {
+		driver.manage().timeouts().implicitlyWait(timeOut, TimeUnit.SECONDS);
 	}
 	
 	public boolean isElementSelected(WebDriver driver, String locator) {
@@ -421,16 +450,20 @@ public class BasePage {
 		new WebDriverWait(driver, 15).until(ExpectedConditions.elementToBeClickable(getByLocator(getRestParameter(locator, params))));
 	}
 	
-	public void waitElementToBeInvisible(WebDriver driver, String locator) {
-		new WebDriverWait(driver, 15).until(ExpectedConditions.invisibilityOfElementLocated(getByLocator(locator)));
-	}
-	
 	public void waitListElementsToBeVisible(WebDriver driver, String locator) {
 		new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOfAllElementsLocatedBy(getByLocator(locator)));
 	}
 	
+	public void waitElementToBeInvisible(WebDriver driver, String locator) {
+		new WebDriverWait(driver, 15).until(ExpectedConditions.invisibilityOfElementLocated(getByLocator(locator)));
+	}
+	
 	public void waitListElementsToBeInvisibile(WebDriver driver, String locator) {
-		new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOfAllElements(getElements(driver, locator)));
+		new WebDriverWait(driver, 15).until(ExpectedConditions.invisibilityOfAllElements(getElements(driver, locator)));
+	}
+	
+	public void waitElementUndisplayed(WebDriver driver, String locator) {
+		new WebDriverWait(driver, 5).until(ExpectedConditions.invisibilityOfElementLocated(getByLocator(locator)));
 	}
 	
 	public void waitElementPresence(WebDriver driver, String locator) {

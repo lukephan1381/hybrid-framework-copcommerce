@@ -30,16 +30,14 @@ public class Level_13_Element_Undisplayed extends BaseTest{
 		loginPage.clickToCreateNewAccountButton();
 		
 		verifyTrue(loginPage.isEmailAddressTextboxDisplayed());
+		loginPage.enterToEmailAddressTextbox("automation@gmail.com");
+		
+		verifyTrue(loginPage.isConfirmEmailAddressTextboxDisplayed());
+		loginPage.sleepInSecond(3);
 	}
 	
 	@Test
-	public void TC_02_Verify_Element_Undisplayed_In_DOM() {
-		verifyFalse(loginPage.isConfirmEmailAddressTextboxDisplayed());
-		
-		loginPage.enterToEmailAddressTextbox("automation@gmail.com");
-		verifyTrue(loginPage.isConfirmEmailAddressTextboxDisplayed());
-		loginPage.sleepInSecond(3);
-		
+	public void TC_02_Verify_Element_Undisplayed_In_DOM()	{
 		loginPage.enterToEmailAddressTextbox("");
 		loginPage.sleepInSecond(3);
 		verifyFalse(loginPage.isConfirmEmailAddressTextboxDisplayed());
@@ -47,7 +45,9 @@ public class Level_13_Element_Undisplayed extends BaseTest{
 
 	@Test
 	public void TC_03_Verify_Element_Undisplayed_Not_In_DOM() {
-		
+		loginPage.clickToCloseButtonSignupForm();
+		loginPage.sleepInSecond(3);
+		verifyTrue(loginPage.isConfirmEmailAddressTextboxUndisplayed());
 	}
 	
 	@AfterClass

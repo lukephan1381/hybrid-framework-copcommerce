@@ -36,5 +36,15 @@ public class LoginPageObject extends BasePage{
 		sendKeyToElement(driver, LoginPageUIs.SIGN_UP_FORM_EMAIL_ADDRESS_TEXTBOX, emailAddress);
 	}
 
+	public void clickToCloseButtonSignupForm() {
+		waitElementToBeClickable(driver, LoginPageUIs.SIGN_UP_FORM_CLOSE_BUTTON);
+		clickToElement(driver, LoginPageUIs.SIGN_UP_FORM_CLOSE_BUTTON);
+	}
+
+	 public boolean isConfirmEmailAddressTextboxUndisplayed() {
+		waitElementUndisplayed(driver, LoginPageUIs.SIGN_UP_FORM_COMFIRM_EMAIL_ADDRESS_TEXTBOX);
+		return isElementUndisplayed(driver, LoginPageUIs.SIGN_UP_FORM_COMFIRM_EMAIL_ADDRESS_TEXTBOX);
+	}
+
 	
 }

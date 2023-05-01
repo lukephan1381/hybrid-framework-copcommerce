@@ -20,7 +20,6 @@ import pageObjects.nopcommerce.UserSideBarPageObject;
 
 public class User_01_Level_10_Dynamic_Locator extends BaseTest{
 	
-	String githubToken = "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";
 	WebDriver driver;
 	UserHomePageObject homePage;
 	UserRegisterPageObject registerPage;

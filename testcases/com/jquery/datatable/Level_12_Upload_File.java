@@ -14,7 +14,6 @@ import pageObjects.jquery.uploadfile.PageGeneratorManager;
 
 public class Level_12_Upload_File extends BaseTest{
 	
-	String githubToken = "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";
 	WebDriver driver;
 	HomePageObject homePage;
 	String behoa = "behoa.PNG";

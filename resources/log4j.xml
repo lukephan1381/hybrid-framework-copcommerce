@@ -35,15 +35,7 @@
 		</layout>
 	</appender>
 
-	<category name="com.nopcommerce.login">
-		<priority value="all" />
-		<appender-ref ref="console" />
-		<appender-ref ref="logfile" />
-		<appender-ref ref="file" />
-		<appender-ref ref="testng" />
-	</category>
-
-	<category name="com.bankguru.payment">
+	<category name="com.nopcommerce.users">
 		<priority value="all" />
 		<appender-ref ref="console" />
 		<appender-ref ref="logfile" />
@@ -52,7 +44,7 @@
 	</category>
 
 	<root>
-		<priority value="warn" />
+		<priority value="info" />
 	</root>
 
 </log4j:configuration>

@@ -16,7 +16,6 @@ import pageObjects.jquery.PageGeneratorManager;
 
 public class User_01_Level_11_DataTable_DataGrid extends BaseTest{
 	
-	String githubToken = "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";
 	WebDriver driver;
 	HomePageObject homePage;
 	List<String> allCountryValues;

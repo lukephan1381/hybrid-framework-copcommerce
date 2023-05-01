@@ -18,7 +18,6 @@ import pageObjects.nopcommerce.UserRegisterPageObject;
 
 public class User_01_Level_9_Switch_Role extends BaseTest{
 	
-	String githubToken = "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";
 	WebDriver driver;
 	UserHomePageObject userHomePage;
 	UserRegisterPageObject userRegisterPage;

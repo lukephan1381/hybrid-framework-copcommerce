@@ -19,7 +19,6 @@ import pageObjects.nopcommerce.UserRewardPageObject;
 
 public class User_01_Level_8_Page_Navigation extends BaseTest{
 	
-	String githubToken = "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";
 	WebDriver driver;
 	UserHomePageObject homePage;
 	UserRegisterPageObject registerPage;

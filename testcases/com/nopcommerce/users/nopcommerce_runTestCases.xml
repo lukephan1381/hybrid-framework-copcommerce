@@ -9,7 +9,7 @@
 	<parameter name= "userURL" value ="https://demo.nopcommerce.com/"/>
 	<parameter name= "adminURL" value ="https://admin-demo.nopcommerce.com/"/>
     <classes>
-			<class name = "com.nopcommerce.users.User_01_Level_12_Assert_Verify"/>
+			<class name = "com.nopcommerce.users.User_01_Level_14_Log4J"/>
     </classes>
   </test> 
 

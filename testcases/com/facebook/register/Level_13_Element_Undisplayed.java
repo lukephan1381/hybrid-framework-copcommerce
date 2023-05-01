@@ -13,7 +13,6 @@ import pageObjects.facebook.PageGeneratorManager;
 
 public class Level_13_Element_Undisplayed extends BaseTest{
 	
-	String githubToken = "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";
 	WebDriver driver;
 	LoginPageObject loginPage;
 	

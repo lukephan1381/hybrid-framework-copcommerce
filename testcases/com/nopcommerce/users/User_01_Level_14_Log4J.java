@@ -3,7 +3,6 @@ package com.nopcommerce.users;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
-import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 
@@ -83,7 +82,7 @@ public class User_01_Level_14_Log4J extends BaseTest{
 		
 		//Verify success message
 		log.info("Register - Step 13: Verify if register completed");
-		Assert.assertEquals(registerPage.getRegisterResultMessage(), "Your registration completed");
+		verifyEquals(registerPage.getRegisterResultMessage(), "Your registration completed");
 		
 		//logout of current account
 		log.info("Register - Step 14: Return to HOME page");
@@ -91,36 +90,50 @@ public class User_01_Level_14_Log4J extends BaseTest{
 		
 		homePage = registerPage.clickToContinueButton();
 		log.info("Register - Step 15: Return to HOME page successfully");
-		Assert.assertEquals(homePage.getHomePageURL(), "https://demo.nopcommerce.com/");
+		verifyEquals(homePage.getHomePageURL(), "https://demo.nopcommerce.com/");
 	}
 	
-	//@Test
+	@Test
 	public void User_02_Login() {
 		//click on login button
-		homePage.clickToLoginLink();
+		log.info("Login - Step 01: Click to LOGIN link");
+		loginPage = homePage.clickToLoginLink();
 		
 		//input Email address & password
-		loginPage = PageGeneratorManager.getUserLoginPage(driver);
+		log.info("Login - Step 02: Input Email and Password");
 		loginPage.inputToEmailTextbox(emailAddress);
 		loginPage.inputToPasswordTextbox("qqqq1111");
 		
 		//submit login
+		log.info("Login - Step 03: Click to LOGIN button");
 		loginPage.clickToLoginButton();
 		
 		homePage = PageGeneratorManager.getUserHomePage(driver);
+		log.info("Login - Step 04: Check if Login successfully");
 		verifyTrue(homePage.isMyAccountLinkDisplayed());
 		
 		homePage.clickToMyAccountLink();
 		//customerInfoPage = new CustomerInfoPageObject(driver);
 		customerInfoPage = PageGeneratorManager.getUserCustomerInfoPage(driver);
 		
-		verifyFalse(customerInfoPage.isGenderMaleRadioSelected());
+		log.info("Login - Step 05: Check if Male radio button is selected");
+		verifyTrue(customerInfoPage.isGenderMaleRadioSelected());
+		
+		log.info("Login - Step 06: Check if firstname match registered info");
 		verifyEquals(customerInfoPage.getFirstNameTextboxAttribute("value"), "Luke");
+		
+		log.info("Login - Step 07: Check if last match registered info");
 		verifyEquals(customerInfoPage.getLastNameTextboxAttribute("value"), "Phan");
+		
+		log.info("Login - Step 08: Check if date of birth match registered info");
 		verifyEquals(customerInfoPage.getDayDropdownSelectedItem(), "28");
-		verifyEquals(customerInfoPage.getMonthDropdownSelectedItem(), "January.");
-		verifyEquals(customerInfoPage.getYearDropdownSelectedItem(), "1991.");
+		verifyEquals(customerInfoPage.getMonthDropdownSelectedItem(), "January");
+		verifyEquals(customerInfoPage.getYearDropdownSelectedItem(), "1991");
+		
+		log.info("Login - Step 09: Check if email address match registered info");
 		verifyEquals(customerInfoPage.getEmailTextboxAttribute("value"), emailAddress);
+		
+		log.info("Login - Step 10: Check if company name match registered info");
 		verifyEquals(customerInfoPage.getCompanyTextboxAttribute("value"), "Marvel");
 	}
 	

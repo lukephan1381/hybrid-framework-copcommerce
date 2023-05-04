@@ -117,17 +117,17 @@ public class User_01_Level_14_Log4J extends BaseTest{
 		customerInfoPage = PageGeneratorManager.getUserCustomerInfoPage(driver);
 		
 		log.info("Login - Step 05: Check if Male radio button is selected");
-		verifyTrue(customerInfoPage.isGenderMaleRadioSelected());
+		verifyFalse(customerInfoPage.isGenderMaleRadioSelected());
 		
 		log.info("Login - Step 06: Check if firstname match registered info");
 		verifyEquals(customerInfoPage.getFirstNameTextboxAttribute("value"), "Luke");
 		
 		log.info("Login - Step 07: Check if last match registered info");
-		verifyEquals(customerInfoPage.getLastNameTextboxAttribute("value"), "Phan");
+		verifyEquals(customerInfoPage.getLastNameTextboxAttribute("value"), "Phan.");
 		
 		log.info("Login - Step 08: Check if date of birth match registered info");
 		verifyEquals(customerInfoPage.getDayDropdownSelectedItem(), "28");
-		verifyEquals(customerInfoPage.getMonthDropdownSelectedItem(), "January");
+		verifyEquals(customerInfoPage.getMonthDropdownSelectedItem(), "January.");
 		verifyEquals(customerInfoPage.getYearDropdownSelectedItem(), "1991");
 		
 		log.info("Login - Step 09: Check if email address match registered info");

@@ -3,6 +3,7 @@
 
 	<listeners>
 		<listener class-name="commons.MethodListener"></listener>
+		<listener class-name="reportConfig.ReportNGListener"></listener>
     	<listener class-name="org.uncommons.reportng.HTMLReporter"/>
         <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
 	</listeners>
@@ -13,7 +14,7 @@
 		<parameter name= "adminURL" value ="https://admin-demo.nopcommerce.com/"/>
     	
     	<classes>
-			<class name = "com.nopcommerce.users.User_01_Level_14_Log4J"/>
+			<class name = "com.nopcommerce.users.User_01_Level_15_ReportNG_Screenshot"/>
     	</classes>
   	</test> 
 

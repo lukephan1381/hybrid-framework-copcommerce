@@ -89,3 +89,96 @@
 [INFO ] [2023-05-04 21:18:47,039]  -------------------------- PASSED -------------------------- 
 [INFO ] [2023-05-04 21:18:47,039] Login - Step 10: Check if company name match registered info
 [INFO ] [2023-05-04 21:18:47,069]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-05-08 21:38:58,873] Register - Step 01: Navigate to REGISTER page
+[INFO ] [2023-05-08 21:39:00,775] Register - Step 02: Click on Male radio button
+[INFO ] [2023-05-08 21:39:01,468] Register - Step 03: Input to firstname textbox
+[INFO ] [2023-05-08 21:39:02,068] Register - Step 04: Input to lastname textbox
+[INFO ] [2023-05-08 21:39:02,315] Register - Step 05: Select birthday day
+[INFO ] [2023-05-08 21:39:02,515] Register - Step 06: Select birthday month
+[INFO ] [2023-05-08 21:39:02,660] Register - Step 07: Select birthday year
+[INFO ] [2023-05-08 21:39:03,594] Register - Step 08: Input to email address textbox
+[INFO ] [2023-05-08 21:39:03,779] Register - Step 09: Input to company textbox
+[INFO ] [2023-05-08 21:39:04,173] Register - Step 10: Input to password textbox
+[INFO ] [2023-05-08 21:39:04,528] Register - Step 11: Input to confirm password textbox
+[INFO ] [2023-05-08 21:39:04,898] Register - Step 12: Click to REGISTER button
+[INFO ] [2023-05-08 21:39:06,305] Register - Step 13: Verify if register completed
+[INFO ] [2023-05-08 21:39:06,372]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-05-08 21:39:06,372] Register - Step 14: Return to HOME page
+[INFO ] [2023-05-08 21:39:07,454] Register - Step 15: Return to HOME page successfully
+[INFO ] [2023-05-08 21:39:07,494]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-05-08 21:39:07,501] Login - Step 01: Click to LOGIN link
+[INFO ] [2023-05-08 21:39:18,849] Login - Step 02: Input Email and Password
+[INFO ] [2023-05-08 21:39:19,389] Login - Step 03: Click to LOGIN button
+[INFO ] [2023-05-08 21:39:20,478] Login - Step 04: Check if Login successfully
+[INFO ] [2023-05-08 21:47:49,816] Register - Step 01: Navigate to REGISTER page
+[INFO ] [2023-05-08 21:47:51,737] Register - Step 02: Click on Male radio button
+[INFO ] [2023-05-08 21:47:52,393] Register - Step 03: Input to firstname textbox
+[INFO ] [2023-05-08 21:47:53,036] Register - Step 04: Input to lastname textbox
+[INFO ] [2023-05-08 21:47:53,249] Register - Step 05: Select birthday day
+[INFO ] [2023-05-08 21:47:53,432] Register - Step 06: Select birthday month
+[INFO ] [2023-05-08 21:47:54,199] Register - Step 07: Select birthday year
+[INFO ] [2023-05-08 21:47:54,494] Register - Step 08: Input to email address textbox
+[INFO ] [2023-05-08 21:47:54,621] Register - Step 09: Input to company textbox
+[INFO ] [2023-05-08 21:47:54,947] Register - Step 10: Input to password textbox
+[INFO ] [2023-05-08 21:47:55,309] Register - Step 11: Input to confirm password textbox
+[INFO ] [2023-05-08 21:47:55,769] Register - Step 12: Click to REGISTER button
+[INFO ] [2023-05-08 21:47:57,195] Register - Step 13: Verify if register completed
+[INFO ] [2023-05-08 21:47:57,250]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-05-08 21:47:57,250] Register - Step 14: Return to HOME page
+[INFO ] [2023-05-08 21:47:57,773] Register - Step 15: Return to HOME page successfully
+[INFO ] [2023-05-08 21:47:57,780]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-05-08 21:47:57,791] Login - Step 01: Click to LOGIN link
+[INFO ] [2023-05-08 21:47:58,326] Login - Step 02: Input Email and Password
+[INFO ] [2023-05-08 21:47:58,604] Login - Step 03: Click to LOGIN button
+[INFO ] [2023-05-08 21:47:59,566] Login - Step 04: Check if Login successfully
+[INFO ] [2023-05-08 21:47:59,592]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-05-08 21:48:00,019] Login - Step 05: Check if Male radio button is selected
+[INFO ] [2023-05-08 21:48:00,234]  -------------------------- FAILED -------------------------- 
+[INFO ] [2023-05-08 21:48:00,235] Login - Step 06: Check if firstname match registered info
+[INFO ] [2023-05-08 21:48:00,274]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-05-08 21:48:00,274] Login - Step 07: Check if last match registered info
+[INFO ] [2023-05-08 21:48:00,318]  -------------------------- FAILED -------------------------- 
+[INFO ] [2023-05-08 21:48:00,319] Login - Step 08: Check if date of birth match registered info
+[INFO ] [2023-05-08 21:48:00,618]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-05-08 21:48:00,700]  -------------------------- FAILED -------------------------- 
+[INFO ] [2023-05-08 21:48:01,680]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-05-08 21:48:01,681] Login - Step 09: Check if email address match registered info
+[INFO ] [2023-05-08 21:48:01,749]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-05-08 21:48:01,749] Login - Step 10: Check if company name match registered info
+[INFO ] [2023-05-08 21:48:01,783]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-05-08 21:51:57,680] Register - Step 01: Navigate to REGISTER page
+[INFO ] [2023-05-08 21:51:59,571] Register - Step 02: Click on Male radio button
+[INFO ] [2023-05-08 21:52:00,244] Register - Step 03: Input to firstname textbox
+[INFO ] [2023-05-08 21:52:00,816] Register - Step 04: Input to lastname textbox
+[INFO ] [2023-05-08 21:52:01,019] Register - Step 05: Select birthday day
+[INFO ] [2023-05-08 21:52:01,205] Register - Step 06: Select birthday month
+[INFO ] [2023-05-08 21:52:01,311] Register - Step 07: Select birthday year
+[INFO ] [2023-05-08 21:52:02,218] Register - Step 08: Input to email address textbox
+[INFO ] [2023-05-08 21:52:02,430] Register - Step 09: Input to company textbox
+[INFO ] [2023-05-08 21:52:02,816] Register - Step 10: Input to password textbox
+[INFO ] [2023-05-08 21:52:03,163] Register - Step 11: Input to confirm password textbox
+[INFO ] [2023-05-08 21:52:03,535] Register - Step 12: Click to REGISTER button
+[INFO ] [2023-05-08 21:52:04,982] Register - Step 13: Verify if register completed
+[INFO ] [2023-05-08 21:52:05,038]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-05-08 21:52:05,038] Register - Step 14: Return to HOME page
+[INFO ] [2023-05-08 21:52:05,571] Register - Step 15: Return to HOME page successfully
+[INFO ] [2023-05-08 21:52:05,578]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-05-08 21:52:05,589] Login - Step 01: Click to LOGIN link
+[INFO ] [2023-05-08 21:52:06,252] Login - Step 02: Input Email and Password
+[INFO ] [2023-05-08 21:52:06,499] Login - Step 03: Click to LOGIN button
+[INFO ] [2023-05-08 21:52:07,516] Login - Step 04: Check if Login successfully
+[INFO ] [2023-05-08 21:52:07,541]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-05-08 21:52:07,990] Login - Step 05: Check if Male radio button is selected
+[INFO ] [2023-05-08 21:52:08,207]  -------------------------- FAILED -------------------------- 
+[INFO ] [2023-05-08 21:52:08,208] Login - Step 06: Check if firstname match registered info
+[INFO ] [2023-05-08 21:52:08,256]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-05-08 21:52:08,256] Login - Step 07: Check if last match registered info
+[INFO ] [2023-05-08 21:52:08,298]  -------------------------- FAILED -------------------------- 
+[INFO ] [2023-05-08 21:52:08,298] Login - Step 08: Check if date of birth match registered info
+[INFO ] [2023-05-08 21:52:08,634]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-05-08 21:52:08,714]  -------------------------- FAILED -------------------------- 
+[INFO ] [2023-05-08 21:52:09,824]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-05-08 21:52:09,824] Login - Step 09: Check if email address match registered info
+[INFO ] [2023-05-08 21:52:09,868]  -------------------------- PASSED -------------------------- 
+[INFO ] [2023-05-08 21:52:09,869] Login - Step 10: Check if company name match registered info
+[INFO ] [2023-05-08 21:52:09,904]  -------------------------- PASSED -------------------------- 

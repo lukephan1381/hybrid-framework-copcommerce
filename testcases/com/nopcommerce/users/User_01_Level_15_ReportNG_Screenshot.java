@@ -3,6 +3,7 @@ package com.nopcommerce.users;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
+import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 
@@ -82,7 +83,7 @@ public class User_01_Level_15_ReportNG_Screenshot extends BaseTest{
 		
 		//Verify success message
 		log.info("Register - Step 13: Verify if register completed");
-		verifyEquals(registerPage.getRegisterResultMessage(), "Your registration completed");
+		Assert.assertEquals(registerPage.getRegisterResultMessage(), "Your registration completed");
 		
 		//logout of current account
 		log.info("Register - Step 14: Return to HOME page");
@@ -90,7 +91,7 @@ public class User_01_Level_15_ReportNG_Screenshot extends BaseTest{
 		
 		homePage = registerPage.clickToContinueButton();
 		log.info("Register - Step 15: Return to HOME page successfully");
-		verifyEquals(homePage.getHomePageURL(), "https://demo.nopcommerce.com/");
+		Assert.assertEquals(homePage.getHomePageURL(), "https://demo.nopcommerce.com/");
 	}
 	
 	@Test
@@ -110,31 +111,31 @@ public class User_01_Level_15_ReportNG_Screenshot extends BaseTest{
 		
 		homePage = PageGeneratorManager.getUserHomePage(driver);
 		log.info("Login - Step 04: Check if Login successfully");
-		verifyTrue(homePage.isMyAccountLinkDisplayed());
+		Assert.assertTrue(homePage.isMyAccountLinkDisplayed());
 		
 		homePage.clickToMyAccountLink();
 		//customerInfoPage = new CustomerInfoPageObject(driver);
 		customerInfoPage = PageGeneratorManager.getUserCustomerInfoPage(driver);
 		
 		log.info("Login - Step 05: Check if Male radio button is selected");
-		verifyFalse(customerInfoPage.isGenderMaleRadioSelected());
+		Assert.assertFalse(customerInfoPage.isGenderMaleRadioSelected());
 		
 		log.info("Login - Step 06: Check if firstname match registered info");
-		verifyEquals(customerInfoPage.getFirstNameTextboxAttribute("value"), "Luke");
+		Assert.assertEquals(customerInfoPage.getFirstNameTextboxAttribute("value"), "Luke");
 		
 		log.info("Login - Step 07: Check if last match registered info");
-		verifyEquals(customerInfoPage.getLastNameTextboxAttribute("value"), "Phan.");
+		Assert.assertEquals(customerInfoPage.getLastNameTextboxAttribute("value"), "Phan.");
 		
 		log.info("Login - Step 08: Check if date of birth match registered info");
-		verifyEquals(customerInfoPage.getDayDropdownSelectedItem(), "28");
-		verifyEquals(customerInfoPage.getMonthDropdownSelectedItem(), "January.");
-		verifyEquals(customerInfoPage.getYearDropdownSelectedItem(), "1991");
+		Assert.assertEquals(customerInfoPage.getDayDropdownSelectedItem(), "28");
+		Assert.assertEquals(customerInfoPage.getMonthDropdownSelectedItem(), "January.");
+		Assert.assertEquals(customerInfoPage.getYearDropdownSelectedItem(), "1991");
 		
 		log.info("Login - Step 09: Check if email address match registered info");
-		verifyEquals(customerInfoPage.getEmailTextboxAttribute("value"), emailAddress);
+		Assert.assertEquals(customerInfoPage.getEmailTextboxAttribute("value"), emailAddress);
 		
 		log.info("Login - Step 10: Check if company name match registered info");
-		verifyEquals(customerInfoPage.getCompanyTextboxAttribute("value"), "Marvel");
+		Assert.assertEquals(customerInfoPage.getCompanyTextboxAttribute("value"), "Marvel");
 	}
 	
 

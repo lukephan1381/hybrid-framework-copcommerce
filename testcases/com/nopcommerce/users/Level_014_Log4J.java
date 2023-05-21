@@ -17,7 +17,7 @@ import pageObjects.nopcommerce.UserRegisterPageObject;
 import pageObjects.nopcommerce.UserRewardPageObject;
 import pageObjects.nopcommerce.UserSideBarPageObject;
 
-public class User_01_Level_14_Log4J extends BaseTest{
+public class Level_014_Log4J extends BaseTest{
 	
 	WebDriver driver;
 	UserHomePageObject homePage;

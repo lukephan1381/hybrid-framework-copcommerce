@@ -18,7 +18,7 @@ import pageObjects.nopcommerce.UserRegisterPageObject;
 import pageObjects.nopcommerce.UserRewardPageObject;
 import pageObjects.nopcommerce.UserSideBarPageObject;
 
-public class User_01_Level_10_Dynamic_Locator extends BaseTest{
+public class Level_010_Dynamic_Locator extends BaseTest{
 	
 	WebDriver driver;
 	UserHomePageObject homePage;

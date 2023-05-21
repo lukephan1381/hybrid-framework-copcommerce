@@ -1,33 +1,20 @@
 package reportConfig;
 
-import java.io.File;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
-
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
-import org.testng.IReporter;
-import org.testng.IResultMap;
-import org.testng.ISuite;
-import org.testng.ISuiteResult;
+
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
-import org.testng.Reporter;
-import org.testng.xml.XmlSuite;
-import com.relevantcodes.extentreports.ExtentReports;
-import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
 import commons.BaseTest;
 
-public class ExtentReportListenerV2 implements ITestListener {
+public class ExtentReportListenerV2 extends BaseTest implements ITestListener {
 	@Override
 	public void onStart(ITestContext context) {
-		
+		context.setAttribute("WebDriver", this.getDriverInstance());
 	}
 
 	@Override
@@ -48,8 +35,8 @@ public class ExtentReportListenerV2 implements ITestListener {
 
 	@Override
 	public void onTestFailure(ITestResult result) {
-		Object testClass = result.getInstance();
-		WebDriver webDriver = ((BaseTest) testClass).getDriverInstance();
+		//Object testClass = result.getInstance();
+		WebDriver webDriver = this.getDriverInstance();
 		String base64Screenshot = "data:image/png;base64," + ((TakesScreenshot) webDriver).getScreenshotAs(OutputType.BASE64);
 		ExtentManager.getTest().log(LogStatus.FAIL, "Test Failed", ExtentManager.getTest().addBase64ScreenShot(base64Screenshot));
 	}

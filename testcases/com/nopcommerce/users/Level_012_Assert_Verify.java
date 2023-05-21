@@ -18,7 +18,7 @@ import pageObjects.nopcommerce.UserRegisterPageObject;
 import pageObjects.nopcommerce.UserRewardPageObject;
 import pageObjects.nopcommerce.UserSideBarPageObject;
 
-public class User_01_Level_12_Assert_Verify extends BaseTest{
+public class Level_012_Assert_Verify extends BaseTest{
 
 	WebDriver driver;
 	UserHomePageObject homePage;

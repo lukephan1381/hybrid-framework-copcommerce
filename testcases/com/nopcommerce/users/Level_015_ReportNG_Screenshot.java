@@ -18,7 +18,7 @@ import pageObjects.nopcommerce.UserRegisterPageObject;
 import pageObjects.nopcommerce.UserRewardPageObject;
 import pageObjects.nopcommerce.UserSideBarPageObject;
 
-public class User_01_Level_15_ReportNG_Screenshot extends BaseTest{
+public class Level_015_ReportNG_Screenshot extends BaseTest{
 	
 	WebDriver driver;
 	UserHomePageObject homePage;

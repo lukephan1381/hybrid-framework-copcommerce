@@ -17,7 +17,7 @@ import pageObjects.nopcommerce.UserHomePageObject;
 import pageObjects.nopcommerce.UserLoginPageObject;
 import pageObjects.nopcommerce.UserRegisterPageObject;
 
-public class User_01_Level_2 {
+public class Level_002 {
 	
 	String githubToken = "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";
 	WebDriver driver;

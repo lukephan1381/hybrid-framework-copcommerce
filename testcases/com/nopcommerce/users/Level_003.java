@@ -8,15 +8,14 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 
 import commons.BaseTest;
-import pageObjects.nopcommerce.PageGeneratorManager;
 import pageObjects.nopcommerce.UserCustomerInfoPageObject;
 import pageObjects.nopcommerce.UserHomePageObject;
 import pageObjects.nopcommerce.UserLoginPageObject;
 import pageObjects.nopcommerce.UserRegisterPageObject;
 
-public class User_01_Level_6_Page_Generator_II extends BaseTest{
+public class Level_003 extends BaseTest{
 	
-	String githubToken = "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";
+	String githubToken = "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";
 	WebDriver driver;
 	UserHomePageObject homePage;
 	UserRegisterPageObject registerPage;
@@ -28,18 +27,20 @@ public class User_01_Level_6_Page_Generator_II extends BaseTest{
 	@Parameters("browser")
 	@BeforeClass
 	public void beforeClass(String browserName) {
+
 		driver = getBrowserDriver(browserName, browserName);
 		emailAddress = "lukephan" + generateRandomNumber() + "@auto.vn";
-		homePage = PageGeneratorManager.getUserHomePage(driver);
 
 	}
 	
 	@Test
 	public void User_01_Register() {
 		//Click on Register button
+		homePage = new UserHomePageObject(driver);
 		homePage.clickToRegisterButton();
-		registerPage = PageGeneratorManager.getUserRegisterPage(driver);
 		
+		
+		registerPage = new UserRegisterPageObject(driver);
 		//Select gender
 		registerPage.clickToGenderMaleRadio();
 		
@@ -68,9 +69,9 @@ public class User_01_Level_6_Page_Generator_II extends BaseTest{
 		
 		//logout of current account
 		registerPage.clickToLogoutLink();
-		Assert.assertEquals(homePage.getHomePageURL(), "https://demo.nopcommerce.com/");
 		
-		homePage = PageGeneratorManager.getUserHomePage(driver);
+		homePage = new UserHomePageObject(driver);
+		Assert.assertEquals(homePage.getHomePageURL(), "https://demo.nopcommerce.com/");
 	}
 	
 	@Test
@@ -79,19 +80,18 @@ public class User_01_Level_6_Page_Generator_II extends BaseTest{
 		homePage.clickToLoginLink();
 		
 		//input Email address & password
-		loginPage = PageGeneratorManager.getUserLoginPage(driver);
+		loginPage = new UserLoginPageObject(driver);
 		loginPage.inputToEmailTextbox(emailAddress);
 		loginPage.inputToPasswordTextbox("qqqq1111");
 		
 		//submit login
 		loginPage.clickToLoginButton();
 		
-		homePage = PageGeneratorManager.getUserHomePage(driver);
+		homePage = new UserHomePageObject(driver);
 		Assert.assertTrue(homePage.isMyAccountLinkDisplayed());
 		
 		homePage.clickToMyAccountLink();
-		//customerInfoPage = new CustomerInfoPageObject(driver);
-		customerInfoPage = PageGeneratorManager.getUserCustomerInfoPage(driver);
+		customerInfoPage = new UserCustomerInfoPageObject(driver);
 		
 		Assert.assertTrue(customerInfoPage.isGenderMaleRadioSelected());
 		Assert.assertEquals(customerInfoPage.getFirstNameTextboxAttribute("value"), "Luke");

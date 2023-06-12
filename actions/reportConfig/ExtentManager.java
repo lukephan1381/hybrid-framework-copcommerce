@@ -1,34 +1,36 @@
 package reportConfig;
-import java.util.HashMap;
-import java.util.Map;
 
-import com.relevantcodes.extentreports.ExtentReports;
-import com.relevantcodes.extentreports.ExtentTest;
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+import com.aventstack.extentreports.reporter.configuration.ChartLocation;
+import com.aventstack.extentreports.reporter.configuration.Theme;
 
 import commons.GlobalConstant;
 
 public class ExtentManager {
-	private static Map<Integer, ExtentTest> extentTestMap = new HashMap<Integer, ExtentTest>();
-	private static ExtentReports extent = ExtentManager.getReporter();
-	
-	public synchronized static ExtentReports getReporter() {
-		if (extent == null) {
-			extent = new ExtentReports(GlobalConstant.EXTENT_PATH + "/ExtentReportV2.html", true);
-		}
+	private static ExtentReports extent;
+	private static String reportFileName = "ExtentReport.html";
+	private static String extentReportPath = GlobalConstant.PROJECT_PATH + "/extentV3/" + reportFileName;
+
+	public static ExtentReports getInstance() {
+		if (extent == null)
+			createInstance();
 		return extent;
 	}
 
-	public static synchronized ExtentTest getTest() {
-		return (ExtentTest) extentTestMap.get((int) (long) (Thread.currentThread().getId()));
-	}
+	// Create an extent report instance
+	public static ExtentReports createInstance() {
+		ExtentHtmlReporter htmlReporter = new ExtentHtmlReporter(extentReportPath);
+		htmlReporter.config().setTestViewChartLocation(ChartLocation.TOP);
+		htmlReporter.config().setChartVisibilityOnOpen(true);
+		htmlReporter.config().setTheme(Theme.DARK);
+		htmlReporter.config().setDocumentTitle("Bank Guru HTML Report");
+		htmlReporter.config().setEncoding("utf-8");
+		htmlReporter.config().setReportName("Bank Guru HTML Report");
 
-	public static synchronized void endTest() {
-		extent.endTest((ExtentTest) extentTestMap.get((int) (long) (Thread.currentThread().getId())));
-	}
+		extent = new ExtentReports();
+		extent.attachReporter(htmlReporter);
 
-	public static synchronized ExtentTest startTest(String testName, String desc) {
-		ExtentTest test = extent.startTest(testName, desc);
-		extentTestMap.put((int) (long) (Thread.currentThread().getId()), test);
-		return test;
+		return extent;
 	}
 }

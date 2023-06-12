@@ -14,7 +14,7 @@
 		<parameter name= "adminURL" value ="https://admin-demo.nopcommerce.com/"/>
     	
     	<classes>
-			<class name = "com.nopcommerce.users.User_01_Level_15_ReportNG_Screenshot"/>
+			<class name = "com.nopcommerce.users.Level_015_ExtentV2_Screenshot"/>
     	</classes>
   	</test> 
 

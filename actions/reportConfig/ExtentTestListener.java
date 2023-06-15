@@ -34,7 +34,7 @@ public class ExtentTestListener extends BaseTest implements ITestListener {
 
 	@Override
 	public void onTestSuccess(ITestResult iTestResult) {
-		getTest().log(Status.PASS, "Test passed");
+		//getTest().log(Status.PASS, "Test passed");
 	}
 
 	@Override

@@ -25,4 +25,5 @@ public class GlobalConstant {
 	public static final long LONG_TIMEOUT = 30;
 	public static final long RETRY_TEST_FAIL = 3;
 	public static final String EXTENT_PATH = PROJECT_PATH + File.separator + "extendReportV2";
+	public static final String JAVA_VERSION = System.getProperty("java.version");
 }

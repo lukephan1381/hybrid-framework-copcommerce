@@ -1,5 +1,6 @@
 package commons;
 
+import java.io.File;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
@@ -8,6 +9,7 @@ import org.apache.commons.logging.LogFactory;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.Reporter;
+import org.testng.annotations.BeforeSuite;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -16,6 +18,11 @@ public class BaseTest {
 	String projectPath = System.getProperty("user.dir");
 	String osName = System.getProperty("os.name");
 	protected final Log log;
+	
+	@BeforeSuite
+	public void initBeforeSuite() {
+		deleteAllureReport();
+	}
 	
 	protected BaseTest() {
 		log = LogFactory.getLog(getClass());
@@ -105,4 +112,21 @@ public class BaseTest {
 		Random email = new Random();
 		return email.nextInt(9999);
 	}
+	
+	public void deleteAllureReport() {
+		try {
+			String pathFolderDownload = GlobalConstant.PROJECT_PATH + "/allure-json";
+			File file = new File(pathFolderDownload);
+			File[] listOfFiles = file.listFiles();
+			for (int i = 0; i < listOfFiles.length; i++) {
+				if (listOfFiles[i].isFile()) {
+					System.out.println(listOfFiles[i].getName());
+					new File(listOfFiles[i].toString()).delete();
+				}
+			}
+		} catch (Exception e) {
+			System.out.print(e.getMessage());
+		}
+	}
+
 }

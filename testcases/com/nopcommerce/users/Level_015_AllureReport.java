@@ -45,11 +45,9 @@ public class Level_015_AllureReport extends BaseTest{
 	@Test
 	public void User_01_Register() {
 		//Click on Register button
-	
 		registerPage = homePage.clickToRegisterButton();
 		
 		//Select gender
-		
 		registerPage.clickToGenderMaleRadio();
 		
 		//Input first name & last name
@@ -104,14 +102,13 @@ public class Level_015_AllureReport extends BaseTest{
 		//customerInfoPage = new CustomerInfoPageObject(driver);
 		customerInfoPage = PageGeneratorManager.getUserCustomerInfoPage(driver);
 		
-		Assert.assertFalse(customerInfoPage.isGenderMaleRadioSelected());
+		Assert.assertTrue(customerInfoPage.isGenderMaleRadioSelected());
 		
 		Assert.assertEquals(customerInfoPage.getFirstNameTextboxAttribute("value"), "Luke");
-		
-		Assert.assertEquals(customerInfoPage.getLastNameTextboxAttribute("value"), "Phan.");
+		Assert.assertEquals(customerInfoPage.getLastNameTextboxAttribute("value"), "Phan");
 		
 		Assert.assertEquals(customerInfoPage.getDayDropdownSelectedItem(), "28");
-		Assert.assertEquals(customerInfoPage.getMonthDropdownSelectedItem(), "January.");
+		Assert.assertEquals(customerInfoPage.getMonthDropdownSelectedItem(), "January");
 		Assert.assertEquals(customerInfoPage.getYearDropdownSelectedItem(), "1991");
 		
 		Assert.assertEquals(customerInfoPage.getEmailTextboxAttribute("value"), emailAddress);

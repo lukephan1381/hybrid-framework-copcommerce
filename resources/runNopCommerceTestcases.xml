@@ -1,8 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite parallel="false" name="Suite">
-  <test name="Fossil Web">
-    <classes>
-			<class name = "com.nopcommerce.users.User_01_Register"></class>
-    </classes>
-  </test> <!-- Test -->
+
+	<listeners>
+		<listener class-name="commons.MethodListener"></listener>
+		<listener class-name="reportConfig.AllureTestListener"></listener>
+    	<listener class-name="org.uncommons.reportng.HTMLReporter"/>
+        <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+	</listeners>
+	
+    <test name="Run on CHROME">
+		<parameter name="browser" value="chrome"/>
+		<parameter name= "userURL" value ="https://demo.nopcommerce.com/"/>
+		<parameter name= "adminURL" value ="https://admin-demo.nopcommerce.com/"/>
+    	
+    	<classes>
+			<class name = "com.nopcommerce.users.Level_015_AllureReport"/>
+    	</classes>
+  	</test> 
+
+<!--     <test name="Run on FIREFOX"> -->
+<!--   	<parameter name="browser" value="firefox"/> -->
+<!--     <classes> -->
+<!-- 			<class name = "com.nopcommerce.users.User_01_Level_7_Page_Switch"/> -->
+<!--     </classes> -->
+<!--   </test> -->
+  
 </suite> <!-- Suite -->

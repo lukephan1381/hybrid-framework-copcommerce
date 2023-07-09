@@ -3,7 +3,7 @@
 
 	<listeners>
 		<listener class-name="commons.MethodListener"></listener>
-		<listener class-name="reportConfig.AllureTestListener"></listener>
+		<listener class-name="reportConfig.ReportNGListener"></listener>
     	<listener class-name="org.uncommons.reportng.HTMLReporter"/>
         <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
 	</listeners>
@@ -14,7 +14,8 @@
 		<parameter name= "adminURL" value ="https://admin-demo.nopcommerce.com/"/>
     	
     	<classes>
-			<class name = "com.nopcommerce.users.Level_015_AllureReport"/>
+			<class name = "com.nopcommerce.common.Common_01_Register_New_Account"/>
+			<class name = "com.nopcommerce.users.Level_016_Share_Data"/>
     	</classes>
   	</test> 
 

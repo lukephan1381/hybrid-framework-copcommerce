@@ -14,7 +14,7 @@
 		<parameter name= "adminURL" value ="https://admin-demo.nopcommerce.com/"/>
     	
     	<classes>
-			<class name = "com.nopcommerce.common.Common_01_Register_New_Account"/>
+			<class name = "com.nopcommerce.common.Common_01_Register"/>
 			<class name = "com.nopcommerce.users.Level_016_Share_Data"/>
     	</classes>
   	</test> 

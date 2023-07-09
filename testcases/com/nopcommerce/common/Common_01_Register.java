@@ -17,7 +17,7 @@ import pageObjects.nopcommerce.UserRegisterPageObject;
 import pageObjects.nopcommerce.UserRewardPageObject;
 import pageObjects.nopcommerce.UserSideBarPageObject;
 
-public class Common_01_Register_New_Account extends BaseTest{
+public class Common_01_Register extends BaseTest{
 	
 	WebDriver driver;
 	UserHomePageObject homePage;

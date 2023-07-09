@@ -202,3 +202,6 @@
 [INFO ] [2023-05-08 22:15:35,908] Login - Step 03: Click to LOGIN button
 [INFO ] [2023-05-08 22:15:36,931] Login - Step 04: Check if Login successfully
 [INFO ] [2023-05-08 22:15:37,413] Login - Step 05: Check if Male radio button is selected
+[INFO ] [2023-07-09 10:22:28,386] Login - Step 01: Click to LOGIN link
+[INFO ] [2023-07-09 10:22:32,065] Login - Step 02: Input Email and Password
+[INFO ] [2023-07-09 10:22:33,691] Login - Step 03: Click to LOGIN button

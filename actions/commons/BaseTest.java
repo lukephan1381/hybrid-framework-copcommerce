@@ -7,6 +7,7 @@ import java.util.concurrent.TimeUnit;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.opera.OperaDriver;
 import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.BeforeSuite;
@@ -47,9 +48,9 @@ public class BaseTest {
 			//driver = new EdgeDriver();
 			break;
 		case OPERA:
-			driver = WebDriverManager.operadriver().create();
-			//System.setProperty("webdriver.opera.driver", projectPath + "/browserDrivers/operadriver");
-			//driver = new OperaDriver();
+			//driver = WebDriverManager.operadriver().create();
+			System.setProperty("webdriver.opera.driver", projectPath + "/browserDrivers/operadriver");
+			driver = new OperaDriver();
 			break;
 		default:
 			throw new RuntimeException("Cannot find browser name.");

@@ -89,8 +89,8 @@ public class Common_01_Register extends BaseTest{
 		
 		//logout of current account
 		log.info("Register - Step 14: Return to HOME page");
-		//registerPage.clickToContinueButton();
 		
+		//registerPage.clickToContinueButton();
 		homePage = registerPage.clickToContinueButton();
 		log.info("Register - Step 15: Return to HOME page successfully");
 		Assert.assertEquals(homePage.getHomePageURL(), "https://demo.nopcommerce.com/");

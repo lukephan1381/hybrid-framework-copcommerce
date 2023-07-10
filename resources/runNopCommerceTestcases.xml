@@ -14,8 +14,8 @@
 		<parameter name= "adminURL" value ="https://admin-demo.nopcommerce.com/"/>
     	
     	<classes>
-			<!-- <class name = "com.nopcommerce.common.Common_01_Register"/> -->
-			<class name = "com.nopcommerce.users.Level_016_Share_Data_A"/>
+			<class name = "com.nopcommerce.common.Common_01_Register_Cookie"/>
+			<class name = "com.nopcommerce.users.Level_016_Share_Data_C"/>
     	</classes>
   	</test> 
 

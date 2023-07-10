@@ -50,13 +50,12 @@ public class Level_016_Share_Data_C extends BaseTest{
 		loginPage = homePage.clickToLoginLink();
 		
 		log.info("Login - Step 02: Set cookie and reload page");
-		Set<Cookie> cookies = Common_01_Register_Cookie.loggedCookie;
-		for (Cookie cookie : cookies) {
-			driver.manage().addCookie(cookie);
-		}
+		loginPage.setCookies(driver, Common_01_Register_Cookie.loggedCookie);
 		
-		log.info("Login - Step 03: Click to LOGIN button");
-		loginPage.clickToLoginButton();
+		log.info("Login - Step 03: reload page");
+		loginPage.pageRefresh(driver);
+		homePage = PageGeneratorManager.getUserHomePage(driver);
+		homePage.sleepInSecond(3);
 	}
 	
 	@Test

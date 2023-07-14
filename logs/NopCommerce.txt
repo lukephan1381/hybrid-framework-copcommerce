@@ -1,2 +1,3 @@
-[INFO ] [2023-07-10 18:26:16,470] Login - Step 01: Click to LOGIN link
-[INFO ] [2023-07-10 18:26:16,903] Login - Step 02: Input Email and Password
+[INFO ] [2023-07-10 22:18:50,793] Login - Step 01: Click to LOGIN link
+[INFO ] [2023-07-10 22:18:54,449] Login - Step 02: Set cookie and reload page
+[INFO ] [2023-07-10 22:18:57,624] Login - Step 03: reload page

@@ -1,13 +1,11 @@
-package com.nopcommerce.common;
+package com.nopcommerce.users;
 
-import java.util.Set;
-
-import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.Assert;
-import org.testng.annotations.AfterTest;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.Test;
 
 import commons.BaseTest;
 import pageObjects.nopcommerce.PageGeneratorManager;
@@ -20,7 +18,7 @@ import pageObjects.nopcommerce.UserRegisterPageObject;
 import pageObjects.nopcommerce.UserRewardPageObject;
 import pageObjects.nopcommerce.UserSideBarPageObject;
 
-public class Common_01_Register_Cookie extends BaseTest{
+public class Level_017_Custom_Close_Driver extends BaseTest{
 	
 	WebDriver driver;
 	UserHomePageObject homePage;
@@ -31,14 +29,12 @@ public class Common_01_Register_Cookie extends BaseTest{
 	UserRewardPageObject rewardPage;
 	UserProductReviewPageObject productReviewPage;
 	UserSideBarPageObject userSideBar;
-	private String firstName,lastName,emailAddress,password;
-	public static Set<Cookie> loggedCookie;
-	
+	//String osName = System.getProperty("os.name");
+	String emailAddress,password,firstName,lastName;
 	
 	@Parameters({"browser","userURL"})
-	@BeforeTest(description = "Create new common user for all Classes Test")
-	public void Register(String browserName, String userURL) {
-		
+	@BeforeClass
+	public void beforeClass(String browserName, String userURL) {
 		driver = getBrowserDriver(browserName,userURL);
 		homePage = PageGeneratorManager.getUserHomePage(driver);
 		
@@ -54,42 +50,48 @@ public class Common_01_Register_Cookie extends BaseTest{
 		registerPage.inputToFirstNameTextbox(firstName);
 		log.info("Register - Step 04: Input to lastname textbox");
 		registerPage.inputToLastNameTextbox(lastName);
-		log.info("Register - Step 08: Input to email address textbox");
+		log.info("Register - Step 05: Input to email address textbox");
 		registerPage.inputToEmailTextbox(emailAddress);
-		log.info("Register - Step 10: Input to password textbox");
+		log.info("Register - Step 06: Input to password textbox");
 		registerPage.inputToPasswordTextbox(password);
-		log.info("Register - Step 11: Input to confirm password textbox");
+		log.info("Register - Step 07: Input to confirm password textbox");
 		registerPage.inputToConfirmPasswordTextbox(password);
 		
-		log.info("Register - Step 12: Click to REGISTER button");
+		log.info("Register - Step 07: Click to REGISTER button");
 		registerPage.clickToRegisterButton();
 		
-		log.info("Register - Step 13: Verify if register completed");
+		log.info("Register - Step 09: Verify if register completed");
 		Assert.assertEquals(registerPage.getRegisterResultMessage(), "Your registration completed");
 		
-		log.info("Register - Step 14: Return to HOME page");
+		log.info("Register - Step 10: click on CONTINUE button");
 		homePage = registerPage.clickToContinueButton();
 		
-		log.info("Register - Step 15: Return to HOME page successfully");
+		log.info("Register - Step 11: Return to HOME page successfully");
 		Assert.assertEquals(homePage.getHomePageURL(), "https://demo.nopcommerce.com/");
 		
-		log.info("Login - Step 01: Click to LOGIN link");
+		log.info("Login - Step 12: Click to LOGIN link");
 		loginPage = homePage.clickToLoginLink();
 		
-		log.info("Login - Step 02: Input Email and Password");
+		log.info("Login - Step 13: Input Email and Password");
 		loginPage.inputToEmailTextbox(emailAddress);
 		loginPage.inputToPasswordTextbox(password);
 		
-		log.info("Login - Step 03: Click to LOGIN button");
+		log.info("Login - Step 14: Click to LOGIN button");
 		homePage = loginPage.clickToLoginButton();
-		
-		loggedCookie = homePage.getAllCookies(driver);
-		
 	}
 	
-	@AfterTest
+	@Test
+	public void User_01_Register() {
+	}
+	
+	@Test
+	public void User_02_Login() {
+	}
+
+	
+	@AfterClass(alwaysRun=true)
 	public void afterClass() {
-		driver.quit();
+		closeBrowserDriver();
 	}
 	
 

@@ -209,3 +209,15 @@
 [INFO ] [2023-07-10 17:59:47,562] Login - Step 02: Input Email and Password
 [INFO ] [2023-07-10 18:26:16,470] Login - Step 01: Click to LOGIN link
 [INFO ] [2023-07-10 18:26:16,903] Login - Step 02: Input Email and Password
+[INFO ] [2023-07-10 21:46:57,723] Login - Step 01: Click to LOGIN link
+[INFO ] [2023-07-10 21:47:01,134] Login - Step 02: Set cookie and reload page
+[INFO ] [2023-07-10 21:48:53,313] Login - Step 01: Click to LOGIN link
+[INFO ] [2023-07-10 21:48:56,847] Login - Step 02: Set cookie and reload page
+[INFO ] [2023-07-10 21:54:30,239] Login - Step 01: Click to LOGIN link
+[INFO ] [2023-07-10 21:54:33,523] Login - Step 02: Set cookie and reload page
+[INFO ] [2023-07-10 21:55:55,818] Login - Step 01: Click to LOGIN link
+[INFO ] [2023-07-10 21:55:59,694] Login - Step 02: Set cookie and reload page
+[INFO ] [2023-07-10 21:55:59,749] Login - Step 03: reload page
+[INFO ] [2023-07-10 22:18:50,793] Login - Step 01: Click to LOGIN link
+[INFO ] [2023-07-10 22:18:54,449] Login - Step 02: Set cookie and reload page
+[INFO ] [2023-07-10 22:18:57,624] Login - Step 03: reload page

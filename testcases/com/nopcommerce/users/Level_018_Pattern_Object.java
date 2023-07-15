@@ -43,99 +43,96 @@ public class Level_018_Pattern_Object extends BaseTest{
 	
 	@Test
 	public void User_01_Register() {
-		//Click on Register button
 		log.info("Register - Step 01: Navigate to REGISTER page");
 		registerPage = homePage.clickToRegisterButton();
 		
-		//Select gender
 		log.info("Register - Step 02: Click on Male radio button");
-		registerPage.clickToGenderMaleRadio();
+		registerPage.clickToRadioByLabel(driver,"Male");
 		
-		//Input first name & last name
 		log.info("Register - Step 03: Input to firstname textbox");
-		registerPage.inputToFirstNameTextbox("Luke");
+		registerPage.inputToTextboxByID(driver,"FirstName","Luke");
 		log.info("Register - Step 04: Input to lastname textbox");
-		registerPage.inputToLastNameTextbox("Phan");
-		
-		//Select birthday
+		registerPage.inputToTextboxByID(driver,"LastName","Phan");
+
 		log.info("Register - Step 05: Select birthday day");
-		registerPage.selectDayDropdown("28");
+		registerPage.selecToDropdownByName(driver,"DateOfBirthDay","28");
 		log.info("Register - Step 06: Select birthday month");
-		registerPage.selectMonthDropdown("January");
+		registerPage.selecToDropdownByName(driver,"DateOfBirthMonth","April");
 		log.info("Register - Step 07: Select birthday year");
-		registerPage.selectYearDropdown("1991");
+		registerPage.selecToDropdownByName(driver,"DateOfBirthYear","1991");
 		
-		//Input email address
 		log.info("Register - Step 08: Input to email address textbox");
-		registerPage.inputToEmailTextbox(emailAddress);
+		registerPage.inputToTextboxByID(driver,"Email",emailAddress);
 		
-		//Input & confirm password
 		log.info("Register - Step 09: Input to company textbox");
-		registerPage.inputToCompanyTextbox("Marvel");
+		registerPage.inputToTextboxByID(driver,"Company","Marvel");
+		
 		log.info("Register - Step 10: Input to password textbox");
-		registerPage.inputToPasswordTextbox("qqqq1111");
+		registerPage.inputToTextboxByID(driver,"Password","qqqq1111");
+		
 		log.info("Register - Step 11: Input to confirm password textbox");
-		registerPage.inputToConfirmPasswordTextbox("qqqq1111");
+		registerPage.inputToTextboxByID(driver,"ConfirmPassword","qqqq1111");
 		
-		//Click REGISTER button
 		log.info("Register - Step 12: Click to REGISTER button");
-		registerPage.clickToRegisterButton();
+		//registerPage.clickToRegisterButton();
+		registerPage.clickToButtonByText(driver,"Register");
 		
-		//Verify success message
 		log.info("Register - Step 13: Verify if register completed");
 		Assert.assertEquals(registerPage.getRegisterResultMessage(), "Your registration completed");
 		
-		//logout of current account
 		log.info("Register - Step 14: Return to HOME page");
-		//registerPage.clickToContinueButton();
-		
 		homePage = registerPage.clickToContinueButton();
+		
 		log.info("Register - Step 15: Return to HOME page successfully");
 		Assert.assertEquals(homePage.getHomePageURL(), "https://demo.nopcommerce.com/");
 	}
 	
 	@Test
 	public void User_02_Login() {
-		//click on login button
 		log.info("Login - Step 01: Click to LOGIN link");
 		loginPage = homePage.clickToLoginLink();
 		
-		//input Email address & password
 		log.info("Login - Step 02: Input Email and Password");
-		loginPage.inputToEmailTextbox(emailAddress);
-		loginPage.inputToPasswordTextbox("qqqq1111");
+		loginPage.inputToTextboxByID(driver, "Email", emailAddress);
+		loginPage.inputToTextboxByID(driver, "Password", "qqqq1111");
 		
-		//submit login
 		log.info("Login - Step 03: Click to LOGIN button");
-		loginPage.clickToLoginButton();
-		
+		//loginPage.clickToLoginButton();
+		loginPage.clickToButtonByText(driver, "Log in");
 		homePage = PageGeneratorManager.getUserHomePage(driver);
+		
 		log.info("Login - Step 04: Check if Login successfully");
 		Assert.assertTrue(homePage.isMyAccountLinkDisplayed());
-		
+	}
+	
+	@Test
+	public void User_03_Customer_Info() {
 		homePage.clickToMyAccountLink();
-		//customerInfoPage = new CustomerInfoPageObject(driver);
 		customerInfoPage = PageGeneratorManager.getUserCustomerInfoPage(driver);
 		
 		log.info("Login - Step 05: Check if Male radio button is selected");
-		Assert.assertFalse(customerInfoPage.isGenderMaleRadioSelected());
+		Assert.assertTrue(customerInfoPage.isGenderMaleRadioSelected());
 		
 		log.info("Login - Step 06: Check if firstname match registered info");
-		Assert.assertEquals(customerInfoPage.getFirstNameTextboxAttribute("value"), "Luke");
+		Assert.assertEquals(customerInfoPage.getTextBoxValueByID(driver,"FirstName"),"Luke");
 		
 		log.info("Login - Step 07: Check if last match registered info");
-		Assert.assertEquals(customerInfoPage.getLastNameTextboxAttribute("value"), "Phan.");
+		Assert.assertEquals(customerInfoPage.getTextBoxValueByID(driver,"LastName"),"Phan");
 		
 		log.info("Login - Step 08: Check if date of birth match registered info");
-		Assert.assertEquals(customerInfoPage.getDayDropdownSelectedItem(), "28");
-		Assert.assertEquals(customerInfoPage.getMonthDropdownSelectedItem(), "January.");
-		Assert.assertEquals(customerInfoPage.getYearDropdownSelectedItem(), "1991");
+		//Assert.assertEquals(customerInfoPage.getDayDropdownSelectedItem(), "28");
+		//Assert.assertEquals(customerInfoPage.getMonthDropdownSelectedItem(), "April");
+		//Assert.assertEquals(customerInfoPage.getYearDropdownSelectedItem(), "1991");
+		
+		Assert.assertEquals(customerInfoPage.getDropDownSelectedItemByName(driver,"DateOfBirthDay"),"28");
+		Assert.assertEquals(customerInfoPage.getDropDownSelectedItemByName(driver,"DateOfBirthMonth"),"April");
+		Assert.assertEquals(customerInfoPage.getDropDownSelectedItemByName(driver,"DateOfBirthYear"),"1991");
 		
 		log.info("Login - Step 09: Check if email address match registered info");
-		Assert.assertEquals(customerInfoPage.getEmailTextboxAttribute("value"), emailAddress);
+		Assert.assertEquals(customerInfoPage.getTextBoxValueByID(driver,"Email"), emailAddress);
 		
 		log.info("Login - Step 10: Check if company name match registered info");
-		Assert.assertEquals(customerInfoPage.getCompanyTextboxAttribute("value"), "Marvel");
+		Assert.assertEquals(customerInfoPage.getTextBoxValueByID(driver,"Company"), "Marvel");
 	}
 	
 

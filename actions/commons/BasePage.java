@@ -20,6 +20,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import pageUIs.jquery.uploadfile.HomePageUI;
+import pageUIs.nopcommerce.BasePageUI;
 
 public class BasePage {
 	
@@ -210,6 +211,10 @@ public class BasePage {
 		return new Select(getElement(driver, locator)).getFirstSelectedOption().getText();
 	}
 	
+	public String getSelectedItemInDropdown(WebDriver driver, String locator, String...params) {
+		return new Select(getElement(driver, getRestParameter(locator, params))).getFirstSelectedOption().getText();
+	}
+	
 	public Boolean isDropdownMultiple(WebDriver driver, String locator) {
 		return new Select(getElement(driver, locator)).isMultiple();
 	}
@@ -234,6 +239,10 @@ public class BasePage {
 	
 	public String getElementAttribute(WebDriver driver, String locator, String attributeName) {
 		return getElement(driver, locator).getAttribute(attributeName);
+	}
+	
+	public String getElementAttribute(WebDriver driver, String locator, String attributeName, String...params) {
+		return  getElement(driver,getRestParameter(locator, params)).getAttribute(attributeName);
 	}
 	
 	public void getElementCSSValue(WebDriver driver, String locator, String propertyName) {
@@ -484,6 +493,44 @@ public class BasePage {
 	
 	public void waitListElementsPresence(WebDriver driver, String locator) {
 		new WebDriverWait(driver, 15).until(ExpectedConditions.presenceOfAllElementsLocatedBy(getByLocator(locator)));
+	}
+	
+	/* Pattern Object */
+	
+	public void inputToTextboxByID(WebDriver driver, String attributeValue, String textValue) {
+		waitElementToBeVisible(driver, BasePageUI.DYNAMIC_TEXTBOX_BY_ID, attributeValue);
+		sendKeyToElement(driver,BasePageUI.DYNAMIC_TEXTBOX_BY_ID, textValue, attributeValue);
+	}
+	
+
+	public void clickToButtonByText(WebDriver driver, String buttonText) {
+		waitElementToBeVisible(driver, BasePageUI.DYNAMIC_BUTTON_BY_TEXT, buttonText);
+		clickToElement(driver, BasePageUI.DYNAMIC_BUTTON_BY_TEXT, buttonText);
+	}
+	
+	public void selecToDropdownByName(WebDriver driver, String attributeName, String value) {
+		waitElementToBeClickable(driver, BasePageUI.DYNAMIC_DROPDOWN_BY_NAME, attributeName);
+		selectItemInDropdown(driver, BasePageUI.DYNAMIC_DROPDOWN_BY_NAME, value, attributeName);
+	}
+	
+	public void clickToRadioByLabel(WebDriver driver, String labelName) {
+		waitElementToBeClickable(driver, BasePageUI.DYNAMIC_RADIO_BY_LABEL, labelName);
+		checkOnCheckboxOrRadio(driver, BasePageUI.DYNAMIC_RADIO_BY_LABEL, labelName);
+	}
+	
+	public void clickToCheckboxByLabel(WebDriver driver, String labelName) {
+		waitElementToBeClickable(driver, BasePageUI.DYNAMIC_CHECKBOX_BY_LABEL, labelName);
+		checkOnCheckboxOrRadio(driver, BasePageUI.DYNAMIC_CHECKBOX_BY_LABEL, labelName);
+	}
+	
+	public String getTextBoxValueByID(WebDriver driver, String textboxID) {
+		waitElementToBeVisible(driver, BasePageUI.DYNAMIC_TEXTBOX_BY_ID, textboxID);
+		return getElementAttribute(driver, BasePageUI.DYNAMIC_TEXTBOX_BY_ID, "value", textboxID);
+	}
+	
+	public String getDropDownSelectedItemByName(WebDriver driver, String attributeName) {
+		waitElementToBeVisible(driver, BasePageUI.DYNAMIC_DROPDOWN_BY_NAME, attributeName);
+		return getSelectedItemInDropdown(driver, BasePageUI.DYNAMIC_DROPDOWN_BY_NAME, attributeName);
 	}
 
 }

@@ -62,7 +62,6 @@ public class UserCustomerInfoPageObject extends UserSideBarPageObject{
 		waitElementToBeVisible(driver, UserCustomerInfoPageUI.COMPANY_TEXTBOX);
 		return getElementAttribute(driver, UserCustomerInfoPageUI.COMPANY_TEXTBOX, attributeName);
 	}
-
 //	public UserOrdersPageObject openOrderPage() {
 //		waitElementToBeClickable(driver, UserCustomerInfoPageUI.ORDER_LINK_SIDEBAR);
 //		clickToElement(driver, UserCustomerInfoPageUI.ORDER_LINK_SIDEBAR);

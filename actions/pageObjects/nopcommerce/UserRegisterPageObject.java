@@ -105,4 +105,5 @@ public class UserRegisterPageObject extends BasePage {
 		return PageGeneratorManager.getUserHomePage(driver);
 	}
 
+
 }

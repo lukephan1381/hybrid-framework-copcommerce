@@ -221,3 +221,155 @@
 [INFO ] [2023-07-10 22:18:50,793] Login - Step 01: Click to LOGIN link
 [INFO ] [2023-07-10 22:18:54,449] Login - Step 02: Set cookie and reload page
 [INFO ] [2023-07-10 22:18:57,624] Login - Step 03: reload page
+[INFO ] [2023-07-14 19:51:56,490] Register - Step 01: Navigate to REGISTER page
+[INFO ] [2023-07-14 19:51:59,601] Register - Step 02: Click on Male radio button
+[INFO ] [2023-07-14 19:52:00,352] Register - Step 03: Input to firstname textbox
+[INFO ] [2023-07-14 19:52:00,352] Register - Step 04: Input to lastname textbox
+[INFO ] [2023-07-14 19:52:30,559] Login - Step 01: Click to LOGIN link
+[INFO ] [2023-07-14 19:52:36,513] Login - Step 02: Input Email and Password
+[INFO ] [2023-07-14 19:52:38,178] Login - Step 03: Click to LOGIN button
+[INFO ] [2023-07-14 19:52:43,848] Login - Step 04: Check if Login successfully
+[INFO ] [2023-07-14 19:55:41,590] Register - Step 01: Navigate to REGISTER page
+[INFO ] [2023-07-14 19:55:44,796] Register - Step 02: Click on Male radio button
+[INFO ] [2023-07-14 19:55:45,500] Register - Step 03: Input to firstname textbox
+[INFO ] [2023-07-14 19:55:45,500] Register - Step 04: Input to lastname textbox
+[INFO ] [2023-07-14 19:55:46,897] Register - Step 05: Select birthday day
+[INFO ] [2023-07-14 19:55:47,458] Register - Step 06: Select birthday month
+[INFO ] [2023-07-14 19:55:48,982] Register - Step 07: Select birthday year
+[INFO ] [2023-07-14 19:55:49,253] Register - Step 08: Input to email address textbox
+[INFO ] [2023-07-14 19:55:49,731] Register - Step 09: Input to company textbox
+[INFO ] [2023-07-14 19:55:50,477] Register - Step 10: Input to password textbox
+[INFO ] [2023-07-14 19:55:51,088] Register - Step 11: Input to confirm password textbox
+[INFO ] [2023-07-14 19:55:51,520] Register - Step 12: Click to REGISTER button
+[INFO ] [2023-07-14 19:55:55,364] Register - Step 13: Verify if register completed
+[INFO ] [2023-07-14 19:55:55,546] Register - Step 14: Return to HOME page
+[INFO ] [2023-07-14 19:55:56,723] Register - Step 15: Return to HOME page successfully
+[INFO ] [2023-07-14 19:55:56,877] Login - Step 01: Click to LOGIN link
+[INFO ] [2023-07-14 19:55:57,537] Login - Step 02: Input Email and Password
+[INFO ] [2023-07-14 19:55:58,158] Login - Step 03: Click to LOGIN button
+[INFO ] [2023-07-14 19:56:01,439] Login - Step 04: Check if Login successfully
+[INFO ] [2023-07-14 19:56:02,393] Login - Step 05: Check if Male radio button is selected
+[INFO ] [2023-07-14 21:08:11,900] Register - Step 01: Navigate to REGISTER page
+[INFO ] [2023-07-14 21:08:15,191] Register - Step 02: Click on Male radio button
+[INFO ] [2023-07-14 21:08:15,515] Register - Step 03: Input to firstname textbox
+[INFO ] [2023-07-14 21:08:16,534] Register - Step 04: Input to lastname textbox
+[INFO ] [2023-07-14 21:08:17,198] Register - Step 05: Select birthday day
+[INFO ] [2023-07-14 21:08:17,783] Register - Step 06: Select birthday month
+[INFO ] [2023-07-14 21:08:18,117] Register - Step 07: Select birthday year
+[INFO ] [2023-07-14 21:08:22,083] Register - Step 08: Input to email address textbox
+[INFO ] [2023-07-14 21:08:22,780] Register - Step 09: Input to company textbox
+[INFO ] [2023-07-14 21:08:23,334] Register - Step 10: Input to password textbox
+[INFO ] [2023-07-14 21:08:23,765] Register - Step 11: Input to confirm password textbox
+[INFO ] [2023-07-14 21:08:24,132] Register - Step 12: Click to REGISTER button
+[INFO ] [2023-07-14 21:08:28,024] Register - Step 13: Verify if register completed
+[INFO ] [2023-07-14 21:08:28,298] Register - Step 14: Return to HOME page
+[INFO ] [2023-07-14 21:08:29,421] Register - Step 15: Return to HOME page successfully
+[INFO ] [2023-07-14 21:08:29,584] Login - Step 01: Click to LOGIN link
+[INFO ] [2023-07-14 21:08:30,384] Login - Step 02: Input Email and Password
+[INFO ] [2023-07-14 21:08:30,949] Login - Step 03: Click to LOGIN button
+[INFO ] [2023-07-14 21:08:33,579] Login - Step 04: Check if Login successfully
+[INFO ] [2023-07-14 21:08:34,512] Login - Step 05: Check if Male radio button is selected
+[INFO ] [2023-07-14 21:10:30,386] Register - Step 01: Navigate to REGISTER page
+[INFO ] [2023-07-14 21:10:33,673] Register - Step 02: Click on Male radio button
+[INFO ] [2023-07-14 21:10:34,469] Register - Step 03: Input to firstname textbox
+[INFO ] [2023-07-14 21:10:35,314] Register - Step 04: Input to lastname textbox
+[INFO ] [2023-07-14 21:10:35,872] Register - Step 05: Select birthday day
+[INFO ] [2023-07-14 21:10:37,128] Register - Step 06: Select birthday month
+[INFO ] [2023-07-14 21:10:37,976] Register - Step 07: Select birthday year
+[INFO ] [2023-07-14 21:10:40,028] Register - Step 08: Input to email address textbox
+[INFO ] [2023-07-14 21:10:40,762] Register - Step 09: Input to company textbox
+[INFO ] [2023-07-14 21:10:41,283] Register - Step 10: Input to password textbox
+[INFO ] [2023-07-14 21:10:41,869] Register - Step 11: Input to confirm password textbox
+[INFO ] [2023-07-14 21:10:42,581] Register - Step 12: Click to REGISTER button
+[INFO ] [2023-07-14 21:10:46,739] Register - Step 13: Verify if register completed
+[INFO ] [2023-07-14 21:10:47,292] Register - Step 14: Return to HOME page
+[INFO ] [2023-07-14 21:10:49,382] Register - Step 15: Return to HOME page successfully
+[INFO ] [2023-07-14 21:10:49,547] Login - Step 01: Click to LOGIN link
+[INFO ] [2023-07-14 21:10:50,316] Login - Step 02: Input Email and Password
+[INFO ] [2023-07-14 21:10:51,391] Login - Step 03: Click to LOGIN button
+[INFO ] [2023-07-14 21:10:54,944] Login - Step 04: Check if Login successfully
+[INFO ] [2023-07-14 21:10:56,263] Login - Step 05: Check if Male radio button is selected
+[INFO ] [2023-07-14 21:10:56,387] Login - Step 06: Check if firstname match registered info
+[INFO ] [2023-07-14 21:10:56,552] Login - Step 07: Check if last match registered info
+[INFO ] [2023-07-14 21:12:07,261] Register - Step 01: Navigate to REGISTER page
+[INFO ] [2023-07-14 21:12:10,451] Register - Step 02: Click on Male radio button
+[INFO ] [2023-07-14 21:12:11,322] Register - Step 03: Input to firstname textbox
+[INFO ] [2023-07-14 21:12:12,230] Register - Step 04: Input to lastname textbox
+[INFO ] [2023-07-14 21:12:12,839] Register - Step 05: Select birthday day
+[INFO ] [2023-07-14 21:12:14,006] Register - Step 06: Select birthday month
+[INFO ] [2023-07-14 21:12:15,147] Register - Step 07: Select birthday year
+[INFO ] [2023-07-14 21:12:17,146] Register - Step 08: Input to email address textbox
+[INFO ] [2023-07-14 21:12:17,847] Register - Step 09: Input to company textbox
+[INFO ] [2023-07-14 21:12:18,329] Register - Step 10: Input to password textbox
+[INFO ] [2023-07-14 21:12:18,872] Register - Step 11: Input to confirm password textbox
+[INFO ] [2023-07-14 21:12:19,517] Register - Step 12: Click to REGISTER button
+[INFO ] [2023-07-14 21:12:23,844] Register - Step 13: Verify if register completed
+[INFO ] [2023-07-14 21:12:23,991] Register - Step 14: Return to HOME page
+[INFO ] [2023-07-14 21:12:25,385] Register - Step 15: Return to HOME page successfully
+[INFO ] [2023-07-14 21:12:25,533] Login - Step 01: Click to LOGIN link
+[INFO ] [2023-07-14 21:12:26,249] Login - Step 02: Input Email and Password
+[INFO ] [2023-07-14 21:12:26,801] Login - Step 03: Click to LOGIN button
+[INFO ] [2023-07-14 21:12:29,786] Login - Step 04: Check if Login successfully
+[INFO ] [2023-07-14 21:12:30,536] Login - Step 05: Check if Male radio button is selected
+[INFO ] [2023-07-14 21:12:30,676] Login - Step 06: Check if firstname match registered info
+[INFO ] [2023-07-14 21:12:30,741] Login - Step 07: Check if last match registered info
+[INFO ] [2023-07-14 21:12:30,805] Login - Step 08: Check if date of birth match registered info
+[INFO ] [2023-07-15 14:28:28,491] Register - Step 01: Navigate to REGISTER page
+[INFO ] [2023-07-15 14:28:30,982] Register - Step 02: Click on Male radio button
+[INFO ] [2023-07-15 14:28:31,773] Register - Step 03: Input to firstname textbox
+[INFO ] [2023-07-15 14:28:32,585] Register - Step 04: Input to lastname textbox
+[INFO ] [2023-07-15 14:28:33,124] Register - Step 05: Select birthday day
+[INFO ] [2023-07-15 14:29:03,416] Login - Step 01: Click to LOGIN link
+[INFO ] [2023-07-15 14:29:08,031] Login - Step 02: Input Email and Password
+[INFO ] [2023-07-15 14:29:08,900] Login - Step 03: Click to LOGIN button
+[INFO ] [2023-07-15 14:29:11,230] Login - Step 04: Check if Login successfully
+[INFO ] [2023-07-15 14:33:05,970] Register - Step 01: Navigate to REGISTER page
+[INFO ] [2023-07-15 14:33:09,326] Register - Step 02: Click on Male radio button
+[INFO ] [2023-07-15 14:33:10,158] Register - Step 03: Input to firstname textbox
+[INFO ] [2023-07-15 14:33:11,057] Register - Step 04: Input to lastname textbox
+[INFO ] [2023-07-15 14:33:11,656] Register - Step 05: Select birthday day
+[INFO ] [2023-07-15 14:33:12,282] Register - Step 06: Select birthday month
+[INFO ] [2023-07-15 14:33:12,609] Register - Step 07: Select birthday year
+[INFO ] [2023-07-15 14:33:12,813] Register - Step 08: Input to email address textbox
+[INFO ] [2023-07-15 14:33:14,369] Register - Step 09: Input to company textbox
+[INFO ] [2023-07-15 14:33:15,671] Register - Step 10: Input to password textbox
+[INFO ] [2023-07-15 14:33:16,105] Register - Step 11: Input to confirm password textbox
+[INFO ] [2023-07-15 14:33:16,477] Register - Step 12: Click to REGISTER button
+[INFO ] [2023-07-15 14:33:20,518] Register - Step 13: Verify if register completed
+[INFO ] [2023-07-15 14:33:21,015] Register - Step 14: Return to HOME page
+[INFO ] [2023-07-15 14:33:23,419] Register - Step 15: Return to HOME page successfully
+[INFO ] [2023-07-15 14:33:23,573] Login - Step 01: Click to LOGIN link
+[INFO ] [2023-07-15 14:33:24,355] Login - Step 02: Input Email and Password
+[INFO ] [2023-07-15 14:33:25,429] Login - Step 03: Click to LOGIN button
+[INFO ] [2023-07-15 14:33:28,434] Login - Step 04: Check if Login successfully
+[INFO ] [2023-07-15 14:33:29,792] Login - Step 05: Check if Male radio button is selected
+[INFO ] [2023-07-15 14:33:30,165] Login - Step 06: Check if firstname match registered info
+[INFO ] [2023-07-15 14:33:30,232] Login - Step 07: Check if last match registered info
+[INFO ] [2023-07-15 14:33:30,309] Login - Step 08: Check if date of birth match registered info
+[INFO ] [2023-07-15 14:33:32,156] Login - Step 09: Check if email address match registered info
+[INFO ] [2023-07-15 14:33:32,568] Login - Step 10: Check if company name match registered info
+[INFO ] [2023-07-15 14:58:02,475] Register - Step 01: Navigate to REGISTER page
+[INFO ] [2023-07-15 14:58:05,782] Register - Step 02: Click on Male radio button
+[INFO ] [2023-07-15 14:58:06,611] Register - Step 03: Input to firstname textbox
+[INFO ] [2023-07-15 14:58:07,511] Register - Step 04: Input to lastname textbox
+[INFO ] [2023-07-15 14:58:08,134] Register - Step 05: Select birthday day
+[INFO ] [2023-07-15 14:58:09,496] Register - Step 06: Select birthday month
+[INFO ] [2023-07-15 14:58:10,566] Register - Step 07: Select birthday year
+[INFO ] [2023-07-15 14:58:10,821] Register - Step 08: Input to email address textbox
+[INFO ] [2023-07-15 14:58:11,314] Register - Step 09: Input to company textbox
+[INFO ] [2023-07-15 14:58:12,291] Register - Step 10: Input to password textbox
+[INFO ] [2023-07-15 14:58:12,802] Register - Step 11: Input to confirm password textbox
+[INFO ] [2023-07-15 14:58:13,293] Register - Step 12: Click to REGISTER button
+[INFO ] [2023-07-15 14:58:17,255] Register - Step 13: Verify if register completed
+[INFO ] [2023-07-15 14:58:17,515] Register - Step 14: Return to HOME page
+[INFO ] [2023-07-15 14:58:18,766] Register - Step 15: Return to HOME page successfully
+[INFO ] [2023-07-15 14:58:18,934] Login - Step 01: Click to LOGIN link
+[INFO ] [2023-07-15 14:58:19,775] Login - Step 02: Input Email and Password
+[INFO ] [2023-07-15 14:58:20,290] Login - Step 03: Click to LOGIN button
+[INFO ] [2023-07-15 14:58:23,195] Login - Step 04: Check if Login successfully
+[INFO ] [2023-07-15 14:58:24,107] Login - Step 05: Check if Male radio button is selected
+[INFO ] [2023-07-15 14:58:24,236] Login - Step 06: Check if firstname match registered info
+[INFO ] [2023-07-15 14:58:24,348] Login - Step 07: Check if last match registered info
+[INFO ] [2023-07-15 14:58:24,484] Login - Step 08: Check if date of birth match registered info
+[INFO ] [2023-07-15 14:58:26,352] Login - Step 09: Check if email address match registered info
+[INFO ] [2023-07-15 14:58:26,481] Login - Step 10: Check if company name match registered info

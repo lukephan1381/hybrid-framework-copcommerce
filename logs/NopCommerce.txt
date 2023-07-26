@@ -1,3 +1,25 @@
-[INFO ] [2023-07-10 22:18:50,793] Login - Step 01: Click to LOGIN link
-[INFO ] [2023-07-10 22:18:54,449] Login - Step 02: Set cookie and reload page
-[INFO ] [2023-07-10 22:18:57,624] Login - Step 03: reload page
+[INFO ] [2023-07-15 14:58:02,475] Register - Step 01: Navigate to REGISTER page
+[INFO ] [2023-07-15 14:58:05,782] Register - Step 02: Click on Male radio button
+[INFO ] [2023-07-15 14:58:06,611] Register - Step 03: Input to firstname textbox
+[INFO ] [2023-07-15 14:58:07,511] Register - Step 04: Input to lastname textbox
+[INFO ] [2023-07-15 14:58:08,134] Register - Step 05: Select birthday day
+[INFO ] [2023-07-15 14:58:09,496] Register - Step 06: Select birthday month
+[INFO ] [2023-07-15 14:58:10,566] Register - Step 07: Select birthday year
+[INFO ] [2023-07-15 14:58:10,821] Register - Step 08: Input to email address textbox
+[INFO ] [2023-07-15 14:58:11,314] Register - Step 09: Input to company textbox
+[INFO ] [2023-07-15 14:58:12,291] Register - Step 10: Input to password textbox
+[INFO ] [2023-07-15 14:58:12,802] Register - Step 11: Input to confirm password textbox
+[INFO ] [2023-07-15 14:58:13,293] Register - Step 12: Click to REGISTER button
+[INFO ] [2023-07-15 14:58:17,255] Register - Step 13: Verify if register completed
+[INFO ] [2023-07-15 14:58:17,515] Register - Step 14: Return to HOME page
+[INFO ] [2023-07-15 14:58:18,766] Register - Step 15: Return to HOME page successfully
+[INFO ] [2023-07-15 14:58:18,934] Login - Step 01: Click to LOGIN link
+[INFO ] [2023-07-15 14:58:19,775] Login - Step 02: Input Email and Password
+[INFO ] [2023-07-15 14:58:20,290] Login - Step 03: Click to LOGIN button
+[INFO ] [2023-07-15 14:58:23,195] Login - Step 04: Check if Login successfully
+[INFO ] [2023-07-15 14:58:24,107] Login - Step 05: Check if Male radio button is selected
+[INFO ] [2023-07-15 14:58:24,236] Login - Step 06: Check if firstname match registered info
+[INFO ] [2023-07-15 14:58:24,348] Login - Step 07: Check if last match registered info
+[INFO ] [2023-07-15 14:58:24,484] Login - Step 08: Check if date of birth match registered info
+[INFO ] [2023-07-15 14:58:26,352] Login - Step 09: Check if email address match registered info
+[INFO ] [2023-07-15 14:58:26,481] Login - Step 10: Check if company name match registered info

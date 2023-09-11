@@ -42,11 +42,20 @@ public class User_002_Login extends BaseTest {
 	}
 	
 	@Test
-	public void Login_003_Empty_Password() {
+	public void Login_003_Not_Registered_Email() {
+		loginPage = homePage.clickToLoginLink();
+		loginPage.inputToEmailTextbox("123@123.123");
+		loginPage.inputToPasswordTextbox("qqqq1111");
+		loginPage.clickToButtonByText(driver, "Log in");
+		Assert.assertEquals(loginPage.getErrorMessageEmptyPassword(), "Login was unsuccessful. Please correct the errors and try again.No customer account found");
+	}
+	
+	@Test
+	public void Login_004_Empty_Password() {
 		loginPage = homePage.clickToLoginLink();
 		loginPage.inputToEmailTextbox(emailAddress);
 		loginPage.clickToButtonByText(driver, "Log in");
-		Assert.assertEquals(loginPage.getErrorMessageEmptyPassword(), "Wrong email");
+		Assert.assertEquals(loginPage.getErrorMessageEmptyPassword(), "Login was unsuccessful. Please correct the errors and try again.The credentials provided are incorrect");
 	}
 	
 	@Test
@@ -55,7 +64,7 @@ public class User_002_Login extends BaseTest {
 		loginPage.inputToEmailTextbox(emailAddress);
 		loginPage.inputToPasswordTextbox("123123123");
 		loginPage.clickToButtonByText(driver, "Log in");
-		Assert.assertEquals(loginPage.getErrorMessageIncorrectPassword(), "Wrong email");
+		Assert.assertEquals(loginPage.getErrorMessageIncorrectPassword(), "Login was unsuccessful. Please correct the errors and try again.The credentials provided are incorrect");
 	}
 	
 	@Test

@@ -18,6 +18,7 @@ public class User_001_Register extends BaseTest{
 	@BeforeClass
 	public void beforeClass(String browserName, String userURL) {
 		emailAddress = "lukephan" + generateRandomNumber() + "@auto.vn";
+		password = "qqqq1111";
 		driver = getBrowserDriver(browserName,userURL);
 		homePage = PageGeneratorManager.getUserHomePage(driver);
 	}
@@ -128,7 +129,7 @@ public class User_001_Register extends BaseTest{
 		registerPage.inputToEmailTextbox(emailAddress);
 				
 		//Input & confirm password
-		registerPage.inputToPasswordTextbox("qqqq1111");
+		registerPage.inputToPasswordTextbox(password);
 		registerPage.inputToConfirmPasswordTextbox("1111qqqq");
 		Assert.assertEquals(registerPage.getErrorMessagePasswordNotMatch(), "The password and confirmation password do not match.");
 	}
@@ -141,5 +142,5 @@ public class User_001_Register extends BaseTest{
 	WebDriver driver;
 	UserHomePageObject homePage;
 	UserRegisterPageObject registerPage;
-	String emailAddress;
+	String emailAddress,password;
 }

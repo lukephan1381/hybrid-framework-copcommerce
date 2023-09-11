@@ -2,7 +2,9 @@ package pageObjects.nopcommerce;
 
 import org.openqa.selenium.WebDriver;
 
+import io.qameta.allure.Step;
 import pageUIs.nopcommerce.UserCustomerInfoPageUI;
+import pageUIs.nopcommerce.UserRegisterPageUI;
 
 public class UserCustomerInfoPageObject extends UserSideBarPageObject{
 
@@ -67,5 +69,59 @@ public class UserCustomerInfoPageObject extends UserSideBarPageObject{
 //		clickToElement(driver, UserCustomerInfoPageUI.ORDER_LINK_SIDEBAR);
 //		return PageGeneratorManager.getUserOrdersPage(driver);
 //	}
+	
+	@Step("Select Male gender")
+	public void clickToGenderMaleRadio() {
+		waitElementToBeClickable(driver, UserCustomerInfoPageUI.GENDER_MALE_RADIO);
+		checkOnCheckboxOrRadio(driver, UserCustomerInfoPageUI.GENDER_MALE_RADIO);
+	}
+	
+	@Step("Select Female gender")
+	public void clickToGenderFemaleRadio() {
+		waitElementToBeClickable(driver, UserCustomerInfoPageUI.GENDER_FEMALE_RADIO);
+		checkOnCheckboxOrRadio(driver, UserCustomerInfoPageUI.GENDER_FEMALE_RADIO);
+	}
+	
+	@Step("Input to Firstname textbox with value {0}")
+	public void inputToFirstNameTextbox(String firstName) {
+		waitElementToBeVisible(driver, UserCustomerInfoPageUI.FIRSTNAME_TEXTBOX);
+		sendKeyToElement(driver, UserCustomerInfoPageUI.FIRSTNAME_TEXTBOX, firstName);
+	}
+	
+	@Step("Input to Lastname textbox with value {0}")
+	public void inputToLastNameTextbox(String lastName) {
+		waitElementToBeVisible(driver, UserCustomerInfoPageUI.LASTNAME_TEXTBOX);
+		sendKeyToElement(driver, UserCustomerInfoPageUI.LASTNAME_TEXTBOX, lastName);
+	}
+
+	@Step("Select Day dropdown with value {0}")
+	public void selectDayDropdown(String textValue) {
+		waitElementToBeVisible(driver, UserCustomerInfoPageUI.DAY_DROPDOWN);
+		selectItemInDropdown(driver, UserCustomerInfoPageUI.DAY_DROPDOWN, textValue);
+	}
+	
+	@Step("Select Month dropdown with value {0}")
+	public void selectMonthDropdown(String textValue) {
+		waitElementToBeVisible(driver, UserCustomerInfoPageUI.MONTH_DROPDOWN);
+		selectItemInDropdown(driver, UserCustomerInfoPageUI.MONTH_DROPDOWN, textValue);
+	}
+
+	@Step("Select Year dropdown with value {0}")	
+	public void selectYearDropdown(String textValue) {
+		waitElementToBeVisible(driver, UserCustomerInfoPageUI.YEAR_DROPDOWN);
+		selectItemInDropdown(driver, UserCustomerInfoPageUI.YEAR_DROPDOWN, textValue);
+	}
+
+	@Step("Input to Email Address textbox with value {0}")
+	public void inputToEmailTextbox(String emailAddress) {
+		waitElementToBeVisible(driver, UserCustomerInfoPageUI.EMAIL_TEXTBOX);
+		sendKeyToElement(driver, UserCustomerInfoPageUI.EMAIL_TEXTBOX, emailAddress);
+	}
+
+	@Step("Input to Company textbox with value {0}")
+	public void inputToCompanyTextbox(String companyName) {
+		waitElementToBeVisible(driver, UserCustomerInfoPageUI.COMPANY_TEXTBOX);
+		sendKeyToElement(driver, UserCustomerInfoPageUI.COMPANY_TEXTBOX, companyName);
+	}
 
 }

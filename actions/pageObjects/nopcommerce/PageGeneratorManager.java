@@ -40,4 +40,9 @@ public class PageGeneratorManager {
 		// TODO Auto-generated method stub
 		return new AdminDashboardPageObject(driver);
 	}
+
+	public static UserAddressPageObject getUserAddressPage(WebDriver driver) {
+		// TODO Auto-generated method stub
+		return new UserAddressPageObject(driver);
+	}
 }

@@ -104,6 +104,60 @@ public class UserRegisterPageObject extends BasePage {
 		clickToElement(driver, UserRegisterPageUI.CONTINUE_BUTTON);
 		return PageGeneratorManager.getUserHomePage(driver);
 	}
+	
+	@Step("Get empty firstname error message")
+	public String getErrorMessageEmptyFirstname() {
+		waitElementToBeVisible(driver, UserRegisterPageUI.FIRSTNAME_EMPTY_ERROR_MESSAGE);
+		return getElement(driver,UserRegisterPageUI.FIRSTNAME_EMPTY_ERROR_MESSAGE).getText();
+	}
+	
+	@Step("Get empty lastname error message")
+	public String getErrorMessageEmptyLastname() {
+		waitElementToBeVisible(driver, UserRegisterPageUI.LASTNAME_EMPTY_ERROR_MESSAGE);
+		return getElement(driver,UserRegisterPageUI.LASTNAME_EMPTY_ERROR_MESSAGE).getText();
+	}
+
+	@Step("Get empty Email error message")	
+	public String getErrorMessageEmptyEmail() {
+		waitElementToBeVisible(driver, UserRegisterPageUI.EMAIL_EMPTY_ERROR_MESSAGE);
+		return getElement(driver,UserRegisterPageUI.EMAIL_EMPTY_ERROR_MESSAGE).getText();
+	}
+
+	@Step("Get empty password error message")
+	public String getErrorMessageEmptyPassword() {
+		waitElementToBeVisible(driver, UserRegisterPageUI.PASSWORD_EMPTY_ERROR_MESSAGE);
+		return getElement(driver,UserRegisterPageUI.PASSWORD_EMPTY_ERROR_MESSAGE).getText();
+	}
+
+	@Step("Get empty confirm password error message")
+	public String getErrorMessageEmptyConfirmPassword() {
+		waitElementToBeVisible(driver, UserRegisterPageUI.PASSWORD_CONFIRM_EMPTY_ERROR_MESSAGE);
+		return getElement(driver,UserRegisterPageUI.PASSWORD_CONFIRM_EMPTY_ERROR_MESSAGE).getText();
+	}
+	
+	@Step("Get wrong email error message")
+	public String getErrorMessageWrongEmail() {
+		waitElementToBeVisible(driver, UserRegisterPageUI.EMAIL_WRONG_ERROR_MESSAGE);
+		return getElement(driver,UserRegisterPageUI.EMAIL_WRONG_ERROR_MESSAGE).getText();
+	}
+	
+	@Step("Get exist email error message")
+	public String getErrorMessageExistEmail() {
+		waitElementToBeVisible(driver, UserRegisterPageUI.EMAIL_EXIST_ERROR_MESSAGE);
+		return getElement(driver,UserRegisterPageUI.EMAIL_EXIST_ERROR_MESSAGE).getText();
+		
+	}
+	
+	@Step("Get at least 6 characters password error message")
+	public String getErrorMessageAtLeast6CharPassword() {
+		waitElementToBeVisible(driver, UserRegisterPageUI.PASSWORD_AT_LEAST_SIX_CHAR_ERROR_MESSAGE);
+		return getElement(driver, UserRegisterPageUI.PASSWORD_AT_LEAST_SIX_CHAR_ERROR_MESSAGE).getText();
+	}
+
+	public String getErrorMessagePasswordNotMatch() {
+		waitElementToBeVisible(driver, UserRegisterPageUI.PASSWORD_NOT_MATCH_ERROR_MESSAGE);
+		return getElement(driver, UserRegisterPageUI.PASSWORD_NOT_MATCH_ERROR_MESSAGE).getText();
+	}
 
 
 }

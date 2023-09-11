@@ -32,4 +32,24 @@ public class UserLoginPageObject extends BasePage {
 		return PageGeneratorManager.getUserHomePage(driver);
 	}
 
+	public String getErrorMessageEmptyEmail() {
+		waitElementToBeVisible(driver, UserLoginPageUI.EMAIL_EMPTY_ERROR_MESSAGE);
+		return getElement(driver, UserLoginPageUI.EMAIL_EMPTY_ERROR_MESSAGE).getText();
+	}
+
+	public String getErrorMessageWrongEmail() {
+		waitElementToBeVisible(driver, UserLoginPageUI.EMAIL_WRONG_ERROR_MESSAGE);
+		return getElement(driver, UserLoginPageUI.EMAIL_WRONG_ERROR_MESSAGE).getText();
+	}
+
+	public String getErrorMessageEmptyPassword() {
+		waitElementToBeVisible(driver, UserLoginPageUI.PASSWORD_EMPTY_ERROR_MESSAGE);
+		return getElement(driver, UserLoginPageUI.PASSWORD_EMPTY_ERROR_MESSAGE).getText();
+	}
+
+	public String getErrorMessageIncorrectPassword() {
+		waitElementToBeVisible(driver, UserLoginPageUI.PASSWORD_INCORRECT_ERROR_MESSAGE);
+		return getElement(driver, UserLoginPageUI.PASSWORD_INCORRECT_ERROR_MESSAGE).getText();
+	}
+
 }

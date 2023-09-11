@@ -15,7 +15,7 @@
     	
     	<classes>
 			<!-- <class name = "com.nopcommerce.common.Common_01_Register_Cookie"/> -->
-			<class name = "com.nopcommerce.users.Level_018_Pattern_Object"/>
+			<class name = "com.nopcommerce.users.User_001_Register"/>
     	</classes>
   	</test> 
 

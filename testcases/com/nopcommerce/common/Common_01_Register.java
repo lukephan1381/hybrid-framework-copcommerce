@@ -19,20 +19,6 @@ import pageObjects.nopcommerce.UserSideBarPageObject;
 
 public class Common_01_Register extends BaseTest{
 	
-	WebDriver driver;
-	UserHomePageObject homePage;
-	UserRegisterPageObject registerPage;
-	UserLoginPageObject loginPage;
-	UserCustomerInfoPageObject customerInfoPage;
-	UserOrdersPageObject orderPage;
-	UserRewardPageObject rewardPage;
-	UserProductReviewPageObject productReviewPage;
-	UserSideBarPageObject userSideBar;
-	//String osName = System.getProperty("os.name");
-	public static String emailAddress,password;
-	String firstName,lastName;
-	
-	
 	@Parameters({"browser","userURL"})
 	@BeforeTest(description = "Create new common user for all Classes Test")
 	public void Register(String browserName, String userURL) {
@@ -101,6 +87,16 @@ public class Common_01_Register extends BaseTest{
 		driver.quit();
 	}
 	
-
+	WebDriver driver;
+	UserHomePageObject homePage;
+	UserRegisterPageObject registerPage;
+	UserLoginPageObject loginPage;
+	UserCustomerInfoPageObject customerInfoPage;
+	UserOrdersPageObject orderPage;
+	UserRewardPageObject rewardPage;
+	UserProductReviewPageObject productReviewPage;
+	UserSideBarPageObject userSideBar;
+	public static String emailAddress,password;
+	String firstName,lastName;
 	
 }

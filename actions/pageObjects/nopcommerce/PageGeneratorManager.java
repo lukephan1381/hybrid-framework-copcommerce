@@ -45,4 +45,9 @@ public class PageGeneratorManager {
 		// TODO Auto-generated method stub
 		return new UserAddressPageObject(driver);
 	}
+
+	public static UserPasswordPageObject getUserPasswordPage(WebDriver driver) {
+		// TODO Auto-generated method stub
+		return new UserPasswordPageObject(driver);
+	}
 }

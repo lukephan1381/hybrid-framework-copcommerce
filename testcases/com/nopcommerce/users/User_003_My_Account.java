@@ -15,6 +15,7 @@ import pageObjects.nopcommerce.UserAddressPageObject;
 import pageObjects.nopcommerce.UserCustomerInfoPageObject;
 import pageObjects.nopcommerce.UserHomePageObject;
 import pageObjects.nopcommerce.UserLoginPageObject;
+import pageObjects.nopcommerce.UserPasswordPageObject;
 
 public class User_003_My_Account extends BaseTest{
 	@Parameters({"browser","userURL"})
@@ -62,11 +63,20 @@ public class User_003_My_Account extends BaseTest{
 		addressPage.inputToZipPostalCodeTextbox("550000");
 		addressPage.inputToPhoneNumberTextbox("0123456789");
 		addressPage.inputToFaxNumberTextbox("9876543210");
+		addressPage.clickToSaveButton();
+		Assert.assertEquals(addressPage.getAddressTitle(), "Automation FC");
 	}
 	
 	@Test
 	public void MyAccount_003_Change_Password() {
-		
+		customerInfoPage.openSideBarPageByPageName("Change password");
+		passwordPage = PageGeneratorManager.getUserPasswordPage(driver);
+		passwordPage.inputToOldPasswordTextbox();
+		passwordPage.inputToNewPasswordTextbox();
+		passwordPage.inputToConfirmPasswordTextbox();
+		passwordPage.clickToChangePasswordButton();
+		////div[@class='bar-notification success']/p
+		Assert.assertEquals(passwordPage.getChangePasswordSuccessNotif(),"Password was changed");
 	}
 	
 	@Test
@@ -84,4 +94,5 @@ public class User_003_My_Account extends BaseTest{
 	UserLoginPageObject loginPage;
 	UserCustomerInfoPageObject customerInfoPage;
 	UserAddressPageObject addressPage;
+	UserPasswordPageObject passwordPage;
 }

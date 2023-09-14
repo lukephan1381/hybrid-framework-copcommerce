@@ -13,6 +13,7 @@ import commons.BaseTest;
 import pageObjects.nopcommerce.PageGeneratorManager;
 import pageObjects.nopcommerce.UserAddressPageObject;
 import pageObjects.nopcommerce.UserCustomerInfoPageObject;
+import pageObjects.nopcommerce.UserHeaderPageObject;
 import pageObjects.nopcommerce.UserHomePageObject;
 import pageObjects.nopcommerce.UserLoginPageObject;
 import pageObjects.nopcommerce.UserPasswordPageObject;
@@ -24,9 +25,13 @@ public class User_003_My_Account extends BaseTest{
 		driver = getBrowserDriver(browser, userURL);
 		homePage = PageGeneratorManager.getUserHomePage(driver);
 		
+		emailAddress = Common_01_Register.emailAddress;
+		currentPassword = Common_01_Register.password;
+		newPassword = "qqqqqqqq";
+		
 		loginPage = homePage.clickToLoginLink();
-		loginPage.inputToEmailTextbox(Common_01_Register.emailAddress);
-		loginPage.inputToPasswordTextbox(Common_01_Register.password);
+		loginPage.inputToEmailTextbox(emailAddress);
+		loginPage.inputToPasswordTextbox(currentPassword);
 		loginPage.clickToButtonByText(driver, "Log in");
 		homePage = PageGeneratorManager.getUserHomePage(driver);
 		Assert.assertTrue(homePage.isMyAccountLinkDisplayed());
@@ -71,17 +76,32 @@ public class User_003_My_Account extends BaseTest{
 	public void MyAccount_003_Change_Password() {
 		customerInfoPage.openSideBarPageByPageName("Change password");
 		passwordPage = PageGeneratorManager.getUserPasswordPage(driver);
-		passwordPage.inputToOldPasswordTextbox();
-		passwordPage.inputToNewPasswordTextbox();
-		passwordPage.inputToConfirmPasswordTextbox();
+		passwordPage.inputToOldPasswordTextbox(currentPassword);
+		passwordPage.inputToNewPasswordTextbox(newPassword);
+		passwordPage.inputToConfirmPasswordTextbox(newPassword);
 		passwordPage.clickToChangePasswordButton();
 		////div[@class='bar-notification success']/p
 		Assert.assertEquals(passwordPage.getChangePasswordSuccessNotif(),"Password was changed");
+		
+		passwordPage.clickToCloseNotificationButton();
+		homePage = passwordPage.clickToLogoutLink();
+
+		loginPage = homePage.clickToLoginLink();
+		loginPage.inputToEmailTextbox(emailAddress);
+		loginPage.inputToPasswordTextbox(currentPassword);
+		loginPage.clickToButtonByText(driver, "Log in");
+		Assert.assertEquals(loginPage.getErrorMessageIncorrectPassword(), "Login was unsuccessful. Please correct the errors and try again.The credentials provided are incorrect");
+		
+		loginPage.inputToPasswordTextbox(newPassword);
+		loginPage.clickToButtonByText(driver, "Log in");
+		homePage = PageGeneratorManager.getUserHomePage(driver);
+		Assert.assertTrue(homePage.isMyAccountLinkDisplayed());
 	}
 	
 	@Test
 	public void MyAccount_004_Review_Product() {
-		
+		headerPage = PageGeneratorManager.getUserHeaderPageObject(driver);
+		headerPage.openHeaderPageByPageName("Computers ");
 	}
 	
 	@AfterClass
@@ -90,9 +110,11 @@ public class User_003_My_Account extends BaseTest{
 	}
 	
 	WebDriver driver;
+	String emailAddress,currentPassword,newPassword;
 	UserHomePageObject homePage;
 	UserLoginPageObject loginPage;
 	UserCustomerInfoPageObject customerInfoPage;
 	UserAddressPageObject addressPage;
 	UserPasswordPageObject passwordPage;
+	UserHeaderPageObject headerPage;
 }

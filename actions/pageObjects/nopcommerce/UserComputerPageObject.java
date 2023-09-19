@@ -9,4 +9,9 @@ public class UserComputerPageObject extends UserHeaderPageObject{
 		super(driver);
 		this.driver = driver;
 	}
+
+	public void clickToSubCategoryByName(String string) {
+		// TODO Auto-generated method stub
+		
+	}
 }

@@ -12,6 +12,7 @@ import com.nopcommerce.common.Common_01_Register;
 import commons.BaseTest;
 import pageObjects.nopcommerce.PageGeneratorManager;
 import pageObjects.nopcommerce.UserAddressPageObject;
+import pageObjects.nopcommerce.UserComputerPageObject;
 import pageObjects.nopcommerce.UserCustomerInfoPageObject;
 import pageObjects.nopcommerce.UserHeaderPageObject;
 import pageObjects.nopcommerce.UserHomePageObject;
@@ -102,6 +103,13 @@ public class User_003_My_Account extends BaseTest{
 	public void MyAccount_004_Review_Product() {
 		headerPage = PageGeneratorManager.getUserHeaderPageObject(driver);
 		headerPage.openHeaderPageByPageName("Computers ");
+		computerPage = PageGeneratorManager.getUserComputerPageObject(driver);
+		
+		////div[@class='sub-category-item']//a[text()=' Desktops ']
+		computerPage.clickToSubCategoryByName(" Desktops ");
+		////h2[@class='product-title']//a[text()='Build your own computer']
+		computerPage.clickToProductByName();
+		computerPage.clickToAddYourReviewLink();
 	}
 	
 	@AfterClass
@@ -117,4 +125,5 @@ public class User_003_My_Account extends BaseTest{
 	UserAddressPageObject addressPage;
 	UserPasswordPageObject passwordPage;
 	UserHeaderPageObject headerPage;
+	UserComputerPageObject computerPage;
 }

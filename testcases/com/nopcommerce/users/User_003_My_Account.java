@@ -18,6 +18,8 @@ import pageObjects.nopcommerce.UserHeaderPageObject;
 import pageObjects.nopcommerce.UserHomePageObject;
 import pageObjects.nopcommerce.UserLoginPageObject;
 import pageObjects.nopcommerce.UserPasswordPageObject;
+import pageObjects.nopcommerce.UserProductReviewPageObject;
+import pageObjects.nopcommerce.UserReviewProductPageObject;
 
 public class User_003_My_Account extends BaseTest{
 	@Parameters({"browser","userURL"})
@@ -105,11 +107,27 @@ public class User_003_My_Account extends BaseTest{
 		headerPage.openHeaderPageByPageName("Computers ");
 		computerPage = PageGeneratorManager.getUserComputerPageObject(driver);
 		
-		////div[@class='sub-category-item']//a[text()=' Desktops ']
+
 		computerPage.clickToSubCategoryByName(" Desktops ");
-		////h2[@class='product-title']//a[text()='Build your own computer']
-		computerPage.clickToProductByName();
+		computerPage.clickToProductByName("Build your own computer");
 		computerPage.clickToAddYourReviewLink();
+		
+		reviewPage = PageGeneratorManager.getUserReviewProductPageObject(driver);
+		
+		reviewPage.inputToReviewTitleTextbox("review title");
+		reviewPage.inputToReviewBodyTextbox("review body");
+		reviewPage.clickToRatingRadioByValue("5");
+		reviewPage.clickToSubmitReviewButton();
+		reviewPage.getAddReviewResultMessage();
+		
+		reviewPage.clickToMyAccountLink();
+		customerInfoPage = PageGeneratorManager.getUserCustomerInfoPage(driver);
+		
+		customerInfoPage.openSideBarPageByPageName("My product reviews");
+		productReviewPage = PageGeneratorManager.getUserProductReviewPage(driver);
+		
+		Assert.assertTrue(productReviewPage.isProductReviewDisplayedByProductName("Build your own computer"));
+
 	}
 	
 	@AfterClass
@@ -126,4 +144,6 @@ public class User_003_My_Account extends BaseTest{
 	UserPasswordPageObject passwordPage;
 	UserHeaderPageObject headerPage;
 	UserComputerPageObject computerPage;
+	UserReviewProductPageObject reviewPage;
+	UserProductReviewPageObject productReviewPage;
 }

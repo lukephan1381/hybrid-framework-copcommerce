@@ -42,4 +42,9 @@ public class UserHomePageObject extends BasePage{
 		clickToElement(driver, UserHomePageUI.MY_ACCOUNT_LINK);
 	}
 
+	public void clickToSearchLink() {
+		waitElementToBeClickable(driver, UserHomePageUI.FOOTER_SEARCH_LINK);
+		clickToElement(driver, UserHomePageUI.FOOTER_SEARCH_LINK);
+	}
+
 }

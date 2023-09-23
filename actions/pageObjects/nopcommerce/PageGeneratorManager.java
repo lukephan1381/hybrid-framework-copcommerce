@@ -65,4 +65,9 @@ public class PageGeneratorManager {
 		// TODO Auto-generated method stub
 		return new UserReviewProductPageObject(driver);
 	}
+
+	public static UserSearchPageObject getUserSearchPageObject(WebDriver driver) {
+		// TODO Auto-generated method stub
+		return new UserSearchPageObject(driver);
+	}
 }

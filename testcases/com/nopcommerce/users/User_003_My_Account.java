@@ -12,12 +12,11 @@ import com.nopcommerce.common.Common_01_Register;
 import commons.BaseTest;
 import pageObjects.nopcommerce.PageGeneratorManager;
 import pageObjects.nopcommerce.UserAddressPageObject;
-import pageObjects.nopcommerce.UserComputerPageObject;
 import pageObjects.nopcommerce.UserCustomerInfoPageObject;
-import pageObjects.nopcommerce.UserHeaderPageObject;
 import pageObjects.nopcommerce.UserHomePageObject;
 import pageObjects.nopcommerce.UserLoginPageObject;
 import pageObjects.nopcommerce.UserPasswordPageObject;
+import pageObjects.nopcommerce.UserProductPageObject;
 import pageObjects.nopcommerce.UserProductReviewPageObject;
 import pageObjects.nopcommerce.UserReviewProductPageObject;
 
@@ -103,14 +102,14 @@ public class User_003_My_Account extends BaseTest{
 	
 	@Test
 	public void MyAccount_004_Review_Product() {
-		headerPage = PageGeneratorManager.getUserHeaderPageObject(driver);
-		headerPage.openHeaderPageByPageName("Computers ");
-		computerPage = PageGeneratorManager.getUserComputerPageObject(driver);
+		homePage = PageGeneratorManager.getUserHomePage(driver);
+		homePage.openHeaderPageByPageName("Computers ");
 		
+		productPage = PageGeneratorManager.getUserProductPage(driver);
 
-		computerPage.clickToSubCategoryByName(" Desktops ");
-		computerPage.clickToProductByName("Build your own computer");
-		computerPage.clickToAddYourReviewLink();
+		productPage.clickToSubCategoryByName(" Desktops ");
+		productPage.clickToProductByName("Build your own computer");
+		productPage.clickToAddYourReviewLink();
 		
 		reviewPage = PageGeneratorManager.getUserReviewProductPageObject(driver);
 		
@@ -142,8 +141,7 @@ public class User_003_My_Account extends BaseTest{
 	UserCustomerInfoPageObject customerInfoPage;
 	UserAddressPageObject addressPage;
 	UserPasswordPageObject passwordPage;
-	UserHeaderPageObject headerPage;
-	UserComputerPageObject computerPage;
 	UserReviewProductPageObject reviewPage;
 	UserProductReviewPageObject productReviewPage;
+	UserProductPageObject productPage;
 }

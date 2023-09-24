@@ -51,16 +51,6 @@ public class PageGeneratorManager {
 		return new UserPasswordPageObject(driver);
 	}
 
-	public static UserComputerPageObject getUserComputerPageObject(WebDriver driver) {
-		// TODO Auto-generated method stub
-		return new UserComputerPageObject(driver);
-	}
-
-	public static UserHeaderPageObject getUserHeaderPageObject(WebDriver driver) {
-		// TODO Auto-generated method stub
-		return new UserHeaderPageObject(driver);
-	}
-
 	public static UserReviewProductPageObject getUserReviewProductPageObject(WebDriver driver) {
 		// TODO Auto-generated method stub
 		return new UserReviewProductPageObject(driver);
@@ -69,5 +59,10 @@ public class PageGeneratorManager {
 	public static UserSearchPageObject getUserSearchPageObject(WebDriver driver) {
 		// TODO Auto-generated method stub
 		return new UserSearchPageObject(driver);
+	}
+
+	public static UserProductPageObject getUserProductPage(WebDriver driver) {
+		// TODO Auto-generated method stub
+		return new UserProductPageObject(driver);
 	}
 }

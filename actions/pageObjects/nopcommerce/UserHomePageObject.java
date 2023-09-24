@@ -46,5 +46,10 @@ public class UserHomePageObject extends BasePage{
 		waitElementToBeClickable(driver, UserHomePageUI.FOOTER_SEARCH_LINK);
 		clickToElement(driver, UserHomePageUI.FOOTER_SEARCH_LINK);
 	}
+	
+	public void openHeaderPageByPageName(String pageName) {
+		waitElementToBeClickable(driver, UserHomePageUI.DYNAMIC_LINK_HEADER, pageName);
+		clickToElement(driver, UserHomePageUI.DYNAMIC_LINK_HEADER, pageName);
+	}
 
 }
